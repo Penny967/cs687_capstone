@@ -1,0 +1,40 @@
+import type { Product } from "../types/product";
+
+export const mockProducts: Product[] = [
+  {
+    id: "p-001",
+    sku: "SOFA-001",
+    name: "Modern Fabric Sofa",
+    category: "Sofa",
+    material: "Fabric",
+    color: "Gray",
+    size: "84 x 36 x 32 in",
+    defaultPurchaseCost: 520,
+    defaultSellingPrice: 1299,
+    isActive: true,
+  },
+  {
+    id: "p-002",
+    sku: "TABLE-001",
+    name: "Solid Wood Dining Table",
+    category: "Dining Table",
+    material: "Oak Wood",
+    color: "Natural",
+    size: "72 x 36 x 30 in",
+    defaultPurchaseCost: 430,
+    defaultSellingPrice: 1099,
+    isActive: true,
+  },
+  {
+    id: "p-003",
+    sku: "CHAIR-001",
+    name: "Upholstered Dining Chair",
+    category: "Chair",
+    material: "Wood + Fabric",
+    color: "Beige",
+    size: "20 x 22 x 35 in",
+    defaultPurchaseCost: 85,
+    defaultSellingPrice: 229,
+    isActive: true,
+  },
+];
