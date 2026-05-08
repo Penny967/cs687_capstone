@@ -27,3 +27,15 @@ export interface InventoryItem {
   estimatedArrivalDate?: string;
   notes?: string;
 }
+
+export interface InventoryMovement {
+  id: string;
+  inventoryItemId: string;
+  fromStatus?: InventoryStatus;
+  toStatus: InventoryStatus;
+  fromLocation?: string;
+  toLocation: string;
+  movementReason: string;
+  performedBy: string;
+  createdAt: string;
+}
