@@ -15,16 +15,41 @@ export type InventoryCondition =
   | "damaged"
   | "returned";
 
+export type StoreType =
+  | "factory"
+  | "warehouse"
+  | "showroom"
+  | "in_transit"
+  | "online"
+  | "other";
+
 export interface InventoryItem {
   id: string;
+
+  productId: string;
   sku: string;
   productName: string;
+
+  category: string;
+  material: string;
+  color: string;
+
+  price: number;
+  cost: number;
+
   status: InventoryStatus;
   location: string;
+  storeType: StoreType;
+
   condition: InventoryCondition;
   batchNumber: string;
-  reservedOrderNumber?: string;
+
+  productionStartDate?: string;
+  receivedDate?: string;
   estimatedArrivalDate?: string;
+  actualArrivalDate?: string;
+
+  reservedOrderNumber?: string;
   notes?: string;
 }
 

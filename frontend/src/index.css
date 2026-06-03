@@ -716,3 +716,12 @@ a {
   color: #6b7280;
   font-size: 14px;
 }
+
+.analytics-preview-card {
+  margin-top: 24px;
+  overflow-x: auto;
+}
+
+.replenishment-explanation-card {
+  margin-top: 24px;
+}

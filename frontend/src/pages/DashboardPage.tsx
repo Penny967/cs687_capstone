@@ -1,5 +1,6 @@
 import { mockInventory } from "../data/mockInventory";
 import { mockOrders } from "../data/mockOrders";
+import { mockSalesAnalyticsRecords } from "../data/mockSalesAnalytics";
 
 function formatCurrency(value: number) {
   return `$${value.toFixed(2)}`;
@@ -31,21 +32,38 @@ function DashboardPage() {
     (order) => order.status === "delivered"
   );
 
-  const totalDeliveredRevenue = deliveredOrders.reduce(
-    (sum, order) => sum + order.totalAmount,
+  const analyticsRevenue = mockSalesAnalyticsRecords.reduce(
+    (sum, record) => sum + record.price,
     0
   );
+
+  const analyticsCost = mockSalesAnalyticsRecords.reduce(
+    (sum, record) => sum + record.cost * record.sales,
+    0
+  );
+
+  const grossProfit = analyticsRevenue - analyticsCost;
 
   const totalBalanceDue = mockOrders.reduce(
     (sum, order) => sum + order.balanceDue,
     0
   );
 
-  const damagedItems = mockInventory.filter(
-    (item) => item.status === "damaged"
+  const deliveryDayRecords = mockSalesAnalyticsRecords.filter(
+    (record) => record.deliveryDays !== null
   );
 
-  const lowStockSkuList = ["SOFA-001", "CHAIR-001"];
+  const averageDeliveryDays =
+    deliveryDayRecords.length > 0
+      ? deliveryDayRecords.reduce(
+          (sum, record) => sum + (record.deliveryDays ?? 0),
+          0
+        ) / deliveryDayRecords.length
+      : 0;
+
+  const lowInventoryRecords = mockSalesAnalyticsRecords.filter(
+    (record) => record.inventory <= 1
+  );
 
   return (
     <div>
@@ -54,7 +72,7 @@ function DashboardPage() {
           <h2>Dashboard</h2>
           <p>
             Overview of inventory status, customer orders, replenishment needs,
-            and profit performance.
+            and analytics-based profit performance.
           </p>
         </div>
 
@@ -75,15 +93,15 @@ function DashboardPage() {
         </div>
 
         <div className="summary-card">
-          <span className="summary-label">Delivered Revenue</span>
-          <strong>{formatCurrency(totalDeliveredRevenue)}</strong>
-          <p className="summary-helper">Revenue from delivered orders</p>
+          <span className="summary-label">Analytics Revenue</span>
+          <strong>{formatCurrency(analyticsRevenue)}</strong>
+          <p className="summary-helper">Generated from delivered orders</p>
         </div>
 
         <div className="summary-card">
-          <span className="summary-label">Balance Due</span>
-          <strong>{formatCurrency(totalBalanceDue)}</strong>
-          <p className="summary-helper">Outstanding customer balance</p>
+          <span className="summary-label">Gross Profit</span>
+          <strong>{formatCurrency(grossProfit)}</strong>
+          <p className="summary-helper">Revenue minus tracked cost</p>
         </div>
       </div>
 
@@ -113,8 +131,8 @@ function DashboardPage() {
             </div>
 
             <div className="status-list-item">
-              <span>Damaged</span>
-              <strong>{damagedItems.length}</strong>
+              <span>Delivered Orders</span>
+              <strong>{deliveredOrders.length}</strong>
             </div>
           </div>
         </div>
@@ -122,52 +140,30 @@ function DashboardPage() {
         <div className="card">
           <div className="card-header">
             <div>
-              <h3>Order Pipeline</h3>
-              <p>Customer orders grouped by current progress.</p>
+              <h3>Analytics Snapshot</h3>
+              <p>Summary generated from sales analytics records.</p>
             </div>
           </div>
 
           <div className="status-list">
             <div className="status-list-item">
-              <span>Inquiry</span>
-              <strong>
-                {
-                  mockOrders.filter((order) => order.status === "inquiry")
-                    .length
-                }
-              </strong>
+              <span>Analytics Records</span>
+              <strong>{mockSalesAnalyticsRecords.length}</strong>
             </div>
 
             <div className="status-list-item">
-              <span>Deposit Paid</span>
-              <strong>
-                {
-                  mockOrders.filter(
-                    (order) => order.status === "deposit_paid"
-                  ).length
-                }
-              </strong>
+              <span>Average Delivery Days</span>
+              <strong>{averageDeliveryDays.toFixed(1)}</strong>
             </div>
 
             <div className="status-list-item">
-              <span>Preparing</span>
-              <strong>
-                {
-                  mockOrders.filter((order) => order.status === "preparing")
-                    .length
-                }
-              </strong>
+              <span>Balance Due</span>
+              <strong>{formatCurrency(totalBalanceDue)}</strong>
             </div>
 
             <div className="status-list-item">
-              <span>Scheduled Delivery</span>
-              <strong>
-                {
-                  mockOrders.filter(
-                    (order) => order.status === "scheduled_delivery"
-                  ).length
-                }
-              </strong>
+              <span>Low Inventory Alerts</span>
+              <strong>{lowInventoryRecords.length}</strong>
             </div>
           </div>
         </div>
@@ -176,11 +172,11 @@ function DashboardPage() {
           <div className="card-header">
             <div>
               <h3>Replenishment Alerts</h3>
-              <p>Products that may need reorder review.</p>
+              <p>Products that may need reorder review based on analytics data.</p>
             </div>
 
             <span className="badge badge-orange">
-              {lowStockSkuList.length} Alerts
+              {lowInventoryRecords.length} Alerts
             </span>
           </div>
 
@@ -188,19 +184,31 @@ function DashboardPage() {
             <thead>
               <tr>
                 <th>SKU</th>
-                <th>Reason</th>
+                <th>Inventory</th>
+                <th>Sales</th>
+                <th>Season</th>
                 <th>Suggested Action</th>
               </tr>
             </thead>
 
             <tbody>
-              {lowStockSkuList.map((sku) => (
-                <tr key={sku}>
-                  <td>{sku}</td>
-                  <td>Available stock is below target level.</td>
+              {lowInventoryRecords.map((record) => (
+                <tr key={record.id}>
+                  <td>{record.sku}</td>
+                  <td>{record.inventory}</td>
+                  <td>{record.sales}</td>
+                  <td>{record.season}</td>
                   <td>Review reorder quantity.</td>
                 </tr>
               ))}
+
+              {lowInventoryRecords.length === 0 && (
+                <tr>
+                  <td colSpan={5} className="empty-table-message">
+                    No low inventory alerts found.
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
@@ -208,36 +216,48 @@ function DashboardPage() {
         <div className="card dashboard-wide-card">
           <div className="card-header">
             <div>
-              <h3>Recent Activity</h3>
-              <p>Latest mock activities across inventory and orders.</p>
+              <h3>Recent Analytics Records</h3>
+              <p>Latest generated records from delivered orders.</p>
             </div>
           </div>
 
-          <div className="activity-list">
-            <div className="activity-item">
-              <span className="activity-dot" />
-              <div>
-                <strong>Inventory item moved to Reserved</strong>
-                <p>CHAIR-001 was reserved for order ORD-1001.</p>
-              </div>
-            </div>
+          <table className="data-table compact-table">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>SKU</th>
+                <th>Price</th>
+                <th>Cost</th>
+                <th>Sales</th>
+                <th>Inventory</th>
+                <th>Delivery Days</th>
+                <th>Season</th>
+              </tr>
+            </thead>
 
-            <div className="activity-item">
-              <span className="activity-dot" />
-              <div>
-                <strong>Order status updated</strong>
-                <p>ORD-1003 moved to Scheduled Delivery.</p>
-              </div>
-            </div>
+            <tbody>
+              {mockSalesAnalyticsRecords.map((record) => (
+                <tr key={record.id}>
+                  <td>{record.orderNumber}</td>
+                  <td>{record.sku}</td>
+                  <td>{formatCurrency(record.price)}</td>
+                  <td>{formatCurrency(record.cost)}</td>
+                  <td>{record.sales}</td>
+                  <td>{record.inventory}</td>
+                  <td>{record.deliveryDays ?? "-"}</td>
+                  <td>{record.season}</td>
+                </tr>
+              ))}
 
-            <div className="activity-item">
-              <span className="activity-dot" />
-              <div>
-                <strong>Warehouse item received</strong>
-                <p>TABLE-001 arrived at Seattle Warehouse.</p>
-              </div>
-            </div>
-          </div>
+              {mockSalesAnalyticsRecords.length === 0 && (
+                <tr>
+                  <td colSpan={8} className="empty-table-message">
+                    No analytics records generated yet.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

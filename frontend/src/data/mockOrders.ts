@@ -10,7 +10,7 @@ export const mockOrders: CustomerOrder[] = [
     totalAmount: 1299,
     depositAmount: 300,
     balanceDue: 999,
-    scheduledDeliveryDate: "2026-05-18",
+    scheduledDeliveryDate: "2026-07-18",
     createdAt: "2026-05-01",
     notes: "Customer prefers weekend delivery.",
   },
@@ -35,8 +35,8 @@ export const mockOrders: CustomerOrder[] = [
     totalAmount: 458,
     depositAmount: 200,
     balanceDue: 258,
-    scheduledDeliveryDate: "2026-05-10",
-    createdAt: "2026-05-05",
+    scheduledDeliveryDate: "2026-06-10",
+    createdAt: "2026-03-05",
   },
   {
     id: "order-004",
@@ -48,7 +48,7 @@ export const mockOrders: CustomerOrder[] = [
     depositAmount: 1000,
     balanceDue: 0,
     scheduledDeliveryDate: "2026-05-06",
-    createdAt: "2026-04-28",
+    createdAt: "2026-03-28",
     notes: "Delivered successfully.",
   },
   {

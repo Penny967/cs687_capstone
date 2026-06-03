@@ -1,12 +1,16 @@
 import { mockProducts } from "../data/mockProducts";
 
+function formatCurrency(value: number) {
+  return `$${value.toFixed(2)}`;
+}
+
 function ProductsPage() {
   return (
     <div>
       <div className="page-header">
         <div>
           <h2>Products</h2>
-          <p>Manage furniture product information.</p>
+          <p>Manage furniture product information used by inventory, orders, and replenishment analysis.</p>
         </div>
 
         <button className="primary-button">Add Product</button>
@@ -21,8 +25,9 @@ function ProductsPage() {
               <th>Category</th>
               <th>Material</th>
               <th>Color</th>
-              <th>Purchase Cost</th>
-              <th>Selling Price</th>
+              <th>Size</th>
+              <th>Default Cost</th>
+              <th>Default Price</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -35,8 +40,9 @@ function ProductsPage() {
                 <td>{product.category}</td>
                 <td>{product.material}</td>
                 <td>{product.color}</td>
-                <td>${product.defaultPurchaseCost.toFixed(2)}</td>
-                <td>${product.defaultSellingPrice.toFixed(2)}</td>
+                <td>{product.size}</td>
+                <td>{formatCurrency(product.defaultCost)}</td>
+                <td>{formatCurrency(product.defaultPrice)}</td>
                 <td>
                   <span className={product.isActive ? "badge badge-green" : "badge badge-gray"}>
                     {product.isActive ? "Active" : "Inactive"}

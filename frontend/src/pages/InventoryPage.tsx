@@ -7,6 +7,7 @@ import type {
   InventoryItem,
   InventoryMovement,
   InventoryStatus,
+  StoreType,
 } from "../types/inventory";
 
 type InventoryStatusFilter = "all" | InventoryStatus;
@@ -64,6 +65,19 @@ const conditionOptions: { value: InventoryCondition; label: string }[] = [
   { value: "returned", label: "Returned" },
 ];
 
+const storeTypeOptions: { value: StoreType; label: string }[] = [
+  { value: "factory", label: "Factory" },
+  { value: "warehouse", label: "Warehouse" },
+  { value: "showroom", label: "Showroom" },
+  { value: "in_transit", label: "In Transit" },
+  { value: "online", label: "Online" },
+  { value: "other", label: "Other" },
+];
+
+function formatCurrency(value: number) {
+  return `$${value.toFixed(2)}`;
+}
+
 function InventoryPage() {
   const [inventoryItems, setInventoryItems] =
     useState<InventoryItem[]>(mockInventory);
@@ -82,19 +96,35 @@ function InventoryPage() {
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  const [newStatus, setNewStatus] = useState<InventoryStatus>("local_warehouse");
+  const [newStatus, setNewStatus] =
+    useState<InventoryStatus>("local_warehouse");
 
   const [movementNote, setMovementNote] = useState("");
 
   const [newInventoryItem, setNewInventoryItem] = useState({
+    productId: "",
     sku: "",
     productName: "",
+
+    category: "",
+    material: "",
+    color: "",
+
+    price: "",
+    cost: "",
+
     status: "local_warehouse" as InventoryStatus,
     location: "",
+    storeType: "warehouse" as StoreType,
+
     condition: "new" as InventoryCondition,
     batchNumber: "",
-    reservedOrderNumber: "",
+
+    receivedDate: "",
     estimatedArrivalDate: "",
+    actualArrivalDate: "",
+
+    reservedOrderNumber: "",
     notes: "",
   });
 
@@ -108,7 +138,11 @@ function InventoryPage() {
       normalizedSearchTerm === "" ||
       item.sku.toLowerCase().includes(normalizedSearchTerm) ||
       item.productName.toLowerCase().includes(normalizedSearchTerm) ||
+      item.category.toLowerCase().includes(normalizedSearchTerm) ||
+      item.material.toLowerCase().includes(normalizedSearchTerm) ||
+      item.color.toLowerCase().includes(normalizedSearchTerm) ||
       item.location.toLowerCase().includes(normalizedSearchTerm) ||
+      item.storeType.toLowerCase().includes(normalizedSearchTerm) ||
       item.batchNumber.toLowerCase().includes(normalizedSearchTerm) ||
       item.reservedOrderNumber?.toLowerCase().includes(normalizedSearchTerm);
 
@@ -151,14 +185,29 @@ function InventoryPage() {
 
   function resetNewInventoryItem() {
     setNewInventoryItem({
+      productId: "",
       sku: "",
       productName: "",
+
+      category: "",
+      material: "",
+      color: "",
+
+      price: "",
+      cost: "",
+
       status: "local_warehouse",
       location: "",
+      storeType: "warehouse",
+
       condition: "new",
       batchNumber: "",
-      reservedOrderNumber: "",
+
+      receivedDate: "",
       estimatedArrivalDate: "",
+      actualArrivalDate: "",
+
+      reservedOrderNumber: "",
       notes: "",
     });
   }
@@ -206,16 +255,37 @@ function InventoryPage() {
   function handleSaveNewInventoryItem() {
     const trimmedSku = newInventoryItem.sku.trim();
     const trimmedProductName = newInventoryItem.productName.trim();
+    const trimmedCategory = newInventoryItem.category.trim();
+    const trimmedMaterial = newInventoryItem.material.trim();
+    const trimmedColor = newInventoryItem.color.trim();
     const trimmedLocation = newInventoryItem.location.trim();
     const trimmedBatchNumber = newInventoryItem.batchNumber.trim();
+
+    const parsedPrice = Number(newInventoryItem.price);
+    const parsedCost = Number(newInventoryItem.cost);
 
     if (
       !trimmedSku ||
       !trimmedProductName ||
+      !trimmedCategory ||
+      !trimmedMaterial ||
+      !trimmedColor ||
       !trimmedLocation ||
       !trimmedBatchNumber
     ) {
-      alert("Please fill in SKU, Product Name, Location, and Batch Number.");
+      alert(
+        "Please fill in SKU, Product Name, Category, Material, Color, Location, and Batch Number."
+      );
+      return;
+    }
+
+    if (Number.isNaN(parsedPrice) || parsedPrice < 0) {
+      alert("Please enter a valid price.");
+      return;
+    }
+
+    if (Number.isNaN(parsedCost) || parsedCost < 0) {
+      alert("Please enter a valid cost.");
       return;
     }
 
@@ -223,16 +293,31 @@ function InventoryPage() {
 
     const itemToAdd: InventoryItem = {
       id: itemId,
+      productId: newInventoryItem.productId.trim() || `product-${Date.now()}`,
       sku: trimmedSku,
       productName: trimmedProductName,
+
+      category: trimmedCategory,
+      material: trimmedMaterial,
+      color: trimmedColor,
+
+      price: parsedPrice,
+      cost: parsedCost,
+
       status: newInventoryItem.status,
       location: trimmedLocation,
+      storeType: newInventoryItem.storeType,
+
       condition: newInventoryItem.condition,
       batchNumber: trimmedBatchNumber,
-      reservedOrderNumber:
-        newInventoryItem.reservedOrderNumber.trim() || undefined,
+
+      receivedDate: newInventoryItem.receivedDate.trim() || undefined,
       estimatedArrivalDate:
         newInventoryItem.estimatedArrivalDate.trim() || undefined,
+      actualArrivalDate: newInventoryItem.actualArrivalDate.trim() || undefined,
+
+      reservedOrderNumber:
+        newInventoryItem.reservedOrderNumber.trim() || undefined,
       notes: newInventoryItem.notes.trim() || undefined,
     };
 
@@ -243,12 +328,15 @@ function InventoryPage() {
       toLocation: trimmedLocation,
       movementReason:
         newInventoryItem.notes.trim() ||
-        `Inventory item created with status ${statusLabels[newInventoryItem.status]}.`,
+        `Inventory item created with status ${
+          statusLabels[newInventoryItem.status]
+        }.`,
       performedBy: "Current User",
       createdAt: new Date().toLocaleString(),
     };
 
     setInventoryItems((currentItems) => [...currentItems, itemToAdd]);
+
     setInventoryMovements((currentMovements) => [
       ...currentMovements,
       initialMovement,
@@ -263,8 +351,8 @@ function InventoryPage() {
         <div>
           <h2>Inventory</h2>
           <p>
-            Track furniture items across production, transit, warehouse,
-            showroom, and reserved statuses.
+            Track furniture items across product attributes, inventory status,
+            location, cost, price, and store type.
           </p>
         </div>
 
@@ -327,7 +415,7 @@ function InventoryPage() {
               <input
                 id="inventory-search"
                 type="text"
-                placeholder="Search SKU, product, location..."
+                placeholder="Search SKU, product, category, location..."
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
               />
@@ -357,12 +445,12 @@ function InventoryPage() {
             <tr>
               <th>SKU</th>
               <th>Product Name</th>
+              <th>Category</th>
               <th>Status</th>
               <th>Location</th>
-              <th>Condition</th>
-              <th>Batch</th>
-              <th>Reserved Order</th>
-              <th>ETA</th>
+              <th>Store Type</th>
+              <th>Cost</th>
+              <th>Price</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -372,16 +460,16 @@ function InventoryPage() {
               <tr key={item.id}>
                 <td>{item.sku}</td>
                 <td>{item.productName}</td>
+                <td>{item.category}</td>
                 <td>
                   <span className={statusClassNames[item.status]}>
                     {statusLabels[item.status]}
                   </span>
                 </td>
                 <td>{item.location}</td>
-                <td>{item.condition}</td>
-                <td>{item.batchNumber}</td>
-                <td>{item.reservedOrderNumber ?? "-"}</td>
-                <td>{item.estimatedArrivalDate ?? "-"}</td>
+                <td>{item.storeType}</td>
+                <td>{formatCurrency(item.cost)}</td>
+                <td>{formatCurrency(item.price)}</td>
                 <td>
                   <div className="row-actions">
                     <button
@@ -433,6 +521,11 @@ function InventoryPage() {
               <div className="detail-row">
                 <span>Current Status</span>
                 <strong>{statusLabels[selectedItem.status]}</strong>
+              </div>
+
+              <div className="detail-row">
+                <span>Current Location</span>
+                <strong>{selectedItem.location}</strong>
               </div>
 
               <div className="form-group">
@@ -497,6 +590,48 @@ function InventoryPage() {
             </div>
 
             <div className="modal-body">
+              <div className="order-detail-grid">
+                <div className="detail-box">
+                  <span>Category</span>
+                  <strong>{timelineItem.category}</strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>Material</span>
+                  <strong>{timelineItem.material}</strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>Color</span>
+                  <strong>{timelineItem.color}</strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>Store Type</span>
+                  <strong>{timelineItem.storeType}</strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>Cost</span>
+                  <strong>{formatCurrency(timelineItem.cost)}</strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>Price</span>
+                  <strong>{formatCurrency(timelineItem.price)}</strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>Batch</span>
+                  <strong>{timelineItem.batchNumber}</strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>ETA</span>
+                  <strong>{timelineItem.estimatedArrivalDate ?? "-"}</strong>
+                </div>
+              </div>
+
               {selectedTimelineMovements.length > 0 ? (
                 <div className="timeline">
                   {selectedTimelineMovements.map((movement) => (
@@ -555,7 +690,10 @@ function InventoryPage() {
             <div className="modal-header">
               <div>
                 <h3>Add Inventory Item</h3>
-                <p>Create a new furniture inventory record.</p>
+                <p>
+                  Create a new furniture inventory record with product
+                  attributes, cost, price, location, and store type.
+                </p>
               </div>
 
               <button className="icon-button" onClick={closeAddModal}>
@@ -565,6 +703,22 @@ function InventoryPage() {
 
             <div className="modal-body">
               <div className="form-grid">
+                <div className="form-group">
+                  <label htmlFor="add-product-id">Product ID</label>
+                  <input
+                    id="add-product-id"
+                    type="text"
+                    placeholder="Example: p-001"
+                    value={newInventoryItem.productId}
+                    onChange={(event) =>
+                      setNewInventoryItem((current) => ({
+                        ...current,
+                        productId: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
                 <div className="form-group">
                   <label htmlFor="add-sku">SKU *</label>
                   <input
@@ -592,6 +746,90 @@ function InventoryPage() {
                       setNewInventoryItem((current) => ({
                         ...current,
                         productName: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="add-category">Category *</label>
+                  <input
+                    id="add-category"
+                    type="text"
+                    placeholder="Example: Sofa"
+                    value={newInventoryItem.category}
+                    onChange={(event) =>
+                      setNewInventoryItem((current) => ({
+                        ...current,
+                        category: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="add-material">Material *</label>
+                  <input
+                    id="add-material"
+                    type="text"
+                    placeholder="Example: Fabric"
+                    value={newInventoryItem.material}
+                    onChange={(event) =>
+                      setNewInventoryItem((current) => ({
+                        ...current,
+                        material: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="add-color">Color *</label>
+                  <input
+                    id="add-color"
+                    type="text"
+                    placeholder="Example: Gray"
+                    value={newInventoryItem.color}
+                    onChange={(event) =>
+                      setNewInventoryItem((current) => ({
+                        ...current,
+                        color: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="add-cost">Cost *</label>
+                  <input
+                    id="add-cost"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="Example: 520"
+                    value={newInventoryItem.cost}
+                    onChange={(event) =>
+                      setNewInventoryItem((current) => ({
+                        ...current,
+                        cost: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="add-price">Price *</label>
+                  <input
+                    id="add-price"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="Example: 1299"
+                    value={newInventoryItem.price}
+                    onChange={(event) =>
+                      setNewInventoryItem((current) => ({
+                        ...current,
+                        price: event.target.value,
                       }))
                     }
                   />
@@ -654,6 +892,26 @@ function InventoryPage() {
                 </div>
 
                 <div className="form-group">
+                  <label htmlFor="add-store-type">Store Type</label>
+                  <select
+                    id="add-store-type"
+                    value={newInventoryItem.storeType}
+                    onChange={(event) =>
+                      setNewInventoryItem((current) => ({
+                        ...current,
+                        storeType: event.target.value as StoreType,
+                      }))
+                    }
+                  >
+                    {storeTypeOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-group">
                   <label htmlFor="add-batch-number">Batch Number *</label>
                   <input
                     id="add-batch-number"
@@ -686,6 +944,21 @@ function InventoryPage() {
                 </div>
 
                 <div className="form-group">
+                  <label htmlFor="add-received-date">Received Date</label>
+                  <input
+                    id="add-received-date"
+                    type="date"
+                    value={newInventoryItem.receivedDate}
+                    onChange={(event) =>
+                      setNewInventoryItem((current) => ({
+                        ...current,
+                        receivedDate: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
                   <label htmlFor="add-eta">Estimated Arrival Date</label>
                   <input
                     id="add-eta"
@@ -695,6 +968,23 @@ function InventoryPage() {
                       setNewInventoryItem((current) => ({
                         ...current,
                         estimatedArrivalDate: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="add-actual-arrival-date">
+                    Actual Arrival Date
+                  </label>
+                  <input
+                    id="add-actual-arrival-date"
+                    type="date"
+                    value={newInventoryItem.actualArrivalDate}
+                    onChange={(event) =>
+                      setNewInventoryItem((current) => ({
+                        ...current,
+                        actualArrivalDate: event.target.value,
                       }))
                     }
                   />

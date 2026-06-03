@@ -1,7 +1,19 @@
 import { useState } from "react";
 
+import { mockInventory } from "../data/mockInventory";
 import { mockOrderItems, mockOrders } from "../data/mockOrders";
-import type { CustomerOrder, CustomerOrderItem, OrderStatus } from "../types/order";
+import type { SalesAnalyticsRecord } from "../types/analytics";
+import type { InventoryItem } from "../types/inventory";
+import type {
+  CustomerOrder,
+  CustomerOrderItem,
+  OrderStatus,
+} from "../types/order";
+import {
+  calculateAvailableInventoryBySku,
+  calculateDeliveryDays,
+  getSeason,
+} from "../utils/analyticsUtils";
 
 type OrderStatusFilter = "all" | OrderStatus;
 
@@ -52,6 +64,13 @@ function formatCurrency(value: number) {
 
 function OrdersPage() {
   const [orders, setOrders] = useState<CustomerOrder[]>(mockOrders);
+
+  const [inventoryItems, setInventoryItems] =
+    useState<InventoryItem[]>(mockInventory);
+
+  const [salesAnalyticsRecords, setSalesAnalyticsRecords] = useState<
+    SalesAnalyticsRecord[]
+  >([]);
 
   const [selectedStatus, setSelectedStatus] =
     useState<OrderStatusFilter>("all");
@@ -128,6 +147,90 @@ function OrdersPage() {
   function handleSaveOrderStatus() {
     if (!selectedOrder) {
       return;
+    }
+
+    const previousStatus = selectedOrder.status;
+
+    const isChangingToDelivered =
+      previousStatus !== "delivered" && newOrderStatus === "delivered";
+
+    let relatedOrderItems: CustomerOrderItem[] = [];
+
+    if (isChangingToDelivered) {
+      const deliveredDate =
+        selectedOrder.scheduledDeliveryDate ||
+        new Date().toISOString().slice(0, 10);
+
+      relatedOrderItems = mockOrderItems.filter(
+        (item) => item.orderId === selectedOrder.id
+      );
+
+      const generatedRecords: SalesAnalyticsRecord[] = relatedOrderItems.map(
+        (orderItem) => {
+          const linkedInventoryItem = inventoryItems.find(
+            (inventoryItem) => inventoryItem.id === orderItem.inventoryItemId
+          );
+
+          const deliveryDays = calculateDeliveryDays(
+            linkedInventoryItem?.productionStartDate,
+            linkedInventoryItem?.actualArrivalDate
+          );
+
+          const inventory = calculateAvailableInventoryBySku(
+            inventoryItems,
+            orderItem.sku
+          );
+
+          return {
+            id: `sales-record-${Date.now()}-${orderItem.id}`,
+
+            orderId: selectedOrder.id,
+            orderNumber: selectedOrder.orderNumber,
+            orderItemId: orderItem.id,
+            inventoryItemId: orderItem.inventoryItemId,
+
+            sku: orderItem.sku,
+            productName: orderItem.productName,
+
+            price: orderItem.finalPrice,
+            cost: linkedInventoryItem?.cost ?? 0,
+            sales: orderItem.quantity,
+            inventory,
+            deliveryDays,
+
+            category: linkedInventoryItem?.category ?? "Unknown",
+            material: linkedInventoryItem?.material ?? "Unknown",
+            color: linkedInventoryItem?.color ?? "Unknown",
+            location: linkedInventoryItem?.location ?? "Unknown",
+            season: getSeason(deliveredDate),
+            storeType: linkedInventoryItem?.storeType ?? "unknown",
+
+            recordDate: deliveredDate,
+          };
+        }
+      );
+
+      setSalesAnalyticsRecords((currentRecords) => [
+        ...currentRecords,
+        ...generatedRecords,
+      ]);
+
+      setInventoryItems((currentItems) =>
+        currentItems.map((item) => {
+          const soldOrderItem = relatedOrderItems.find(
+            (orderItem) => orderItem.inventoryItemId === item.id
+          );
+
+          if (!soldOrderItem) {
+            return item;
+          }
+
+          return {
+            ...item,
+            status: "sold",
+          };
+        })
+      );
     }
 
     setOrders((currentOrders) =>
@@ -290,6 +393,60 @@ function OrdersPage() {
         </table>
       </div>
 
+      {salesAnalyticsRecords.length > 0 && (
+        <div className="card analytics-preview-card">
+          <div className="card-header">
+            <div>
+              <h3>Generated Sales Analytics Records</h3>
+              <p>
+                These records are automatically generated when an order is marked
+                as Delivered.
+              </p>
+            </div>
+          </div>
+
+          <table className="data-table compact-table">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>SKU</th>
+                <th>Price</th>
+                <th>Cost</th>
+                <th>Sales</th>
+                <th>Inventory</th>
+                <th>Delivery Days</th>
+                <th>Category</th>
+                <th>Material</th>
+                <th>Color</th>
+                <th>Location</th>
+                <th>Season</th>
+                <th>Store Type</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {salesAnalyticsRecords.map((record) => (
+                <tr key={record.id}>
+                  <td>{record.orderNumber}</td>
+                  <td>{record.sku}</td>
+                  <td>{formatCurrency(record.price)}</td>
+                  <td>{formatCurrency(record.cost)}</td>
+                  <td>{record.sales}</td>
+                  <td>{record.inventory}</td>
+                  <td>{record.deliveryDays ?? "-"}</td>
+                  <td>{record.category}</td>
+                  <td>{record.material}</td>
+                  <td>{record.color}</td>
+                  <td>{record.location}</td>
+                  <td>{record.season}</td>
+                  <td>{record.storeType}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
       {selectedOrder && (
         <div className="modal-backdrop">
           <div className="modal-card">
@@ -348,7 +505,8 @@ function OrdersPage() {
               {newOrderStatus === "delivered" && (
                 <div className="warning-box">
                   Marking this order as Delivered will set the balance due to
-                  $0.00 in this mock UI.
+                  $0.00, generate sales analytics records, and mark linked
+                  inventory items as Sold in this mock UI.
                 </div>
               )}
             </div>
