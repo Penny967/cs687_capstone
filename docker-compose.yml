@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: furniture_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: furniture_user
+      POSTGRES_PASSWORD: furniture_password
+      POSTGRES_DB: furniture_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - furniture_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  furniture_postgres_data:
