@@ -6,3 +6,7 @@ python-dotenv
 pydantic
 pydantic-settings
 alembic
+pandas
+numpy
+scikit-learn
+joblib

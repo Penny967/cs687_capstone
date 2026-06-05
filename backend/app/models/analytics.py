@@ -24,19 +24,22 @@ class SalesAnalyticsRecord(Base):
         default=uuid.uuid4,
     )
 
-    order_id: Mapped[uuid.UUID] = mapped_column(
+    order_id: Mapped[uuid.UUID | None] = mapped_column(
         UUID(as_uuid=True),
         ForeignKey("customer_orders.id"),
-        nullable=False,
+        nullable=True,
         index=True,
     )
 
-    order_number: Mapped[str] = mapped_column(String(100), nullable=False)
+    order_number: Mapped[str | None] = mapped_column(
+        String(100),
+        nullable=True,
+    )
 
-    order_item_id: Mapped[uuid.UUID] = mapped_column(
+    order_item_id: Mapped[uuid.UUID | None] = mapped_column(
         UUID(as_uuid=True),
         ForeignKey("customer_order_items.id"),
-        nullable=False,
+        nullable=True,
         index=True,
     )
 
@@ -120,4 +123,23 @@ class SalesAnalyticsRecord(Base):
     product = relationship(
         "Product",
         back_populates="analytics_records",
+    )
+
+    data_source: Mapped[str] = mapped_column(
+        String(50),
+        nullable=False,
+        default="real_order",
+        index=True,
+    )
+
+    source_file: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+
+    source_record_key: Mapped[str | None] = mapped_column(
+        String(100),
+        nullable=True,
+        unique=True,
+        index=True,
     )
