@@ -1,0 +1,2501 @@
+price,cost,sales,profit,inventory,delivery_days,category,material,color,location,season,store_type,revenue
+1635,941,9,694,6,29,Bed,Wood,Blue,Urban,Fall,Online,14715
+1515,891,10,624,5,31,Bed,Wood,Black,Rural,Fall,Online,15150
+1702,1037,4,665,2,26,Bed,Wood,Red,Rural,Spring,Retail,6808
+1520,891,13,629,7,29,Bed,Wood,Green,Suburban,Summer,Retail,19760
+1862,1050,8,812,5,39,Bed,Leather,Green,Suburban,Summer,Online,14896
+1103,562,3,541,3,11,Bed,Fabric,Blue,Suburban,Winter,Online,3309
+1799,975,5,824,2,25,Bed,Wood,Black,Urban,Spring,Online,8995
+1788,1067,6,721,5,24,Bed,Wood,Red,Rural,Summer,Retail,10728
+1117,550,5,567,4,22,Bed,Fabric,Blue,Urban,Winter,Retail,5585
+1168,603,9,565,4,14,Bed,Fabric,Red,Rural,Fall,Online,10512
+1608,953,10,655,10,25,Bed,Wood,Red,Urban,Summer,Retail,16080
+1508,904,9,604,6,35,Bed,Wood,Blue,Rural,Fall,Online,13572
+1861,1075,6,786,2,36,Bed,Wood,Red,Urban,Fall,Online,11166
+1644,988,15,656,8,38,Bed,Leather,Black,Suburban,Fall,Retail,24660
+1225,684,19,541,9,15,Bed,Fabric,Black,Urban,Summer,Retail,23275
+1667,1040,9,627,5,38,Bed,Leather,Green,Suburban,Summer,Retail,15003
+1590,911,10,679,3,27,Bed,Wood,White,Suburban,Summer,Retail,15900
+1744,1064,6,680,4,31,Bed,Wood,White,Rural,Spring,Online,10464
+1797,1082,1,715,1,35,Bed,Wood,Blue,Rural,Winter,Online,1797
+1182,627,13,555,11,16,Bed,Fabric,White,Rural,Fall,Retail,15366
+1922,1120,4,802,1,29,Bed,Wood,Brown,Suburban,Winter,Online,7688
+1898,1140,9,758,1,34,Bed,Wood,Brown,Suburban,Spring,Online,17082
+1798,1018,7,780,4,40,Bed,Wood,Black,Urban,Winter,Retail,12586
+1635,964,5,671,2,32,Bed,Leather,Green,Urban,Winter,Online,8175
+1718,943,8,775,2,35,Bed,Wood,Brown,Suburban,Spring,Online,13744
+1722,1097,16,625,12,22,Bed,Wood,Black,Urban,Fall,Retail,27552
+1638,963,12,675,3,36,Bed,Wood,Blue,Suburban,Summer,Online,19656
+1890,1206,2,684,1,31,Bed,Leather,Red,Suburban,Winter,Online,3780
+1549,906,11,643,10,26,Bed,Wood,Black,Rural,Fall,Online,17039
+1165,537,3,628,2,23,Bed,Fabric,Red,Urban,Winter,Online,3495
+1902,1101,7,801,5,33,Bed,Wood,Brown,Suburban,Spring,Retail,13314
+1894,1103,13,791,7,38,Bed,Leather,White,Rural,Summer,Online,24622
+1264,651,11,613,10,19,Bed,Fabric,White,Suburban,Spring,Online,13904
+1631,951,13,680,7,33,Bed,Wood,Red,Urban,Summer,Online,21203
+1812,1028,4,784,3,31,Bed,Wood,Green,Rural,Fall,Retail,7248
+1589,956,4,633,1,33,Bed,Wood,Red,Urban,Winter,Retail,6356
+1118,518,5,600,3,14,Bed,Fabric,Red,Suburban,Winter,Retail,5590
+1219,624,15,595,9,24,Bed,Fabric,Black,Suburban,Fall,Retail,18285
+1701,1037,7,664,8,23,Bed,Leather,Red,Rural,Summer,Online,11907
+1924,1140,7,784,8,34,Bed,Leather,White,Rural,Spring,Retail,13468
+2192,1291,16,901,8,30,Bed,Leather,Black,Suburban,Summer,Retail,35072
+1662,952,5,710,1,42,Bed,Wood,Green,Urban,Spring,Online,8310
+1698,1059,5,639,3,49,Bed,Wood,Black,Suburban,Winter,Retail,8490
+1554,843,2,711,2,34,Bed,Wood,Red,Urban,Winter,Retail,3108
+2011,1194,9,817,4,41,Bed,Leather,White,Rural,Summer,Retail,18099
+1715,911,2,804,4,43,Bed,Wood,Blue,Urban,Winter,Online,3430
+1175,597,4,578,1,18,Bed,Fabric,Blue,Suburban,Spring,Online,4700
+1720,1023,3,697,1,25,Bed,Wood,Green,Suburban,Spring,Online,5160
+1637,1009,1,628,1,37,Bed,Leather,Red,Rural,Fall,Online,1637
+1874,1090,13,784,6,26,Bed,Wood,Red,Urban,Summer,Retail,24362
+1612,997,14,615,9,50,Bed,Wood,Brown,Rural,Summer,Retail,22568
+1800,1108,7,692,3,48,Bed,Leather,Red,Rural,Fall,Online,12600
+1312,610,15,702,9,23,Bed,Fabric,Black,Urban,Fall,Online,19680
+1536,804,8,732,4,29,Bed,Wood,Black,Rural,Summer,Online,12288
+1734,972,7,762,1,32,Bed,Wood,White,Urban,Spring,Online,12138
+1755,1061,15,694,8,38,Bed,Wood,Brown,Urban,Fall,Online,26325
+1669,940,13,729,6,17,Bed,Wood,White,Urban,Fall,Retail,21697
+1743,1022,14,721,6,32,Bed,Wood,Black,Suburban,Summer,Retail,24402
+1279,641,9,638,4,18,Bed,Fabric,Green,Suburban,Fall,Online,11511
+1547,892,6,655,7,36,Bed,Wood,Black,Suburban,Winter,Online,9282
+1242,599,14,643,5,20,Bed,Fabric,White,Rural,Summer,Online,17388
+1779,998,15,781,9,19,Bed,Wood,Black,Urban,Spring,Retail,26685
+1865,1100,10,765,6,36,Bed,Leather,Blue,Suburban,Summer,Retail,18650
+1384,763,2,621,4,41,Bed,Wood,Blue,Rural,Winter,Retail,2768
+1912,1011,10,901,2,40,Bed,Wood,Red,Rural,Summer,Retail,19120
+1704,940,4,764,3,19,Bed,Wood,Red,Rural,Winter,Retail,6816
+1865,1085,3,780,1,42,Bed,Leather,White,Rural,Winter,Online,5595
+1599,972,14,627,6,35,Bed,Leather,Red,Urban,Fall,Retail,22386
+1749,984,13,765,7,24,Bed,Wood,Black,Rural,Fall,Retail,22737
+1945,1167,14,778,6,25,Bed,Wood,Brown,Urban,Summer,Online,27230
+1248,619,3,629,1,22,Bed,Fabric,Red,Rural,Winter,Retail,3744
+1689,1012,10,677,7,34,Bed,Wood,Brown,Urban,Spring,Retail,16890
+1805,1044,4,761,1,28,Bed,Leather,White,Rural,Spring,Online,7220
+1786,1034,4,752,7,30,Bed,Wood,Red,Suburban,Winter,Online,7144
+1025,503,10,522,3,16,Bed,Fabric,Black,Rural,Spring,Retail,10250
+1150,562,8,588,3,29,Bed,Fabric,Green,Suburban,Fall,Online,9200
+1683,941,5,742,5,26,Bed,Wood,Brown,Rural,Spring,Online,8415
+1931,1194,15,737,11,31,Bed,Leather,Black,Suburban,Summer,Online,28965
+1822,1021,9,801,7,35,Bed,Wood,Red,Urban,Summer,Online,16398
+1823,1040,6,783,2,28,Bed,Leather,White,Suburban,Winter,Online,10938
+1763,1069,7,694,5,35,Bed,Leather,Black,Rural,Fall,Online,12341
+1703,1066,4,637,1,30,Bed,Leather,Green,Urban,Winter,Retail,6812
+1817,985,14,832,6,30,Bed,Wood,Black,Urban,Fall,Retail,25438
+1682,977,9,705,5,28,Bed,Wood,Blue,Rural,Summer,Online,15138
+1646,1017,10,629,8,30,Bed,Leather,White,Suburban,Spring,Retail,16460
+1657,959,6,698,3,20,Bed,Wood,Blue,Rural,Fall,Online,9942
+1923,1185,10,738,10,32,Bed,Leather,Red,Rural,Summer,Retail,19230
+1121,561,16,560,5,21,Bed,Fabric,Green,Suburban,Summer,Retail,17936
+1033,450,9,583,2,24,Bed,Fabric,Black,Rural,Fall,Online,9297
+1057,522,10,535,7,11,Bed,Fabric,Red,Urban,Summer,Online,10570
+1994,1147,4,847,2,34,Bed,Leather,Red,Rural,Fall,Online,7976
+2071,1249,8,822,3,31,Bed,Leather,Black,Suburban,Spring,Retail,16568
+1226,625,11,601,8,15,Bed,Fabric,Brown,Suburban,Spring,Retail,13486
+1636,956,4,680,2,28,Bed,Wood,Green,Suburban,Winter,Online,6544
+1030,533,11,497,7,7,Bed,Fabric,Blue,Urban,Fall,Retail,11330
+1865,1020,7,845,6,22,Bed,Wood,Black,Suburban,Spring,Online,13055
+1660,966,4,694,5,39,Bed,Wood,Red,Rural,Fall,Online,6640
+1407,765,8,642,2,28,Bed,Wood,Red,Urban,Spring,Retail,11256
+1705,1018,13,687,7,25,Bed,Wood,White,Urban,Fall,Online,22165
+1291,630,18,661,9,19,Bed,Fabric,Black,Urban,Fall,Retail,23238
+1632,940,4,692,4,38,Bed,Wood,Green,Urban,Spring,Retail,6528
+1877,1161,8,716,6,36,Bed,Leather,Brown,Rural,Spring,Online,15016
+1682,1012,9,670,3,30,Bed,Wood,Green,Urban,Fall,Online,15138
+1433,831,8,602,7,31,Bed,Wood,White,Urban,Winter,Retail,11464
+1777,1031,1,746,1,24,Bed,Wood,Blue,Rural,Winter,Retail,1777
+1473,878,5,595,4,30,Bed,Wood,Green,Urban,Spring,Online,7365
+1243,654,15,589,8,15,Bed,Fabric,White,Urban,Summer,Online,18645
+1498,894,15,604,8,27,Bed,Wood,Black,Suburban,Fall,Online,22470
+1798,937,1,861,1,27,Bed,Wood,Blue,Rural,Winter,Online,1798
+1894,1144,8,750,4,28,Bed,Wood,Brown,Suburban,Spring,Retail,15152
+1586,868,2,718,3,35,Bed,Wood,Blue,Rural,Winter,Online,3172
+1630,1063,14,567,8,29,Bed,Leather,Blue,Urban,Summer,Online,22820
+1539,909,2,630,1,37,Bed,Wood,Green,Suburban,Spring,Online,3078
+1454,916,5,538,1,22,Bed,Wood,Blue,Rural,Spring,Online,7270
+1682,932,7,750,1,29,Bed,Wood,Black,Urban,Winter,Retail,11774
+1287,608,11,679,3,22,Bed,Fabric,Blue,Urban,Fall,Retail,14157
+1808,1173,6,635,3,37,Bed,Leather,Brown,Rural,Spring,Online,10848
+1619,885,14,734,7,31,Bed,Wood,White,Urban,Fall,Online,22666
+1738,986,14,752,11,23,Bed,Wood,White,Suburban,Summer,Online,24332
+1884,1081,1,803,5,31,Bed,Wood,Blue,Urban,Winter,Online,1884
+1835,1102,7,733,4,27,Bed,Wood,Green,Urban,Summer,Online,12845
+1594,886,11,708,7,36,Bed,Leather,Blue,Urban,Summer,Retail,17534
+1097,527,9,570,4,12,Bed,Fabric,Blue,Urban,Fall,Online,9873
+1627,943,4,684,2,25,Bed,Wood,Green,Rural,Fall,Online,6508
+1670,990,6,680,4,20,Bed,Wood,Red,Rural,Fall,Online,10020
+1102,559,10,543,2,19,Bed,Fabric,Red,Rural,Fall,Retail,11020
+1850,1065,9,785,6,31,Bed,Wood,White,Suburban,Spring,Retail,16650
+1743,1014,7,729,2,29,Bed,Wood,Green,Rural,Fall,Retail,12201
+2005,1193,11,812,5,39,Bed,Leather,White,Rural,Summer,Online,22055
+1664,1036,1,628,1,35,Bed,Leather,Blue,Rural,Winter,Retail,1664
+1688,992,5,696,2,33,Bed,Wood,Red,Urban,Winter,Retail,8440
+1565,957,7,608,5,31,Bed,Wood,White,Suburban,Winter,Retail,10955
+1725,1021,7,704,4,35,Bed,Leather,Brown,Rural,Spring,Online,12075
+1474,862,6,612,1,29,Bed,Wood,Green,Rural,Summer,Online,8844
+1521,939,6,582,3,28,Bed,Leather,Blue,Suburban,Spring,Online,9126
+1529,881,5,648,3,34,Bed,Wood,Green,Urban,Summer,Online,7645
+1645,934,6,711,4,37,Bed,Wood,White,Suburban,Winter,Retail,9870
+1724,970,14,754,8,39,Bed,Wood,Black,Suburban,Summer,Retail,24136
+1776,1019,12,757,2,36,Bed,Leather,White,Urban,Summer,Online,21312
+1640,933,8,707,2,37,Bed,Leather,Brown,Suburban,Fall,Online,13120
+1495,802,5,693,2,33,Bed,Wood,Red,Urban,Spring,Online,7475
+1969,1181,6,788,3,37,Bed,Leather,Black,Suburban,Spring,Online,11814
+1641,893,10,748,5,28,Bed,Wood,Black,Urban,Winter,Retail,16410
+1825,1142,13,683,6,38,Bed,Leather,White,Rural,Summer,Retail,23725
+2136,1356,16,780,7,57,Bed,Leather,White,Urban,Summer,Retail,34176
+1495,853,5,642,6,33,Bed,Wood,Blue,Urban,Spring,Retail,7475
+996,505,13,491,7,11,Bed,Fabric,Green,Suburban,Summer,Retail,12948
+1621,922,8,699,3,34,Bed,Wood,Black,Rural,Spring,Retail,12968
+1039,475,8,564,7,15,Bed,Fabric,Blue,Rural,Fall,Retail,8312
+1963,1163,1,800,1,31,Bed,Wood,Green,Rural,Spring,Online,1963
+1684,1110,10,574,7,43,Bed,Leather,Black,Rural,Fall,Retail,16840
+1706,947,12,759,7,35,Bed,Wood,Black,Suburban,Fall,Online,20472
+1849,1045,12,804,5,21,Bed,Leather,Brown,Suburban,Fall,Online,22188
+1577,858,3,719,6,41,Bed,Wood,Red,Urban,Winter,Online,4731
+1073,524,12,549,9,15,Bed,Fabric,Green,Suburban,Summer,Online,12876
+1635,1039,8,596,3,31,Bed,Wood,Blue,Rural,Summer,Retail,13080
+1801,999,6,802,1,28,Bed,Wood,Black,Suburban,Winter,Online,10806
+2138,1322,14,816,6,32,Bed,Leather,Black,Suburban,Fall,Retail,29932
+1811,1025,8,786,2,28,Bed,Wood,Red,Urban,Spring,Online,14488
+1961,1039,6,922,1,29,Bed,Wood,Black,Rural,Winter,Online,11766
+1120,583,2,537,1,15,Bed,Fabric,Red,Urban,Spring,Retail,2240
+1174,561,15,613,6,16,Bed,Fabric,Black,Rural,Summer,Retail,17610
+1091,552,12,539,9,14,Bed,Fabric,Black,Suburban,Spring,Online,13092
+1645,956,14,689,8,21,Bed,Wood,White,Urban,Summer,Retail,23030
+1772,987,13,785,4,37,Bed,Wood,Black,Urban,Summer,Online,23036
+1802,1133,13,669,4,27,Bed,Leather,White,Rural,Summer,Retail,23426
+1933,1123,12,810,6,33,Bed,Leather,White,Urban,Summer,Online,23196
+1076,529,6,547,1,21,Bed,Fabric,Black,Rural,Winter,Retail,6456
+1594,977,10,617,2,37,Bed,Wood,Brown,Rural,Summer,Retail,15940
+1444,815,11,629,5,20,Bed,Wood,Blue,Suburban,Summer,Retail,15884
+1730,995,6,735,4,48,Bed,Wood,Brown,Rural,Winter,Online,10380
+1480,858,4,622,5,35,Bed,Wood,Brown,Urban,Winter,Online,5920
+1789,1003,10,786,1,40,Bed,Wood,White,Rural,Summer,Online,17890
+1182,583,14,599,9,24,Bed,Fabric,Red,Urban,Summer,Online,16548
+1498,842,4,656,3,36,Bed,Wood,Black,Rural,Winter,Online,5992
+1520,886,10,634,7,35,Bed,Wood,Blue,Rural,Fall,Online,15200
+1651,989,8,662,5,37,Bed,Wood,Blue,Suburban,Spring,Online,13208
+1678,1032,8,646,3,41,Bed,Leather,Red,Rural,Fall,Online,13424
+1107,531,12,576,10,20,Bed,Fabric,Black,Suburban,Spring,Retail,13284
+1814,1019,12,795,4,27,Bed,Wood,White,Rural,Summer,Retail,21768
+1212,605,15,607,8,17,Bed,Fabric,Red,Urban,Summer,Online,18180
+1989,1161,3,828,4,36,Bed,Leather,Red,Rural,Fall,Online,5967
+1522,915,14,607,11,30,Bed,Leather,Brown,Urban,Summer,Retail,21308
+1703,983,3,720,1,25,Bed,Leather,Green,Urban,Spring,Online,5109
+1517,819,7,698,1,27,Bed,Wood,Blue,Urban,Summer,Online,10619
+1740,991,8,749,4,31,Bed,Leather,Brown,Rural,Spring,Retail,13920
+1772,1134,13,638,8,18,Bed,Leather,Brown,Suburban,Fall,Retail,23036
+1599,841,12,758,7,26,Bed,Wood,White,Suburban,Summer,Online,19188
+1722,955,3,767,1,28,Bed,Wood,Blue,Urban,Winter,Online,5166
+1709,1014,1,695,4,28,Bed,Wood,Green,Rural,Winter,Online,1709
+1659,848,12,811,6,23,Bed,Wood,Black,Rural,Spring,Retail,19908
+1256,667,11,589,3,21,Bed,Fabric,Red,Urban,Fall,Online,13816
+1588,875,7,713,1,33,Bed,Wood,Red,Urban,Spring,Online,11116
+1715,1083,12,632,2,25,Bed,Wood,Blue,Urban,Summer,Retail,20580
+1142,581,13,561,3,16,Bed,Fabric,Red,Urban,Fall,Online,14846
+1837,1136,14,701,7,37,Bed,Wood,Brown,Urban,Spring,Retail,25718
+1899,1158,7,741,6,25,Bed,Wood,Red,Rural,Fall,Online,13293
+1628,1017,10,611,5,31,Bed,Leather,Brown,Rural,Fall,Retail,16280
+1651,967,2,684,1,31,Bed,Wood,Brown,Rural,Winter,Retail,3302
+1163,560,9,603,9,14,Bed,Fabric,Black,Rural,Winter,Retail,10467
+1236,645,2,591,1,14,Bed,Fabric,Green,Urban,Spring,Online,2472
+1956,1183,14,773,9,29,Bed,Leather,Brown,Suburban,Summer,Online,27384
+1090,512,8,578,4,19,Bed,Fabric,Brown,Rural,Spring,Online,8720
+1573,948,7,625,7,34,Bed,Wood,Red,Urban,Spring,Online,11011
+1713,1022,7,691,3,38,Bed,Wood,White,Rural,Spring,Online,11991
+1279,703,11,576,7,20,Bed,Fabric,Blue,Urban,Fall,Online,14069
+1670,994,2,676,1,41,Bed,Wood,Red,Rural,Spring,Online,3340
+1186,595,19,591,11,20,Bed,Fabric,Black,Urban,Summer,Online,22534
+1679,923,15,756,6,31,Bed,Wood,White,Urban,Summer,Retail,25185
+1497,903,9,594,6,29,Bed,Wood,Blue,Rural,Summer,Retail,13473
+1846,1017,1,829,1,36,Bed,Leather,Blue,Urban,Winter,Retail,1846
+1643,912,7,731,3,24,Bed,Wood,Blue,Rural,Fall,Retail,11501
+1852,1101,7,751,5,38,Bed,Leather,Red,Suburban,Spring,Retail,12964
+1201,575,10,626,3,35,Bed,Fabric,Black,Suburban,Spring,Retail,12010
+1511,868,2,643,1,26,Bed,Wood,Green,Rural,Spring,Retail,3022
+1450,805,9,645,5,26,Bed,Wood,Brown,Suburban,Fall,Online,13050
+1627,952,12,675,8,28,Bed,Wood,Black,Suburban,Fall,Online,19524
+1718,940,14,778,7,32,Bed,Wood,White,Suburban,Summer,Online,24052
+1749,1007,9,742,4,38,Bed,Wood,Brown,Urban,Spring,Online,15741
+1832,1085,12,747,4,26,Bed,Wood,Brown,Urban,Summer,Online,21984
+1103,564,2,539,3,18,Bed,Fabric,Blue,Rural,Spring,Online,2206
+1444,820,9,624,3,27,Bed,Wood,Black,Suburban,Summer,Online,12996
+1637,936,11,701,5,39,Bed,Wood,Black,Rural,Summer,Online,18007
+1980,1131,5,849,1,29,Bed,Leather,Red,Suburban,Winter,Retail,9900
+1856,973,2,883,1,29,Bed,Wood,Green,Suburban,Winter,Online,3712
+1663,1035,4,628,2,34,Bed,Wood,White,Rural,Spring,Online,6652
+1620,906,11,714,6,35,Bed,Wood,Blue,Urban,Summer,Retail,17820
+1545,879,11,666,6,29,Bed,Wood,Red,Urban,Fall,Retail,16995
+1719,967,8,752,5,23,Bed,Wood,Black,Suburban,Spring,Retail,13752
+1953,1182,4,771,3,35,Bed,Leather,Green,Rural,Summer,Online,7812
+1755,1069,9,686,4,26,Bed,Wood,Blue,Urban,Fall,Retail,15795
+1047,504,2,543,1,15,Bed,Fabric,Red,Rural,Winter,Online,2094
+1681,1023,3,658,1,33,Bed,Leather,Blue,Suburban,Spring,Online,5043
+1134,537,15,597,10,18,Bed,Fabric,Brown,Rural,Summer,Online,17010
+1688,1001,9,687,7,40,Bed,Wood,Red,Urban,Fall,Online,15192
+1816,1110,6,706,3,27,Bed,Leather,Red,Suburban,Spring,Online,10896
+1810,979,11,831,8,31,Bed,Wood,White,Rural,Spring,Retail,19910
+1129,614,5,515,1,14,Bed,Fabric,Green,Urban,Spring,Online,5645
+1619,898,6,721,4,25,Bed,Wood,Green,Rural,Fall,Online,9714
+1885,1028,7,857,5,29,Bed,Wood,Red,Urban,Fall,Retail,13195
+1883,1101,12,782,5,30,Bed,Leather,White,Suburban,Summer,Retail,22596
+1880,1105,4,775,3,40,Bed,Leather,Red,Suburban,Winter,Retail,7520
+1993,1235,17,758,8,32,Bed,Leather,Black,Urban,Fall,Retail,33881
+1426,837,8,589,5,33,Bed,Wood,Red,Urban,Fall,Online,11408
+1535,851,10,684,4,31,Bed,Wood,Black,Rural,Fall,Online,15350
+1532,890,10,642,1,34,Bed,Wood,White,Urban,Fall,Online,15320
+1511,855,12,656,4,28,Bed,Wood,White,Urban,Summer,Retail,18132
+1599,967,1,632,1,35,Bed,Wood,Green,Rural,Winter,Online,1599
+2005,1224,5,781,5,45,Bed,Leather,Brown,Urban,Winter,Online,10025
+1957,1261,7,696,6,27,Bed,Leather,Black,Rural,Winter,Retail,13699
+1693,1014,12,679,5,39,Bed,Leather,Black,Suburban,Summer,Retail,20316
+1614,958,2,656,1,36,Bed,Wood,Brown,Suburban,Winter,Online,3228
+1698,997,13,701,10,25,Bed,Wood,Red,Urban,Fall,Retail,22074
+1884,1064,7,820,4,36,Bed,Wood,Brown,Rural,Spring,Retail,13188
+1674,1023,13,651,9,33,Bed,Leather,Brown,Suburban,Fall,Online,21762
+1787,1005,5,782,3,22,Bed,Wood,Green,Rural,Spring,Retail,8935
+1185,598,11,587,5,17,Bed,Fabric,White,Urban,Spring,Retail,13035
+1493,929,7,564,3,37,Bed,Wood,White,Suburban,Spring,Retail,10451
+1927,1191,9,736,4,28,Bed,Leather,Brown,Urban,Winter,Online,17343
+1765,1059,6,706,1,37,Bed,Wood,Blue,Rural,Summer,Online,10590
+1765,963,15,802,5,27,Bed,Wood,White,Urban,Fall,Online,26475
+1551,875,9,676,4,34,Bed,Wood,Brown,Rural,Fall,Retail,13959
+1847,1137,12,710,6,34,Bed,Leather,Red,Urban,Summer,Online,22164
+1743,1085,9,658,8,36,Bed,Wood,Red,Rural,Summer,Online,15687
+1812,970,12,842,7,30,Bed,Wood,Red,Urban,Summer,Online,21744
+1781,1050,11,731,8,25,Bed,Leather,Black,Urban,Spring,Online,19591
+1751,991,12,760,7,28,Bed,Wood,Black,Urban,Fall,Online,21012
+1692,983,9,709,5,27,Bed,Leather,Green,Suburban,Fall,Online,15228
+1542,887,11,655,4,33,Bed,Wood,Green,Suburban,Summer,Retail,16962
+1702,1137,12,565,5,35,Bed,Leather,White,Urban,Summer,Online,20424
+1597,959,17,638,9,31,Bed,Wood,Black,Suburban,Fall,Online,27149
+1078,539,9,539,7,13,Bed,Fabric,Blue,Suburban,Spring,Online,9702
+1302,689,14,613,6,18,Bed,Fabric,Brown,Rural,Fall,Retail,18228
+1096,561,8,535,1,24,Bed,Fabric,Black,Urban,Winter,Online,8768
+1142,602,3,540,2,25,Bed,Fabric,Green,Suburban,Winter,Online,3426
+1705,1001,16,704,8,31,Bed,Wood,Green,Urban,Summer,Online,27280
+1883,1054,3,829,1,33,Bed,Wood,Blue,Urban,Spring,Online,5649
+1807,1082,9,725,7,37,Bed,Wood,Black,Rural,Fall,Retail,16263
+1641,953,5,688,3,34,Bed,Wood,Green,Suburban,Spring,Online,8205
+1510,869,7,641,5,33,Bed,Wood,Green,Suburban,Fall,Retail,10570
+1641,964,1,677,2,27,Bed,Wood,Blue,Urban,Winter,Retail,1641
+1804,1133,4,671,5,35,Bed,Leather,Green,Rural,Fall,Online,7216
+1657,984,1,673,2,30,Bed,Wood,Green,Rural,Spring,Retail,1657
+1791,1029,4,762,3,30,Bed,Wood,Blue,Suburban,Spring,Retail,7164
+1061,525,16,536,9,13,Bed,Fabric,Black,Rural,Fall,Online,16976
+1820,971,8,849,4,31,Bed,Wood,Black,Rural,Summer,Online,14560
+1752,977,14,775,5,31,Bed,Wood,Black,Urban,Fall,Online,24528
+1440,830,10,610,2,27,Bed,Wood,Green,Urban,Fall,Online,14400
+1208,651,8,557,5,11,Bed,Fabric,Red,Suburban,Fall,Retail,9664
+1476,915,9,561,3,31,Bed,Wood,Green,Suburban,Fall,Online,13284
+1954,1181,11,773,7,16,Bed,Leather,Black,Rural,Spring,Online,21494
+1615,907,9,708,5,26,Bed,Wood,Blue,Urban,Fall,Online,14535
+1510,927,2,583,1,34,Bed,Wood,Blue,Suburban,Winter,Online,3020
+1902,1201,3,701,3,30,Bed,Leather,Red,Suburban,Spring,Retail,5706
+1843,1060,1,783,1,19,Bed,Wood,White,Rural,Spring,Online,1843
+1755,1050,10,705,3,27,Bed,Leather,Blue,Urban,Summer,Retail,17550
+1589,912,14,677,9,27,Bed,Wood,Brown,Rural,Fall,Retail,22246
+1878,1025,7,853,3,31,Bed,Wood,Brown,Rural,Spring,Online,13146
+1774,999,16,775,9,44,Bed,Wood,White,Suburban,Summer,Retail,28384
+1630,997,1,633,1,38,Bed,Wood,Red,Rural,Winter,Retail,1630
+1635,890,2,745,3,34,Bed,Leather,Green,Rural,Winter,Retail,3270
+1652,1024,4,628,1,34,Bed,Wood,White,Rural,Winter,Online,6608
+1489,843,1,646,1,23,Bed,Wood,Green,Rural,Spring,Retail,1489
+1981,1134,1,847,1,39,Bed,Leather,Red,Suburban,Winter,Retail,1981
+1671,990,2,681,1,24,Bed,Wood,Red,Suburban,Winter,Retail,3342
+1783,1032,10,751,1,37,Bed,Wood,Red,Suburban,Fall,Online,17830
+1080,599,4,481,2,22,Bed,Fabric,Blue,Urban,Winter,Retail,4320
+1538,926,7,612,6,35,Bed,Wood,Green,Suburban,Fall,Online,10766
+1719,966,1,753,1,18,Bed,Wood,Green,Suburban,Winter,Online,1719
+1645,993,3,652,4,26,Bed,Wood,Black,Suburban,Winter,Online,4935
+1697,936,7,761,5,37,Bed,Wood,Green,Urban,Spring,Retail,11879
+1980,1250,8,730,2,42,Bed,Leather,Green,Rural,Summer,Retail,15840
+1632,961,14,671,9,44,Bed,Leather,White,Urban,Fall,Online,22848
+1653,889,8,764,5,28,Bed,Wood,Green,Urban,Fall,Online,13224
+1897,1089,10,808,6,23,Bed,Wood,Brown,Suburban,Summer,Online,18970
+1330,674,12,656,9,32,Bed,Fabric,Black,Suburban,Fall,Online,15960
+954,499,12,455,7,20,Bed,Fabric,Red,Suburban,Summer,Online,11448
+1754,987,15,767,6,42,Bed,Wood,White,Rural,Summer,Retail,26310
+2025,1155,6,870,6,31,Bed,Leather,Red,Rural,Fall,Online,12150
+1763,1040,6,723,2,34,Bed,Leather,Green,Suburban,Spring,Online,10578
+1920,1142,11,778,3,25,Bed,Leather,Brown,Suburban,Fall,Retail,21120
+1528,821,4,707,3,30,Bed,Wood,White,Suburban,Winter,Online,6112
+1719,988,10,731,3,27,Bed,Leather,Brown,Rural,Summer,Retail,17190
+1748,952,8,796,3,45,Bed,Wood,Green,Suburban,Fall,Online,13984
+1459,853,9,606,3,32,Bed,Wood,Brown,Rural,Fall,Online,13131
+1827,1047,3,780,2,42,Bed,Leather,Red,Urban,Winter,Online,5481
+1589,980,7,609,1,33,Bed,Wood,Red,Rural,Fall,Retail,11123
+1693,945,9,748,4,36,Bed,Wood,Brown,Urban,Winter,Retail,15237
+1676,1004,15,672,9,24,Bed,Wood,White,Urban,Fall,Retail,25140
+1848,1073,12,775,8,35,Bed,Wood,Black,Urban,Winter,Retail,22176
+1088,533,15,555,6,11,Bed,Fabric,Brown,Suburban,Summer,Online,16320
+1789,1070,8,719,7,32,Bed,Leather,Red,Suburban,Fall,Online,14312
+1883,1123,7,760,4,22,Bed,Leather,Blue,Rural,Summer,Online,13181
+1696,957,1,739,1,27,Bed,Wood,White,Rural,Winter,Online,1696
+1420,854,10,566,2,26,Bed,Wood,Red,Suburban,Summer,Retail,14200
+1754,991,1,763,1,29,Bed,Wood,Blue,Rural,Winter,Retail,1754
+1473,853,13,620,13,29,Bed,Wood,Brown,Urban,Fall,Retail,19149
+1610,974,1,636,1,25,Bed,Wood,Red,Suburban,Winter,Online,1610
+1860,1050,1,810,3,28,Bed,Wood,Green,Rural,Winter,Retail,1860
+1671,994,1,677,1,31,Bed,Wood,Red,Rural,Winter,Online,1671
+1668,970,1,698,3,44,Bed,Leather,Red,Suburban,Winter,Retail,1668
+1359,678,9,681,3,28,Bed,Fabric,Blue,Urban,Fall,Online,12231
+1450,830,1,620,4,24,Bed,Wood,Blue,Rural,Winter,Retail,1450
+1963,1242,10,721,6,25,Bed,Leather,Red,Urban,Summer,Online,19630
+1659,953,1,706,1,32,Bed,Wood,Red,Suburban,Spring,Retail,1659
+1591,898,6,693,2,32,Bed,Leather,Brown,Rural,Spring,Retail,9546
+1558,864,4,694,1,29,Bed,Wood,White,Rural,Winter,Online,6232
+1673,989,10,684,7,31,Bed,Wood,Brown,Rural,Fall,Online,16730
+1913,1207,5,706,5,45,Bed,Leather,Green,Suburban,Fall,Online,9565
+1572,911,10,661,6,33,Bed,Wood,Brown,Rural,Summer,Online,15720
+1613,988,7,625,4,36,Bed,Wood,Brown,Suburban,Spring,Retail,11291
+2128,1250,16,878,9,25,Bed,Leather,Brown,Urban,Fall,Retail,34048
+1527,840,6,687,2,30,Bed,Wood,Blue,Rural,Summer,Online,9162
+1823,1077,13,746,7,35,Bed,Wood,Blue,Rural,Summer,Retail,23699
+1743,1077,2,666,3,40,Bed,Wood,White,Rural,Winter,Online,3486
+1558,901,11,657,5,25,Bed,Wood,Blue,Suburban,Summer,Retail,17138
+2069,1230,3,839,1,33,Bed,Leather,Red,Rural,Winter,Retail,6207
+1958,1165,11,793,5,36,Bed,Leather,Brown,Suburban,Fall,Retail,21538
+1566,912,1,654,1,29,Bed,Wood,Blue,Rural,Fall,Online,1566
+1089,517,1,572,1,27,Bed,Fabric,Red,Rural,Winter,Online,1089
+1469,842,8,627,5,29,Bed,Wood,Green,Rural,Fall,Online,11752
+1117,559,8,558,1,14,Bed,Fabric,Brown,Urban,Winter,Online,8936
+1410,863,10,547,4,35,Bed,Wood,Red,Suburban,Fall,Online,14100
+1978,1116,12,862,7,29,Bed,Wood,Green,Suburban,Summer,Online,23736
+1507,853,7,654,1,33,Bed,Wood,Green,Suburban,Fall,Online,10549
+1677,992,11,685,12,20,Bed,Wood,Black,Rural,Summer,Online,18447
+1593,952,19,641,8,41,Bed,Wood,Black,Suburban,Summer,Online,30267
+1063,566,12,497,11,29,Bed,Fabric,White,Rural,Fall,Online,12756
+1066,611,7,455,3,29,Bed,Fabric,Green,Rural,Summer,Online,7462
+1572,887,1,685,1,32,Bed,Wood,Red,Suburban,Winter,Online,1572
+1571,919,1,652,4,32,Bed,Wood,Red,Rural,Winter,Retail,1571
+1518,882,7,636,6,20,Bed,Wood,White,Suburban,Spring,Online,10626
+1745,966,5,779,4,31,Bed,Wood,Red,Rural,Spring,Online,8725
+1756,1004,8,752,4,34,Bed,Wood,White,Rural,Spring,Retail,14048
+1695,878,8,817,7,39,Bed,Wood,White,Urban,Spring,Online,13560
+1668,962,4,706,3,33,Bed,Wood,Green,Suburban,Spring,Retail,6672
+1524,909,9,615,3,29,Bed,Wood,Green,Rural,Fall,Retail,13716
+1928,1192,3,736,1,31,Bed,Leather,Black,Rural,Winter,Online,5784
+1879,1148,4,731,1,27,Bed,Leather,White,Rural,Winter,Retail,7516
+1182,555,7,627,3,14,Bed,Fabric,Green,Urban,Spring,Online,8274
+1708,1062,15,646,8,21,Bed,Wood,Brown,Urban,Summer,Online,25620
+1722,1048,9,674,7,33,Bed,Wood,Blue,Suburban,Fall,Online,15498
+1028,513,10,515,7,15,Bed,Fabric,White,Urban,Winter,Retail,10280
+1713,1009,17,704,11,34,Bed,Wood,Black,Suburban,Summer,Online,29121
+1741,965,12,776,6,36,Bed,Wood,White,Urban,Summer,Online,20892
+1706,1013,6,693,1,37,Bed,Wood,Green,Suburban,Summer,Online,10236
+1683,921,17,762,10,48,Bed,Wood,White,Urban,Summer,Retail,28611
+1893,1114,5,779,3,29,Bed,Wood,Black,Rural,Winter,Retail,9465
+1463,882,9,581,1,26,Bed,Wood,Blue,Rural,Summer,Retail,13167
+1544,933,9,611,8,20,Bed,Wood,Blue,Suburban,Fall,Retail,13896
+1699,1065,3,634,1,31,Bed,Leather,Black,Rural,Winter,Online,5097
+1553,922,10,631,2,28,Bed,Wood,Green,Suburban,Fall,Online,15530
+1788,1076,11,712,6,31,Bed,Leather,Blue,Suburban,Summer,Online,19668
+1035,470,4,565,2,24,Bed,Fabric,Red,Urban,Winter,Retail,4140
+1803,1187,10,616,5,36,Bed,Leather,Black,Suburban,Spring,Retail,18030
+1525,892,3,633,3,30,Bed,Wood,Green,Rural,Summer,Online,4575
+1682,982,1,700,1,39,Bed,Wood,Blue,Rural,Spring,Retail,1682
+1876,1098,6,778,4,46,Bed,Leather,Red,Urban,Spring,Online,11256
+1801,1063,9,738,9,29,Bed,Wood,Blue,Suburban,Summer,Retail,16209
+1089,511,15,578,8,23,Bed,Fabric,Black,Urban,Fall,Retail,16335
+1775,1081,6,694,5,44,Bed,Wood,Green,Rural,Fall,Online,10650
+1774,1100,3,674,1,25,Bed,Wood,Blue,Rural,Fall,Online,5322
+1300,756,6,544,2,31,Bed,Wood,Blue,Rural,Spring,Retail,7800
+1604,911,9,693,3,37,Bed,Wood,Black,Urban,Winter,Retail,14436
+1543,938,2,605,4,39,Bed,Leather,White,Rural,Winter,Online,3086
+1378,716,5,662,2,29,Bed,Wood,Blue,Rural,Summer,Online,6890
+1173,606,14,567,4,20,Bed,Fabric,Black,Suburban,Summer,Retail,16422
+1639,946,12,693,6,39,Bed,Wood,White,Urban,Fall,Online,19668
+1018,478,15,540,11,17,Bed,Fabric,Black,Rural,Fall,Retail,15270
+1487,788,7,699,1,43,Bed,Wood,Green,Urban,Spring,Retail,10409
+2121,1285,11,836,6,41,Bed,Leather,Green,Urban,Fall,Retail,23331
+1786,1074,6,712,5,47,Bed,Leather,Green,Rural,Spring,Retail,10716
+1437,814,9,623,7,27,Bed,Wood,Blue,Urban,Summer,Retail,12933
+1203,566,6,637,8,28,Bed,Fabric,White,Rural,Winter,Retail,7218
+1549,944,13,605,6,27,Bed,Leather,White,Rural,Summer,Online,20137
+1741,1014,9,727,5,44,Bed,Wood,Green,Suburban,Fall,Online,15669
+1053,513,11,540,8,10,Bed,Fabric,Red,Suburban,Fall,Online,11583
+1863,1013,3,850,1,26,Bed,Wood,White,Rural,Winter,Online,5589
+1988,1076,6,912,1,39,Bed,Leather,White,Rural,Spring,Retail,11928
+1897,1137,17,760,5,31,Bed,Wood,White,Urban,Fall,Retail,32249
+1516,865,12,651,7,38,Bed,Wood,Brown,Rural,Summer,Retail,18192
+1549,897,12,652,3,40,Bed,Leather,Brown,Urban,Summer,Retail,18588
+1141,615,13,526,7,12,Bed,Fabric,Blue,Suburban,Summer,Online,14833
+1928,1123,5,805,1,35,Bed,Leather,Blue,Rural,Fall,Retail,9640
+1840,1070,7,770,4,27,Bed,Wood,Red,Suburban,Spring,Retail,12880
+2096,1311,11,785,4,20,Bed,Wood,Black,Urban,Spring,Retail,23056
+1843,1094,8,749,5,37,Bed,Leather,Green,Rural,Summer,Online,14744
+1805,1061,4,744,1,33,Bed,Wood,Blue,Suburban,Spring,Retail,7220
+1512,904,10,608,5,25,Bed,Wood,Green,Suburban,Fall,Retail,15120
+984,464,6,520,3,15,Bed,Fabric,White,Rural,Spring,Retail,5904
+1563,941,14,622,8,33,Bed,Wood,White,Suburban,Summer,Retail,21882
+1809,977,4,832,1,25,Bed,Wood,Red,Urban,Winter,Retail,7236
+1240,641,13,599,8,26,Bed,Fabric,White,Urban,Spring,Retail,16120
+1479,847,10,632,10,36,Bed,Wood,White,Rural,Fall,Online,14790
+1864,1046,15,818,9,24,Bed,Wood,Black,Rural,Fall,Online,27960
+2024,1102,1,922,1,24,Bed,Wood,Brown,Rural,Winter,Online,2024
+1724,1012,10,712,9,20,Bed,Wood,Green,Urban,Fall,Retail,17240
+1247,598,11,649,10,32,Bed,Fabric,Blue,Rural,Fall,Online,13717
+1662,916,13,746,7,19,Bed,Wood,White,Suburban,Fall,Online,21606
+1191,568,8,623,6,16,Bed,Fabric,Green,Rural,Spring,Retail,9528
+1128,557,11,571,12,12,Bed,Fabric,Blue,Urban,Fall,Retail,12408
+1831,1144,12,687,5,26,Bed,Leather,White,Suburban,Fall,Retail,21972
+1956,1208,10,748,2,37,Bed,Leather,Green,Urban,Fall,Online,19560
+1743,996,6,747,3,25,Bed,Wood,Brown,Urban,Spring,Online,10458
+1132,568,2,564,3,18,Bed,Fabric,Blue,Suburban,Winter,Online,2264
+1724,1018,1,706,1,28,Bed,Wood,Green,Rural,Winter,Online,1724
+1848,1079,17,769,11,27,Bed,Wood,Black,Suburban,Summer,Retail,31416
+1770,1015,9,755,9,37,Bed,Wood,Blue,Rural,Fall,Retail,15930
+1358,626,14,732,7,16,Bed,Fabric,White,Suburban,Fall,Retail,19012
+1773,1012,6,761,5,32,Bed,Wood,Black,Rural,Winter,Online,10638
+1675,1028,15,647,9,34,Bed,Leather,White,Suburban,Summer,Retail,25125
+2027,1188,8,839,6,37,Bed,Leather,White,Urban,Spring,Online,16216
+1767,1012,2,755,1,27,Bed,Wood,Green,Urban,Spring,Online,3534
+1919,1189,6,730,4,33,Bed,Leather,Red,Urban,Fall,Retail,11514
+1531,972,5,559,4,45,Bed,Wood,Red,Suburban,Spring,Online,7655
+1072,525,14,547,5,18,Bed,Fabric,Green,Suburban,Summer,Online,15008
+1711,1034,12,677,5,36,Bed,Wood,Brown,Rural,Fall,Retail,20532
+1766,978,10,788,4,23,Bed,Wood,Green,Urban,Summer,Retail,17660
+2017,1194,6,823,1,32,Bed,Leather,Black,Urban,Winter,Online,12102
+1907,1142,8,765,2,34,Bed,Wood,Brown,Rural,Summer,Online,15256
+1715,1005,6,710,1,35,Bed,Leather,Green,Suburban,Fall,Online,10290
+1732,1089,9,643,3,38,Bed,Leather,Green,Urban,Fall,Online,15588
+2019,1174,3,845,1,26,Bed,Leather,White,Urban,Winter,Online,6057
+1311,610,14,701,11,23,Bed,Fabric,Brown,Suburban,Summer,Online,18354
+1618,907,12,711,6,39,Bed,Wood,White,Suburban,Fall,Online,19416
+1650,901,8,749,6,29,Bed,Wood,Red,Urban,Spring,Retail,13200
+1828,1063,13,765,7,23,Bed,Wood,Black,Suburban,Summer,Retail,23764
+1695,977,7,718,4,26,Bed,Leather,Green,Rural,Fall,Online,11865
+1063,531,6,532,3,5,Bed,Fabric,White,Rural,Winter,Online,6378
+1824,1139,12,685,8,34,Bed,Wood,Blue,Urban,Fall,Online,21888
+1599,935,6,664,4,21,Bed,Wood,White,Suburban,Spring,Online,9594
+1889,1117,12,772,7,31,Bed,Leather,Red,Urban,Fall,Retail,22668
+1225,577,8,648,3,22,Bed,Fabric,White,Urban,Winter,Retail,9800
+1141,578,18,563,5,12,Bed,Fabric,White,Urban,Summer,Retail,20538
+1669,1010,1,659,3,29,Bed,Wood,Blue,Rural,Winter,Online,1669
+1667,946,1,721,1,27,Bed,Wood,Blue,Suburban,Winter,Retail,1667
+1777,1037,10,740,2,37,Bed,Leather,Red,Urban,Fall,Retail,17770
+1694,1001,2,693,1,36,Bed,Wood,Red,Rural,Spring,Retail,3388
+1683,1060,4,623,2,23,Bed,Wood,Brown,Urban,Winter,Retail,6732
+1691,981,1,710,2,27,Bed,Leather,Red,Rural,Spring,Online,1691
+1734,943,8,791,7,33,Bed,Wood,Blue,Suburban,Summer,Online,13872
+343,194,22,149,13,30,Chair,Metal,Brown,Rural,Spring,Online,7546
+278,139,32,139,19,21,Chair,Fabric,Black,Urban,Summer,Online,8896
+493,280,17,213,12,30,Chair,Wood,Black,Suburban,Winter,Online,8381
+312,172,17,140,11,27,Chair,Metal,Blue,Rural,Spring,Retail,5304
+479,294,17,185,11,20,Chair,Leather,Red,Rural,Spring,Retail,8143
+393,228,22,165,10,34,Chair,Wood,Red,Suburban,Fall,Retail,8646
+427,259,16,168,9,29,Chair,Leather,Blue,Rural,Spring,Online,6832
+321,186,27,135,17,22,Chair,Metal,Green,Urban,Summer,Retail,8667
+281,151,17,130,12,29,Chair,Metal,Blue,Urban,Winter,Online,4777
+308,147,24,161,13,17,Chair,Fabric,White,Suburban,Spring,Online,7392
+402,238,21,164,13,21,Chair,Wood,Black,Rural,Spring,Online,8442
+273,161,20,112,12,21,Chair,Fabric,Brown,Urban,Winter,Online,5460
+444,286,28,158,16,45,Chair,Leather,Black,Urban,Fall,Online,12432
+315,169,18,146,7,24,Chair,Metal,Brown,Rural,Winter,Retail,5670
+445,260,25,185,15,32,Chair,Wood,Blue,Urban,Fall,Retail,11125
+320,186,25,134,17,21,Chair,Metal,Green,Urban,Summer,Retail,8000
+319,174,21,145,11,16,Chair,Fabric,Brown,Urban,Spring,Retail,6699
+497,283,32,214,15,32,Chair,Wood,White,Suburban,Fall,Retail,15904
+415,246,22,169,11,19,Chair,Wood,Green,Suburban,Fall,Retail,9130
+332,170,17,162,10,21,Chair,Metal,Red,Urban,Spring,Online,5644
+511,289,22,222,13,32,Chair,Leather,White,Rural,Spring,Retail,11242
+418,242,31,176,16,35,Chair,Wood,Black,Urban,Fall,Retail,12958
+436,272,29,164,16,20,Chair,Wood,Black,Urban,Summer,Online,12644
+266,136,29,130,17,14,Chair,Fabric,Brown,Urban,Fall,Online,7714
+332,177,28,155,15,33,Chair,Metal,Brown,Suburban,Fall,Online,9296
+409,249,18,160,9,25,Chair,Wood,Red,Rural,Fall,Online,7362
+491,290,23,201,13,23,Chair,Wood,Black,Suburban,Spring,Online,11293
+487,299,26,188,14,34,Chair,Wood,White,Suburban,Fall,Online,12662
+423,243,15,180,8,27,Chair,Wood,Green,Rural,Spring,Online,6345
+312,153,24,159,12,9,Chair,Fabric,Red,Urban,Fall,Online,7488
+502,298,30,204,15,39,Chair,Wood,Black,Suburban,Summer,Online,15060
+434,267,15,167,8,27,Chair,Wood,Blue,Suburban,Winter,Online,6510
+485,294,21,191,15,35,Chair,Leather,Black,Rural,Winter,Online,10185
+562,271,15,291,9,27,Desk,Metal,Green,Rural,Fall,Online,8430
+301,150,25,151,12,29,Chair,Fabric,Green,Suburban,Summer,Retail,7525
+467,286,17,181,8,33,Chair,Wood,Blue,Urban,Winter,Retail,7939
+297,148,23,149,11,13,Chair,Fabric,White,Rural,Spring,Retail,6831
+344,153,20,191,13,7,Desk,Plastic,Blue,Rural,Summer,Retail,6880
+366,216,24,150,13,22,Chair,Wood,Blue,Suburban,Summer,Retail,8784
+247,134,26,113,15,18,Chair,Fabric,Green,Suburban,Summer,Retail,6422
+443,243,16,200,6,23,Chair,Wood,Blue,Rural,Spring,Retail,7088
+275,125,24,150,12,11,Chair,Fabric,Blue,Suburban,Fall,Retail,6600
+433,251,18,182,14,34,Chair,Wood,White,Suburban,Winter,Retail,7794
+472,270,26,202,16,24,Chair,Wood,Red,Urban,Fall,Retail,12272
+278,159,26,119,15,17,Chair,Fabric,Red,Urban,Summer,Retail,7228
+471,261,22,210,14,31,Chair,Wood,Brown,Urban,Spring,Retail,10362
+358,208,19,150,12,32,Chair,Wood,Black,Rural,Winter,Retail,6802
+312,157,27,155,13,13,Chair,Fabric,Black,Suburban,Spring,Retail,8424
+272,127,23,145,15,22,Chair,Fabric,Blue,Suburban,Spring,Retail,6256
+317,170,25,147,16,25,Chair,Metal,White,Rural,Fall,Retail,7925
+493,274,14,219,5,21,Chair,Wood,Red,Rural,Winter,Retail,6902
+220,104,22,116,9,13,Chair,Plastic,Blue,Rural,Summer,Online,4840
+288,151,23,137,10,20,Chair,Fabric,Red,Urban,Spring,Retail,6624
+445,284,19,161,9,32,Chair,Leather,Red,Suburban,Spring,Retail,8455
+287,167,21,120,8,20,Chair,Metal,Blue,Suburban,Winter,Retail,6027
+425,240,18,185,12,29,Chair,Wood,Green,Suburban,Winter,Retail,7650
+350,175,30,175,17,14,Chair,Fabric,Brown,Urban,Fall,Retail,10500
+251,124,17,127,9,7,Chair,Plastic,Red,Rural,Spring,Online,4267
+447,245,19,202,9,33,Chair,Wood,White,Suburban,Winter,Online,8493
+364,207,28,157,14,20,Chair,Metal,Brown,Urban,Fall,Online,10192
+433,256,23,177,11,31,Chair,Wood,Red,Urban,Summer,Online,9959
+475,298,25,177,12,38,Chair,Wood,Green,Urban,Fall,Online,11875
+432,251,21,181,9,39,Chair,Leather,Blue,Rural,Fall,Online,9072
+331,185,16,146,10,25,Chair,Metal,White,Rural,Winter,Online,5296
+323,185,23,138,13,21,Chair,Metal,White,Urban,Fall,Online,7429
+414,242,28,172,14,29,Chair,Wood,Brown,Suburban,Fall,Retail,11592
+427,252,23,175,12,38,Chair,Wood,Blue,Rural,Fall,Retail,9821
+388,228,22,160,12,34,Chair,Wood,Red,Urban,Summer,Retail,8536
+518,301,25,217,16,30,Chair,Wood,Black,Rural,Fall,Retail,12950
+471,293,26,178,11,34,Chair,Leather,Red,Urban,Fall,Retail,12246
+303,143,23,160,13,15,Chair,Fabric,Black,Urban,Spring,Online,6969
+404,233,23,171,13,39,Chair,Wood,Blue,Urban,Summer,Online,9292
+428,268,18,160,12,26,Chair,Wood,Green,Rural,Spring,Online,7704
+432,241,18,191,10,33,Chair,Wood,Brown,Rural,Winter,Online,7776
+347,192,20,155,9,19,Chair,Metal,Black,Suburban,Winter,Online,6940
+472,272,21,200,13,33,Chair,Wood,Black,Rural,Spring,Online,9912
+408,244,14,164,8,36,Chair,Leather,Blue,Rural,Spring,Online,5712
+242,126,27,116,14,15,Chair,Plastic,Black,Rural,Summer,Online,6534
+476,264,30,212,18,29,Chair,Wood,Brown,Urban,Summer,Retail,14280
+419,251,15,168,9,26,Chair,Wood,Blue,Rural,Winter,Retail,6285
+381,220,27,161,16,25,Chair,Wood,Brown,Suburban,Summer,Retail,10287
+349,196,25,153,16,20,Chair,Metal,White,Rural,Fall,Retail,8725
+281,142,30,139,15,22,Chair,Fabric,White,Urban,Fall,Retail,8430
+446,250,18,196,11,31,Chair,Wood,Black,Rural,Spring,Retail,8028
+467,296,18,171,12,42,Chair,Leather,Green,Suburban,Fall,Retail,8406
+411,249,27,162,13,29,Chair,Wood,Black,Urban,Fall,Retail,11097
+348,177,24,171,15,14,Chair,Fabric,Black,Urban,Winter,Retail,8352
+480,297,24,183,12,36,Chair,Wood,Green,Suburban,Fall,Retail,11520
+448,267,22,181,13,25,Chair,Wood,White,Rural,Spring,Online,9856
+326,165,18,161,11,20,Chair,Fabric,Blue,Suburban,Winter,Online,5868
+454,266,15,188,7,27,Chair,Wood,Green,Suburban,Winter,Online,6810
+419,253,18,166,10,29,Chair,Wood,Green,Urban,Spring,Online,7542
+313,162,34,151,16,17,Chair,Fabric,Brown,Urban,Summer,Online,10642
+467,251,23,216,12,25,Chair,Wood,Black,Suburban,Winter,Online,10741
+462,243,20,219,9,30,Chair,Wood,Green,Rural,Fall,Online,9240
+477,296,24,181,17,34,Chair,Leather,Blue,Suburban,Summer,Online,11448
+286,152,15,134,9,3,Chair,Fabric,Red,Rural,Winter,Online,4290
+462,267,20,195,10,35,Chair,Wood,Black,Rural,Spring,Online,9240
+273,172,27,101,16,33,Chair,Metal,Green,Urban,Fall,Retail,7371
+347,183,29,164,13,26,Chair,Metal,Black,Rural,Summer,Online,10063
+470,279,10,191,6,29,Chair,Wood,Green,Rural,Winter,Online,4700
+440,239,14,201,7,41,Chair,Leather,Red,Urban,Winter,Online,6160
+398,227,17,171,9,28,Chair,Metal,Blue,Suburban,Spring,Online,6766
+342,191,17,151,12,35,Chair,Metal,Blue,Urban,Winter,Online,5814
+447,261,27,186,14,17,Chair,Wood,Black,Rural,Fall,Retail,12069
+538,286,15,252,9,31,Desk,Metal,Red,Urban,Winter,Online,8070
+399,243,20,156,13,29,Chair,Wood,Blue,Suburban,Fall,Retail,7980
+475,271,26,204,15,32,Chair,Wood,Brown,Rural,Fall,Retail,12350
+302,164,15,138,11,16,Chair,Fabric,Blue,Rural,Winter,Retail,4530
+320,179,24,141,9,19,Chair,Fabric,Green,Suburban,Summer,Retail,7680
+314,169,27,145,14,31,Chair,Metal,White,Suburban,Fall,Retail,8478
+253,129,31,124,16,3,Chair,Plastic,Black,Suburban,Spring,Retail,7843
+518,304,29,214,12,22,Chair,Wood,Black,Suburban,Summer,Retail,15022
+471,271,26,200,12,36,Chair,Wood,Black,Urban,Summer,Retail,12246
+526,318,30,208,19,45,Chair,Leather,Brown,Urban,Spring,Retail,15780
+533,331,18,202,7,30,Chair,Leather,Black,Suburban,Winter,Retail,9594
+438,254,20,184,11,33,Chair,Wood,Green,Suburban,Spring,Retail,8760
+463,269,22,194,7,35,Chair,Wood,Green,Suburban,Fall,Retail,10186
+332,152,16,180,11,16,Desk,Plastic,Red,Rural,Spring,Retail,5312
+509,291,25,218,13,44,Chair,Leather,White,Rural,Summer,Online,12725
+505,300,27,205,16,33,Chair,Leather,White,Rural,Fall,Retail,13635
+449,270,24,179,11,32,Chair,Wood,Red,Suburban,Summer,Retail,10776
+297,140,22,157,12,18,Chair,Fabric,Black,Rural,Spring,Retail,6534
+453,260,21,193,11,33,Chair,Wood,Red,Urban,Spring,Retail,9513
+456,271,24,185,13,20,Chair,Wood,Brown,Rural,Spring,Retail,10944
+474,294,23,180,13,24,Chair,Leather,Brown,Suburban,Spring,Retail,10902
+217,107,30,110,15,14,Chair,Plastic,Black,Rural,Fall,Retail,6510
+307,160,18,147,10,24,Chair,Metal,Green,Urban,Winter,Retail,5526
+472,294,26,178,14,36,Chair,Wood,Black,Urban,Spring,Online,12272
+505,284,19,221,12,31,Desk,Glass,Red,Rural,Summer,Online,9595
+494,277,22,217,12,37,Chair,Wood,Blue,Rural,Fall,Online,10868
+442,265,23,177,14,29,Chair,Wood,White,Rural,Spring,Online,10166
+454,265,18,189,13,33,Chair,Leather,Red,Urban,Winter,Online,8172
+382,216,28,166,14,18,Chair,Wood,Black,Rural,Summer,Retail,10696
+293,132,32,161,17,18,Chair,Fabric,Black,Suburban,Summer,Retail,9376
+473,264,21,209,11,33,Chair,Wood,Blue,Urban,Summer,Retail,9933
+380,217,13,163,7,26,Chair,Wood,Blue,Rural,Winter,Retail,4940
+525,301,25,224,13,14,Chair,Wood,Red,Urban,Summer,Retail,13125
+373,176,31,197,14,14,Chair,Metal,Brown,Urban,Fall,Online,11563
+434,276,26,158,14,25,Chair,Wood,White,Rural,Summer,Online,11284
+237,112,18,125,6,15,Chair,Plastic,Red,Suburban,Winter,Online,4266
+348,180,22,168,12,19,Chair,Metal,Black,Suburban,Spring,Online,7656
+439,239,22,200,16,25,Chair,Wood,Green,Urban,Summer,Online,9658
+431,248,25,183,16,27,Chair,Wood,Black,Rural,Fall,Retail,10775
+477,266,26,211,14,29,Chair,Wood,Black,Suburban,Spring,Retail,12402
+327,184,16,143,7,34,Chair,Metal,Red,Rural,Spring,Retail,5232
+368,173,16,195,9,3,Desk,Plastic,Red,Suburban,Spring,Online,5888
+488,291,26,197,13,33,Chair,Leather,Black,Urban,Spring,Retail,12688
+477,275,19,202,11,28,Chair,Wood,White,Suburban,Winter,Retail,9063
+470,271,17,199,8,23,Chair,Wood,Red,Urban,Winter,Online,7990
+374,182,20,192,12,3,Desk,Plastic,Red,Rural,Summer,Retail,7480
+482,265,23,217,10,37,Chair,Leather,Brown,Suburban,Spring,Online,11086
+315,153,21,162,14,8,Chair,Fabric,White,Suburban,Winter,Online,6615
+507,306,23,201,9,34,Chair,Leather,Black,Urban,Winter,Online,11661
+385,198,20,187,10,23,Desk,Plastic,Red,Urban,Summer,Retail,7700
+392,227,20,165,11,24,Chair,Wood,Brown,Suburban,Winter,Retail,7840
+365,209,31,156,15,19,Chair,Metal,Black,Rural,Fall,Retail,11315
+365,217,28,148,12,21,Chair,Metal,Brown,Suburban,Fall,Retail,10220
+471,281,25,190,18,27,Chair,Wood,White,Suburban,Spring,Retail,11775
+398,219,17,179,11,40,Chair,Wood,Blue,Rural,Spring,Retail,6766
+309,155,30,154,19,13,Chair,Fabric,Black,Suburban,Fall,Retail,9270
+434,251,23,183,16,25,Chair,Wood,White,Suburban,Spring,Retail,9982
+529,298,18,231,9,34,Chair,Wood,Brown,Suburban,Winter,Retail,9522
+294,155,17,139,6,16,Chair,Fabric,Red,Urban,Winter,Retail,4998
+447,243,26,204,15,25,Chair,Wood,White,Suburban,Fall,Online,11622
+478,250,19,228,11,38,Desk,Metal,Blue,Suburban,Fall,Retail,9082
+625,330,16,295,9,35,Desk,Glass,Red,Urban,Fall,Online,10000
+451,256,22,195,15,39,Chair,Wood,Green,Rural,Fall,Online,9922
+400,236,23,164,11,22,Chair,Wood,White,Suburban,Fall,Online,9200
+437,238,22,199,12,25,Chair,Wood,Black,Suburban,Winter,Online,9614
+464,287,24,177,12,28,Chair,Wood,Black,Suburban,Spring,Online,11136
+425,239,12,186,6,37,Chair,Wood,Green,Suburban,Winter,Online,5100
+400,213,23,187,15,20,Chair,Wood,Blue,Suburban,Summer,Online,9200
+296,151,19,145,12,22,Chair,Fabric,Blue,Urban,Winter,Online,5624
+494,284,16,210,8,28,Desk,Glass,Blue,Rural,Spring,Retail,7904
+430,272,22,158,15,32,Chair,Leather,Red,Urban,Fall,Online,9460
+452,256,18,196,6,32,Chair,Wood,Green,Rural,Winter,Retail,8136
+386,220,21,166,13,22,Chair,Leather,Green,Rural,Spring,Retail,8106
+300,145,31,155,21,22,Chair,Fabric,Brown,Suburban,Summer,Retail,9300
+337,190,23,147,14,28,Chair,Metal,Blue,Urban,Summer,Online,7751
+216,100,30,116,17,5,Chair,Plastic,White,Rural,Fall,Retail,6480
+324,174,29,150,16,21,Chair,Metal,Brown,Urban,Fall,Retail,9396
+506,304,24,202,10,31,Chair,Wood,Black,Rural,Spring,Online,12144
+474,284,19,190,9,36,Chair,Wood,Red,Rural,Fall,Online,9006
+421,251,13,170,7,31,Chair,Wood,Green,Rural,Winter,Online,5473
+283,154,32,129,20,15,Chair,Fabric,Black,Urban,Summer,Online,9056
+321,174,23,147,14,26,Chair,Metal,Brown,Rural,Fall,Online,7383
+214,101,27,113,13,10,Chair,Plastic,Green,Urban,Summer,Online,5778
+331,159,25,172,19,5,Chair,Fabric,Red,Urban,Summer,Online,8275
+388,242,18,146,11,43,Chair,Wood,Blue,Suburban,Spring,Retail,6984
+417,236,30,181,16,27,Chair,Wood,Brown,Urban,Summer,Retail,12510
+424,232,22,192,14,29,Chair,Wood,Blue,Rural,Fall,Retail,9328
+223,110,27,113,14,12,Chair,Plastic,White,Rural,Summer,Retail,6021
+379,208,29,171,16,20,Chair,Metal,Black,Suburban,Fall,Retail,10991
+400,223,19,177,9,31,Chair,Wood,Red,Urban,Winter,Retail,7600
+464,263,21,201,14,32,Chair,Leather,Black,Urban,Winter,Retail,9744
+422,240,22,182,13,28,Chair,Wood,Black,Suburban,Spring,Online,9284
+434,246,25,188,14,31,Chair,Wood,White,Rural,Fall,Online,10850
+464,268,25,196,15,39,Chair,Wood,Brown,Urban,Spring,Online,11600
+330,184,27,146,15,27,Chair,Metal,White,Urban,Fall,Online,8910
+416,257,22,159,15,24,Chair,Wood,Green,Suburban,Fall,Online,9152
+325,175,30,150,18,22,Chair,Metal,White,Suburban,Summer,Online,9750
+317,174,18,143,12,22,Chair,Metal,Red,Rural,Spring,Online,5706
+456,275,21,181,12,31,Chair,Leather,White,Urban,Winter,Retail,9576
+488,275,22,213,15,36,Chair,Wood,Blue,Suburban,Spring,Retail,10736
+554,340,20,214,10,30,Chair,Leather,Black,Suburban,Winter,Retail,11080
+348,179,14,169,11,28,Chair,Metal,Blue,Rural,Spring,Online,4872
+493,307,27,186,14,25,Chair,Leather,Brown,Rural,Summer,Online,13311
+325,166,18,159,10,15,Chair,Fabric,Red,Urban,Spring,Online,5850
+223,105,20,118,11,5,Chair,Plastic,Red,Rural,Spring,Retail,4460
+452,268,16,184,10,35,Chair,Wood,Blue,Suburban,Spring,Retail,7232
+476,288,26,188,11,37,Chair,Leather,Black,Suburban,Fall,Retail,12376
+301,154,32,147,17,19,Chair,Fabric,Black,Urban,Summer,Retail,9632
+509,291,11,218,3,23,Desk,Metal,Blue,Urban,Winter,Online,5599
+317,132,18,185,9,7,Desk,Plastic,Red,Suburban,Fall,Retail,5706
+264,131,28,133,17,18,Chair,Fabric,Brown,Urban,Spring,Retail,7392
+474,270,21,204,13,23,Chair,Wood,Brown,Urban,Spring,Online,9954
+363,174,18,189,9,19,Desk,Plastic,Red,Rural,Summer,Retail,6534
+374,219,22,155,11,30,Chair,Wood,Green,Suburban,Summer,Online,8228
+453,262,23,191,15,26,Chair,Wood,Brown,Urban,Spring,Online,10419
+344,174,29,170,12,26,Chair,Metal,White,Suburban,Summer,Online,9976
+412,241,10,171,6,35,Chair,Wood,Blue,Rural,Winter,Online,4120
+468,271,23,197,15,34,Chair,Wood,Black,Suburban,Spring,Online,10764
+416,235,25,181,14,23,Chair,Wood,White,Suburban,Fall,Online,10400
+358,206,24,152,14,37,Chair,Wood,Red,Urban,Fall,Online,8592
+301,162,18,139,10,21,Chair,Metal,Brown,Rural,Spring,Online,5418
+323,178,24,145,11,31,Chair,Metal,Brown,Rural,Fall,Online,7752
+457,263,18,194,9,33,Chair,Wood,Blue,Rural,Fall,Retail,8226
+439,266,26,173,14,27,Chair,Wood,Red,Urban,Fall,Retail,11414
+289,142,32,147,17,8,Chair,Fabric,Brown,Urban,Fall,Retail,9248
+345,189,25,156,10,29,Chair,Metal,White,Rural,Fall,Retail,8625
+308,145,18,163,8,10,Chair,Fabric,Green,Suburban,Winter,Retail,5544
+357,214,21,143,11,30,Chair,Wood,Green,Suburban,Spring,Retail,7497
+265,122,28,143,16,15,Chair,Plastic,Black,Suburban,Fall,Retail,7420
+285,132,19,153,12,22,Chair,Fabric,Blue,Urban,Spring,Online,5415
+263,123,23,140,13,31,Chair,Fabric,Black,Suburban,Spring,Online,6049
+427,248,18,179,15,26,Chair,Wood,White,Rural,Spring,Online,7686
+462,279,15,183,10,34,Chair,Leather,Black,Rural,Winter,Online,6930
+449,263,24,186,12,20,Chair,Leather,Black,Suburban,Summer,Online,10776
+418,237,12,181,5,25,Chair,Wood,Red,Rural,Winter,Online,5016
+490,302,19,188,13,28,Chair,Wood,Black,Rural,Winter,Retail,9310
+435,243,28,192,17,22,Chair,Wood,Black,Rural,Summer,Retail,12180
+579,317,11,262,6,14,Desk,Glass,Red,Rural,Spring,Retail,6369
+431,270,31,161,15,33,Chair,Wood,Black,Urban,Summer,Retail,13361
+303,149,21,154,12,14,Chair,Fabric,Brown,Suburban,Winter,Retail,6363
+423,253,26,170,12,27,Chair,Wood,Green,Suburban,Summer,Retail,10998
+329,179,24,150,16,25,Chair,Fabric,Blue,Rural,Fall,Retail,7896
+336,168,23,168,10,23,Chair,Metal,Black,Urban,Winter,Retail,7728
+528,320,17,208,7,22,Chair,Leather,Green,Urban,Spring,Online,8976
+378,235,23,143,12,29,Chair,Wood,Black,Rural,Spring,Online,8694
+440,255,27,185,16,18,Chair,Wood,Brown,Urban,Spring,Retail,11880
+479,255,22,224,9,30,Chair,Wood,Brown,Suburban,Spring,Retail,10538
+386,211,14,175,9,29,Chair,Wood,Green,Suburban,Winter,Retail,5404
+488,309,23,179,14,28,Chair,Leather,Blue,Suburban,Fall,Retail,11224
+290,137,22,153,14,24,Chair,Fabric,Blue,Suburban,Spring,Retail,6380
+229,115,23,114,12,15,Chair,Plastic,Brown,Urban,Winter,Retail,5267
+355,215,24,140,11,16,Chair,Metal,Brown,Suburban,Spring,Online,8520
+419,252,18,167,13,32,Chair,Leather,Red,Rural,Fall,Online,7542
+350,194,27,156,13,22,Chair,Metal,White,Rural,Summer,Online,9450
+287,143,26,144,16,15,Chair,Fabric,White,Rural,Fall,Online,7462
+314,160,25,154,7,14,Chair,Fabric,Red,Rural,Fall,Online,7850
+472,244,25,228,14,18,Chair,Wood,Blue,Rural,Summer,Retail,11800
+505,290,21,215,14,32,Chair,Leather,Brown,Suburban,Spring,Retail,10605
+396,250,18,146,9,25,Chair,Wood,Blue,Suburban,Winter,Retail,7128
+324,191,15,133,6,30,Chair,Metal,Red,Urban,Winter,Online,4860
+419,244,24,175,12,15,Chair,Wood,Green,Suburban,Fall,Retail,10056
+295,157,24,138,13,18,Chair,Fabric,Brown,Rural,Winter,Retail,7080
+323,166,25,157,10,16,Chair,Fabric,Blue,Rural,Summer,Retail,8075
+303,140,28,163,19,16,Chair,Fabric,White,Suburban,Fall,Retail,8484
+422,233,25,189,13,29,Chair,Leather,Brown,Rural,Fall,Retail,10550
+491,298,30,193,17,27,Chair,Leather,Black,Urban,Summer,Retail,14730
+419,240,28,179,17,26,Chair,Wood,Brown,Urban,Summer,Online,11732
+414,256,22,158,9,28,Chair,Wood,Brown,Suburban,Spring,Online,9108
+300,156,18,144,8,34,Chair,Metal,White,Rural,Spring,Online,5400
+463,285,18,178,10,32,Chair,Wood,Green,Rural,Spring,Online,8334
+476,273,18,203,12,27,Chair,Leather,White,Rural,Spring,Online,8568
+436,260,25,176,14,23,Chair,Wood,Green,Suburban,Fall,Retail,10900
+503,300,27,203,11,37,Chair,Leather,Black,Suburban,Summer,Retail,13581
+258,118,27,140,12,15,Chair,Fabric,Red,Rural,Summer,Retail,6966
+449,261,21,188,10,35,Chair,Wood,Black,Suburban,Spring,Online,9429
+471,282,21,189,10,39,Chair,Leather,Black,Rural,Fall,Online,9891
+408,227,16,181,10,32,Chair,Wood,Red,Suburban,Winter,Online,6528
+317,180,32,137,20,13,Chair,Metal,White,Suburban,Summer,Retail,10144
+367,171,29,196,17,17,Chair,Fabric,White,Urban,Summer,Retail,10643
+306,163,31,143,15,18,Chair,Fabric,White,Suburban,Fall,Retail,9486
+463,281,26,182,16,34,Chair,Wood,Blue,Urban,Fall,Retail,12038
+453,257,24,196,12,41,Chair,Leather,White,Suburban,Spring,Retail,10872
+303,164,24,139,15,27,Chair,Metal,Green,Urban,Fall,Retail,7272
+430,253,27,177,11,34,Chair,Wood,Green,Urban,Summer,Online,11610
+485,296,23,189,11,27,Chair,Wood,Black,Urban,Winter,Online,11155
+350,187,27,163,12,15,Chair,Metal,White,Suburban,Fall,Online,9450
+454,258,17,196,9,32,Chair,Wood,Brown,Suburban,Winter,Online,7718
+433,253,22,180,12,30,Chair,Wood,Brown,Suburban,Spring,Online,9526
+435,256,20,179,9,27,Chair,Leather,Red,Urban,Summer,Online,8700
+462,290,25,172,14,28,Chair,Leather,Brown,Rural,Summer,Online,11550
+474,304,16,170,7,27,Chair,Leather,Green,Rural,Spring,Online,7584
+333,175,18,158,8,12,Chair,Metal,Blue,Suburban,Winter,Retail,5994
+445,244,25,201,16,26,Chair,Wood,Blue,Suburban,Summer,Retail,11125
+449,276,27,173,18,28,Chair,Wood,Brown,Suburban,Summer,Retail,12123
+311,172,19,139,13,27,Chair,Metal,Brown,Rural,Winter,Retail,5909
+450,268,26,182,16,27,Chair,Wood,White,Rural,Summer,Retail,11700
+404,236,29,168,18,26,Chair,Wood,Brown,Urban,Spring,Retail,11716
+370,186,20,184,12,18,Chair,Metal,White,Suburban,Winter,Retail,7400
+413,238,12,175,5,23,Chair,Wood,Red,Rural,Winter,Online,4956
+495,265,16,230,11,22,Desk,Glass,Green,Urban,Spring,Retail,7920
+306,181,26,125,14,16,Chair,Metal,Black,Suburban,Fall,Online,7956
+404,238,22,166,15,34,Chair,Wood,Blue,Rural,Summer,Online,8888
+434,258,21,176,14,33,Chair,Wood,Green,Suburban,Summer,Online,9114
+455,271,25,184,11,31,Chair,Wood,White,Suburban,Summer,Retail,11375
+434,258,17,176,9,38,Chair,Wood,Blue,Rural,Spring,Retail,7378
+349,198,29,151,18,24,Chair,Metal,Black,Rural,Fall,Retail,10121
+308,156,20,152,16,12,Chair,Fabric,Blue,Rural,Spring,Online,6160
+316,186,20,130,10,18,Chair,Metal,Brown,Suburban,Winter,Online,6320
+608,349,19,259,10,31,Desk,Glass,Blue,Urban,Spring,Online,11552
+524,296,11,228,7,31,Chair,Leather,Green,Rural,Winter,Online,5764
+466,272,18,194,8,26,Chair,Leather,Black,Rural,Winter,Online,8388
+313,157,24,156,14,21,Chair,Fabric,Black,Suburban,Winter,Online,7512
+322,154,29,168,16,24,Chair,Fabric,Black,Suburban,Fall,Retail,9338
+492,293,14,199,8,27,Chair,Leather,Red,Rural,Winter,Retail,6888
+477,286,30,191,18,36,Chair,Wood,Black,Suburban,Fall,Retail,14310
+481,272,14,209,6,25,Desk,Glass,Green,Rural,Fall,Retail,6734
+512,311,14,201,11,35,Chair,Leather,Red,Rural,Winter,Retail,7168
+445,251,25,194,14,25,Chair,Leather,Black,Rural,Summer,Retail,11125
+499,303,23,196,13,37,Chair,Leather,Black,Suburban,Spring,Retail,11477
+486,276,11,210,7,31,Desk,Metal,Green,Urban,Winter,Online,5346
+444,243,16,201,9,25,Chair,Wood,Red,Urban,Winter,Online,7104
+305,165,27,140,16,29,Chair,Metal,Black,Urban,Spring,Online,8235
+291,160,25,131,15,17,Chair,Fabric,Green,Urban,Summer,Retail,7275
+396,190,14,206,8,5,Desk,Plastic,Red,Suburban,Spring,Retail,5544
+207,104,26,103,16,7,Chair,Plastic,Green,Suburban,Summer,Retail,5382
+473,272,19,201,9,22,Chair,Wood,Green,Suburban,Summer,Online,8987
+379,225,20,154,12,26,Chair,Wood,Green,Urban,Spring,Online,7580
+237,105,20,132,11,9,Chair,Plastic,White,Suburban,Winter,Online,4740
+297,148,21,149,12,24,Chair,Fabric,Red,Suburban,Spring,Online,6237
+223,111,27,112,15,13,Chair,Plastic,Black,Urban,Spring,Online,6021
+468,285,18,183,8,24,Desk,Glass,Blue,Suburban,Summer,Retail,8424
+304,180,24,124,12,17,Chair,Metal,Black,Suburban,Spring,Retail,7296
+351,205,26,146,13,30,Chair,Metal,Black,Suburban,Spring,Retail,9126
+347,185,28,162,16,23,Chair,Metal,Black,Rural,Summer,Retail,9716
+482,289,33,193,24,35,Chair,Leather,Black,Urban,Fall,Retail,15906
+401,222,19,179,7,29,Chair,Wood,Red,Urban,Winter,Retail,7619
+456,267,26,189,18,35,Chair,Wood,Brown,Suburban,Fall,Retail,11856
+417,250,24,167,12,28,Chair,Wood,Red,Urban,Fall,Retail,10008
+626,342,16,284,11,28,Desk,Glass,Red,Urban,Spring,Retail,10016
+234,108,31,126,19,3,Chair,Plastic,Brown,Urban,Spring,Retail,7254
+371,192,24,179,12,30,Chair,Metal,Brown,Suburban,Fall,Online,8904
+419,245,12,174,9,28,Chair,Wood,Green,Suburban,Winter,Online,5028
+304,170,30,134,17,30,Chair,Metal,Black,Urban,Fall,Online,9120
+305,164,18,141,10,23,Chair,Fabric,Blue,Rural,Spring,Online,5490
+468,268,25,200,14,30,Chair,Wood,Blue,Rural,Summer,Online,11700
+530,280,6,250,7,28,Desk,Metal,Blue,Rural,Winter,Online,3180
+302,167,20,135,10,31,Chair,Metal,Green,Suburban,Spring,Online,6040
+445,278,15,167,9,43,Chair,Leather,Blue,Rural,Spring,Online,6675
+303,148,19,155,12,15,Chair,Fabric,Green,Urban,Winter,Retail,5757
+322,191,31,131,16,14,Chair,Metal,White,Suburban,Fall,Retail,9982
+295,154,21,141,11,14,Chair,Metal,Red,Rural,Fall,Retail,6195
+478,252,21,226,15,27,Chair,Leather,White,Rural,Spring,Retail,10038
+343,200,19,143,10,31,Chair,Wood,Black,Rural,Winter,Online,6517
+473,294,17,179,7,31,Chair,Wood,Green,Urban,Winter,Online,8041
+207,99,18,108,9,21,Chair,Plastic,Red,Suburban,Winter,Retail,3726
+469,264,27,205,16,34,Chair,Leather,Brown,Suburban,Fall,Online,12663
+312,168,17,144,8,18,Chair,Metal,White,Rural,Winter,Online,5304
+455,258,22,197,11,39,Chair,Leather,Green,Suburban,Fall,Online,10010
+583,348,13,235,10,25,Desk,Glass,Green,Rural,Fall,Online,7579
+309,161,21,148,12,21,Chair,Fabric,Red,Rural,Spring,Retail,6489
+426,255,15,171,9,39,Chair,Wood,Green,Rural,Spring,Retail,6390
+548,343,24,205,14,40,Chair,Leather,White,Urban,Winter,Retail,13152
+501,290,20,211,11,31,Chair,Wood,Red,Urban,Fall,Online,10020
+272,128,14,144,5,23,Chair,Fabric,Green,Rural,Winter,Online,3808
+338,175,20,163,11,13,Chair,Fabric,White,Urban,Winter,Retail,6760
+307,147,24,160,15,16,Chair,Fabric,Brown,Urban,Winter,Online,7368
+455,265,28,190,12,32,Chair,Wood,White,Rural,Summer,Online,12740
+486,277,19,209,11,24,Chair,Wood,Brown,Urban,Winter,Online,9234
+282,134,22,148,8,14,Chair,Fabric,Red,Rural,Fall,Online,6204
+457,261,21,196,13,39,Chair,Wood,White,Suburban,Spring,Online,9597
+319,185,21,134,10,25,Chair,Metal,Black,Urban,Spring,Online,6699
+438,255,26,183,14,35,Chair,Wood,Green,Urban,Fall,Retail,11388
+412,232,10,180,7,25,Chair,Wood,Blue,Rural,Winter,Retail,4120
+359,207,30,152,17,23,Chair,Metal,White,Urban,Summer,Retail,10770
+465,262,20,203,10,37,Chair,Leather,White,Rural,Winter,Online,9300
+443,260,20,183,13,25,Chair,Wood,Red,Urban,Spring,Retail,8860
+362,201,24,161,12,22,Chair,Metal,Brown,Suburban,Spring,Retail,8688
+355,185,25,170,13,26,Chair,Metal,Black,Rural,Summer,Retail,8875
+423,260,19,163,13,39,Chair,Wood,Red,Rural,Spring,Online,8037
+438,260,22,178,7,32,Chair,Wood,Green,Suburban,Summer,Online,9636
+443,264,16,179,11,33,Chair,Leather,White,Urban,Winter,Retail,7088
+413,228,21,185,10,24,Chair,Wood,Red,Suburban,Summer,Online,8673
+423,252,25,171,15,23,Chair,Leather,Brown,Suburban,Fall,Online,10575
+281,134,22,147,12,23,Chair,Fabric,Blue,Urban,Spring,Online,6182
+512,297,31,215,16,29,Chair,Wood,Black,Urban,Summer,Retail,15872
+298,165,24,133,13,18,Chair,Fabric,White,Urban,Spring,Retail,7152
+306,171,17,135,10,18,Chair,Metal,Blue,Rural,Spring,Online,5202
+359,189,29,170,18,30,Chair,Metal,Black,Urban,Summer,Online,10411
+435,268,22,167,14,35,Chair,Leather,Green,Suburban,Fall,Online,9570
+492,304,15,188,8,25,Chair,Wood,Red,Rural,Spring,Retail,7380
+290,132,16,158,11,20,Chair,Fabric,Green,Urban,Winter,Retail,4640
+491,283,18,208,10,42,Chair,Leather,Green,Urban,Spring,Retail,8838
+302,152,28,150,16,19,Chair,Fabric,Brown,Rural,Fall,Online,8456
+462,266,24,196,13,26,Chair,Wood,Black,Rural,Spring,Online,11088
+354,203,20,151,12,28,Chair,Metal,Brown,Urban,Winter,Online,7080
+379,192,21,187,10,32,Desk,Metal,Red,Urban,Summer,Online,7959
+475,284,16,191,8,30,Chair,Leather,Green,Urban,Winter,Online,7600
+303,159,24,144,14,15,Chair,Fabric,Brown,Rural,Fall,Retail,7272
+300,144,31,156,15,18,Chair,Fabric,White,Urban,Summer,Retail,9300
+467,261,22,206,6,32,Chair,Leather,Brown,Urban,Winter,Retail,10274
+259,131,23,128,14,17,Chair,Fabric,Red,Rural,Summer,Retail,5957
+460,289,23,171,13,43,Chair,Leather,Red,Urban,Fall,Retail,10580
+451,284,15,167,7,36,Chair,Wood,Blue,Rural,Winter,Retail,6765
+474,272,25,202,14,33,Chair,Wood,Brown,Rural,Fall,Online,11850
+340,186,27,154,16,14,Chair,Metal,Black,Suburban,Spring,Online,9180
+476,282,17,194,10,36,Chair,Leather,Red,Urban,Winter,Online,8092
+293,150,33,143,18,30,Chair,Metal,Black,Urban,Fall,Retail,9669
+456,258,15,198,9,33,Chair,Wood,White,Rural,Winter,Retail,6840
+494,284,23,210,9,26,Chair,Wood,Red,Suburban,Fall,Retail,11362
+446,255,24,191,16,40,Chair,Wood,White,Rural,Summer,Retail,10704
+267,134,23,133,16,19,Chair,Fabric,Green,Rural,Summer,Retail,6141
+305,145,29,160,15,29,Chair,Fabric,Blue,Urban,Fall,Retail,8845
+369,197,31,172,18,21,Chair,Metal,Black,Urban,Fall,Retail,11439
+496,297,23,199,11,30,Chair,Leather,Red,Suburban,Fall,Retail,11408
+515,286,22,229,9,23,Desk,Metal,Blue,Suburban,Summer,Retail,11330
+522,304,12,218,5,39,Chair,Leather,Blue,Rural,Winter,Retail,6264
+433,260,28,173,14,32,Chair,Leather,Black,Suburban,Summer,Retail,12124
+424,242,28,182,16,27,Chair,Wood,White,Urban,Summer,Online,11872
+345,186,25,159,14,12,Chair,Metal,White,Rural,Summer,Online,8625
+401,226,13,175,7,26,Chair,Wood,Green,Suburban,Winter,Online,5213
+438,274,26,164,16,36,Chair,Leather,White,Suburban,Spring,Online,11388
+515,313,17,202,10,32,Chair,Leather,White,Rural,Winter,Retail,8755
+364,203,16,161,10,27,Chair,Wood,Brown,Rural,Winter,Retail,5824
+404,242,19,162,12,36,Chair,Leather,White,Rural,Winter,Retail,7676
+532,297,27,235,17,26,Chair,Wood,Black,Suburban,Spring,Retail,14364
+297,143,27,154,14,15,Chair,Fabric,Brown,Rural,Fall,Retail,8019
+339,178,31,161,19,18,Chair,Metal,Black,Suburban,Fall,Retail,10509
+458,254,13,204,8,33,Chair,Wood,Green,Urban,Winter,Retail,5954
+403,239,19,164,16,25,Chair,Wood,Green,Suburban,Winter,Online,7657
+581,308,22,273,11,31,Desk,Glass,Blue,Rural,Fall,Online,12782
+467,268,20,199,8,30,Chair,Leather,Blue,Rural,Fall,Online,9340
+297,150,26,147,14,33,Chair,Fabric,Black,Urban,Fall,Retail,7722
+412,242,27,170,9,24,Chair,Wood,Black,Suburban,Summer,Online,11124
+213,107,18,106,9,16,Chair,Plastic,Red,Urban,Winter,Online,3834
+468,279,23,189,10,33,Chair,Leather,Green,Rural,Summer,Retail,10764
+321,143,16,178,9,19,Chair,Fabric,Blue,Urban,Winter,Online,5136
+426,252,18,174,12,31,Chair,Wood,White,Rural,Spring,Online,7668
+261,131,25,130,17,7,Chair,Plastic,White,Suburban,Spring,Online,6525
+432,232,22,200,15,27,Chair,Wood,Brown,Rural,Spring,Online,9504
+422,265,15,157,7,43,Chair,Leather,Red,Urban,Winter,Online,6330
+450,268,27,182,16,28,Chair,Leather,Green,Urban,Fall,Retail,12150
+393,172,12,221,8,9,Desk,Plastic,Green,Rural,Winter,Online,4716
+447,256,23,191,13,30,Chair,Leather,Brown,Rural,Spring,Online,10281
+504,318,24,186,15,40,Chair,Leather,Black,Suburban,Spring,Online,12096
+475,289,26,186,12,26,Chair,Leather,White,Suburban,Fall,Online,12350
+344,183,28,161,15,28,Chair,Metal,White,Urban,Fall,Online,9632
+579,329,14,250,7,24,Desk,Glass,Green,Urban,Spring,Online,8106
+472,263,25,209,14,36,Chair,Leather,Blue,Urban,Summer,Retail,11800
+266,130,25,136,13,11,Chair,Fabric,Green,Urban,Summer,Online,6650
+395,229,24,166,13,25,Chair,Wood,Red,Suburban,Fall,Retail,9480
+310,153,19,157,9,15,Chair,Fabric,Brown,Rural,Winter,Retail,5890
+243,116,26,127,12,29,Chair,Plastic,Brown,Rural,Fall,Online,6318
+355,188,23,167,13,41,Chair,Wood,Red,Urban,Fall,Retail,8165
+455,267,30,188,17,18,Chair,Wood,White,Suburban,Summer,Retail,13650
+487,295,22,192,11,42,Chair,Leather,Brown,Rural,Winter,Retail,10714
+299,176,25,123,15,26,Chair,Metal,Brown,Rural,Fall,Online,7475
+540,298,13,242,7,17,Desk,Metal,Green,Suburban,Spring,Online,7020
+507,258,12,249,9,29,Desk,Metal,Green,Rural,Spring,Online,6084
+483,282,17,201,9,32,Chair,Wood,White,Rural,Winter,Online,8211
+467,275,16,192,12,33,Chair,Wood,Brown,Suburban,Winter,Online,7472
+463,269,19,194,14,24,Chair,Wood,Blue,Urban,Spring,Retail,8797
+443,266,17,177,8,18,Desk,Metal,Green,Rural,Fall,Retail,7531
+397,257,24,140,14,39,Chair,Leather,White,Urban,Spring,Online,9528
+438,268,24,170,9,38,Chair,Leather,White,Suburban,Spring,Online,10512
+375,181,9,194,5,9,Desk,Plastic,Red,Rural,Winter,Retail,3375
+446,253,17,193,8,27,Chair,Wood,Red,Suburban,Winter,Online,7582
+319,158,26,161,12,27,Chair,Fabric,Blue,Urban,Fall,Online,8294
+500,281,12,219,5,24,Desk,Glass,Green,Urban,Winter,Online,6000
+324,176,22,148,11,7,Chair,Fabric,Red,Rural,Fall,Online,7128
+342,162,23,180,13,22,Chair,Fabric,Brown,Suburban,Spring,Retail,7866
+337,187,21,150,11,14,Chair,Fabric,Brown,Rural,Winter,Online,7077
+427,256,18,171,11,19,Chair,Wood,Red,Urban,Winter,Online,7686
+442,281,16,161,9,50,Chair,Leather,Blue,Urban,Winter,Retail,7072
+426,262,20,164,13,27,Chair,Wood,Green,Suburban,Winter,Retail,8520
+275,145,22,130,13,29,Chair,Metal,Brown,Rural,Spring,Online,6050
+391,229,18,162,8,33,Chair,Wood,Blue,Suburban,Fall,Online,7038
+272,155,26,117,11,20,Chair,Metal,Red,Rural,Fall,Retail,7072
+537,329,29,208,16,26,Chair,Leather,White,Urban,Summer,Online,15573
+230,118,29,112,17,10,Chair,Plastic,Black,Suburban,Fall,Online,6670
+399,227,12,172,4,30,Chair,Wood,Green,Rural,Winter,Retail,4788
+429,239,22,190,10,33,Chair,Wood,White,Rural,Spring,Retail,9438
+316,171,30,145,18,18,Chair,Fabric,Black,Rural,Summer,Retail,9480
+428,266,31,162,17,47,Chair,Leather,Black,Suburban,Fall,Retail,13268
+364,218,28,146,14,22,Chair,Metal,Black,Suburban,Fall,Online,10192
+445,269,23,176,13,33,Chair,Leather,White,Urban,Spring,Online,10235
+444,261,29,183,16,26,Chair,Leather,Black,Rural,Fall,Retail,12876
+360,206,26,154,12,19,Chair,Wood,Blue,Urban,Summer,Retail,9360
+494,336,27,158,13,33,Chair,Leather,White,Rural,Summer,Online,13338
+298,140,19,158,10,23,Chair,Fabric,Brown,Suburban,Winter,Retail,5662
+472,275,15,197,9,28,Chair,Leather,Green,Rural,Winter,Retail,7080
+316,157,24,159,14,19,Desk,Plastic,Green,Urban,Summer,Retail,7584
+336,155,32,181,20,25,Chair,Fabric,Brown,Urban,Summer,Retail,10752
+390,181,16,209,10,8,Desk,Plastic,Green,Suburban,Spring,Online,6240
+821,490,6,331,4,48,Desk,Marble,Green,Rural,Winter,Retail,4926
+589,352,28,237,13,25,Desk,Glass,Black,Urban,Summer,Online,16492
+350,175,26,175,13,18,Desk,Plastic,Black,Suburban,Summer,Online,9100
+506,298,15,208,8,22,Desk,Glass,Green,Urban,Summer,Online,7590
+710,416,8,294,2,26,Desk,Wood,Blue,Urban,Winter,Retail,5680
+395,206,27,189,18,7,Desk,Plastic,Brown,Urban,Summer,Retail,10665
+696,406,14,290,7,28,Desk,Wood,Blue,Rural,Fall,Retail,9744
+599,343,16,256,8,15,Desk,Glass,White,Urban,Winter,Retail,9584
+850,533,15,317,9,39,Desk,Marble,Red,Rural,Summer,Online,12750
+628,355,15,273,9,26,Desk,Wood,Red,Rural,Summer,Online,9420
+663,363,15,300,5,26,Desk,Wood,White,Urban,Winter,Retail,9945
+556,308,24,248,13,27,Desk,Metal,Black,Urban,Fall,Online,13344
+324,159,21,165,12,11,Desk,Plastic,White,Rural,Fall,Retail,6804
+490,273,19,217,8,19,Desk,Metal,Green,Urban,Fall,Retail,9310
+475,263,17,212,7,24,Desk,Metal,Brown,Suburban,Spring,Online,8075
+550,300,17,250,11,20,Desk,Metal,Black,Urban,Winter,Retail,9350
+709,391,16,318,9,33,Desk,Wood,Brown,Suburban,Winter,Retail,11344
+576,312,12,264,6,23,Desk,Glass,Black,Rural,Winter,Online,6912
+610,373,21,237,7,17,Desk,Wood,Red,Suburban,Summer,Retail,12810
+308,149,21,159,9,10,Desk,Plastic,Green,Urban,Spring,Online,6468
+400,187,24,213,15,12,Desk,Plastic,Brown,Rural,Fall,Retail,9600
+548,314,16,234,8,18,Desk,Metal,Green,Suburban,Fall,Retail,8768
+573,303,18,270,10,26,Desk,Glass,Red,Suburban,Summer,Retail,10314
+575,319,18,256,13,29,Desk,Metal,Red,Urban,Spring,Online,10350
+378,201,15,177,6,19,Desk,Metal,Brown,Rural,Winter,Retail,5670
+621,348,17,273,13,23,Desk,Glass,Black,Urban,Winter,Retail,10557
+616,344,13,272,6,21,Desk,Glass,Blue,Urban,Winter,Retail,8008
+358,160,22,198,12,9,Desk,Plastic,Black,Suburban,Spring,Retail,7876
+602,321,13,281,8,18,Desk,Glass,Green,Rural,Fall,Retail,7826
+460,255,20,205,9,17,Desk,Metal,Red,Suburban,Fall,Online,9200
+397,177,18,220,11,8,Desk,Plastic,Red,Urban,Spring,Online,7146
+354,162,24,192,13,8,Desk,Plastic,White,Suburban,Summer,Retail,8496
+591,353,17,238,11,29,Desk,Wood,Red,Suburban,Fall,Retail,10047
+634,358,16,276,6,17,Desk,Metal,Red,Suburban,Summer,Online,10144
+510,259,19,251,10,13,Desk,Metal,Brown,Rural,Fall,Retail,9690
+573,324,19,249,12,27,Desk,Glass,White,Rural,Fall,Retail,10887
+915,592,18,323,10,45,Desk,Marble,Black,Suburban,Spring,Retail,16470
+372,163,17,209,8,19,Desk,Plastic,Brown,Rural,Winter,Retail,6324
+530,283,19,247,13,18,Desk,Metal,White,Suburban,Spring,Retail,10070
+499,276,23,223,16,32,Desk,Glass,White,Urban,Spring,Retail,11477
+434,236,23,198,12,15,Desk,Metal,White,Urban,Fall,Retail,9982
+353,159,25,194,14,9,Desk,Plastic,Brown,Urban,Spring,Online,8825
+461,265,20,196,13,24,Desk,Metal,Green,Suburban,Fall,Retail,9220
+786,481,11,305,5,46,Desk,Marble,Red,Urban,Spring,Online,8646
+804,512,25,292,13,48,Desk,Marble,Black,Urban,Summer,Online,20100
+551,308,25,243,14,17,Desk,Metal,Black,Suburban,Summer,Retail,13775
+648,380,23,268,12,33,Desk,Wood,Brown,Suburban,Fall,Online,14904
+351,162,23,189,13,8,Desk,Plastic,White,Suburban,Fall,Online,8073
+561,307,23,254,10,28,Desk,Glass,Black,Suburban,Fall,Online,12903
+688,403,14,285,8,23,Desk,Wood,Green,Rural,Fall,Online,9632
+332,166,11,166,5,9,Desk,Plastic,Red,Rural,Spring,Retail,3652
+868,516,20,352,9,52,Desk,Marble,White,Suburban,Summer,Online,17360
+511,274,16,237,11,10,Desk,Metal,White,Rural,Spring,Online,8176
+320,155,15,165,5,8,Desk,Plastic,Green,Urban,Spring,Online,4800
+573,326,18,247,7,17,Desk,Glass,Blue,Suburban,Spring,Online,10314
+463,266,11,197,3,27,Desk,Metal,Blue,Rural,Spring,Retail,5093
+307,177,20,130,10,27,Chair,Metal,Blue,Suburban,Spring,Retail,6140
+879,587,17,292,9,51,Desk,Marble,White,Urban,Spring,Retail,14943
+397,193,24,204,11,3,Desk,Plastic,Black,Urban,Fall,Retail,9528
+532,295,18,237,11,11,Desk,Glass,White,Urban,Spring,Retail,9576
+757,464,19,293,11,35,Desk,Marble,Blue,Suburban,Summer,Retail,14383
+857,518,24,339,11,43,Desk,Marble,Black,Urban,Summer,Online,20568
+645,394,19,251,8,23,Desk,Glass,White,Urban,Winter,Retail,12255
+524,285,11,239,5,33,Desk,Glass,Blue,Suburban,Spring,Online,5764
+430,211,18,219,11,3,Desk,Plastic,Black,Suburban,Winter,Retail,7740
+785,510,23,275,12,47,Desk,Marble,Black,Urban,Summer,Online,18055
+438,254,13,184,8,22,Desk,Metal,Red,Suburban,Spring,Retail,5694
+891,583,14,308,9,45,Desk,Marble,Black,Rural,Spring,Retail,12474
+594,319,23,275,14,19,Desk,Metal,Black,Urban,Spring,Retail,13662
+873,542,12,331,6,43,Desk,Marble,Blue,Rural,Spring,Online,10476
+531,306,21,225,13,26,Desk,Metal,Brown,Rural,Fall,Retail,11151
+477,273,20,204,12,24,Desk,Metal,Green,Rural,Fall,Retail,9540
+492,286,14,206,8,31,Desk,Metal,Brown,Rural,Spring,Retail,6888
+764,492,16,272,10,34,Desk,Marble,Green,Urban,Fall,Online,12224
+495,264,17,231,6,31,Desk,Metal,Green,Rural,Summer,Online,8415
+845,522,21,323,12,44,Desk,Marble,White,Urban,Spring,Retail,17745
+591,354,19,237,8,27,Desk,Glass,White,Urban,Spring,Online,11229
+696,403,17,293,8,20,Desk,Wood,Green,Suburban,Fall,Retail,11832
+721,403,19,318,11,36,Desk,Wood,Brown,Rural,Fall,Retail,13699
+321,151,16,170,10,6,Desk,Plastic,Blue,Rural,Fall,Online,5136
+499,280,21,219,9,22,Desk,Metal,Black,Rural,Summer,Online,10479
+479,260,19,219,10,21,Desk,Metal,Red,Rural,Fall,Online,9101
+545,284,16,261,11,34,Desk,Glass,Green,Rural,Fall,Online,8720
+448,212,26,236,12,23,Desk,Plastic,Black,Urban,Fall,Retail,11648
+394,199,24,195,13,3,Desk,Plastic,Black,Rural,Summer,Online,9456
+586,332,18,254,8,27,Desk,Metal,Black,Rural,Spring,Online,10548
+690,404,16,286,7,29,Desk,Wood,Green,Urban,Fall,Online,11040
+675,374,18,301,9,30,Desk,Wood,Red,Urban,Spring,Retail,12150
+365,189,20,176,11,4,Desk,Plastic,White,Rural,Summer,Online,7300
+561,315,12,246,7,33,Desk,Metal,Red,Rural,Spring,Online,6732
+361,168,20,193,13,16,Desk,Plastic,Black,Suburban,Spring,Retail,7220
+728,410,16,318,10,31,Desk,Wood,Black,Suburban,Winter,Online,11648
+326,183,23,143,12,20,Chair,Metal,Red,Rural,Fall,Retail,7498
+305,151,18,154,13,3,Desk,Plastic,Red,Rural,Fall,Retail,5490
+330,186,16,144,10,24,Chair,Metal,Blue,Urban,Winter,Online,5280
+843,526,5,317,3,43,Desk,Marble,Blue,Urban,Winter,Retail,4215
+634,347,20,287,12,39,Desk,Wood,Green,Urban,Summer,Online,12680
+656,400,13,256,6,33,Desk,Wood,Black,Rural,Winter,Online,8528
+606,331,19,275,10,19,Desk,Glass,Green,Urban,Spring,Retail,11514
+480,277,18,203,10,23,Desk,Metal,Brown,Urban,Spring,Online,8640
+826,541,20,285,9,28,Desk,Marble,Brown,Suburban,Fall,Retail,16520
+566,313,14,253,6,32,Desk,Glass,Red,Rural,Spring,Online,7924
+798,537,15,261,7,46,Desk,Marble,Red,Suburban,Fall,Retail,11970
+753,453,17,300,12,30,Desk,Wood,White,Rural,Fall,Retail,12801
+586,332,15,254,7,38,Desk,Wood,Green,Rural,Summer,Online,8790
+717,436,10,281,2,33,Desk,Wood,White,Rural,Winter,Online,7170
+573,333,15,240,9,31,Desk,Glass,Red,Suburban,Spring,Online,8595
+822,522,19,300,13,36,Desk,Marble,Red,Rural,Fall,Retail,15618
+706,469,16,237,9,39,Desk,Marble,Green,Urban,Fall,Online,11296
+838,519,13,319,4,28,Desk,Marble,Red,Rural,Fall,Retail,10894
+469,272,14,197,8,29,Desk,Metal,Blue,Urban,Spring,Retail,6566
+767,434,25,333,13,18,Desk,Wood,Brown,Urban,Summer,Retail,19175
+551,305,18,246,10,24,Desk,Metal,Green,Urban,Summer,Online,9918
+585,313,18,272,11,31,Desk,Glass,White,Suburban,Spring,Online,10530
+669,370,9,299,7,26,Desk,Wood,Red,Rural,Winter,Online,6021
+701,425,19,276,13,32,Desk,Wood,Green,Suburban,Fall,Online,13319
+655,389,22,266,13,27,Desk,Glass,Black,Urban,Fall,Online,14410
+795,494,19,301,12,47,Desk,Marble,Black,Urban,Fall,Retail,15105
+576,336,16,240,8,31,Desk,Metal,Brown,Rural,Spring,Retail,9216
+762,428,17,334,9,24,Desk,Wood,Black,Rural,Summer,Retail,12954
+837,548,11,289,7,35,Desk,Marble,Brown,Urban,Winter,Online,9207
+999,631,15,368,6,29,Desk,Marble,Brown,Suburban,Winter,Retail,14985
+635,353,23,282,10,35,Desk,Wood,White,Suburban,Fall,Online,14605
+337,184,15,153,7,28,Chair,Metal,Green,Urban,Spring,Online,5055
+556,308,15,248,9,24,Desk,Metal,Black,Rural,Spring,Retail,8340
+801,513,18,288,6,38,Desk,Marble,Brown,Rural,Fall,Retail,14418
+345,176,26,169,14,9,Desk,Plastic,Black,Suburban,Summer,Online,8970
+373,193,22,180,11,19,Desk,Plastic,White,Urban,Fall,Online,8206
+700,398,10,302,7,24,Desk,Wood,Blue,Rural,Winter,Online,7000
+365,175,20,190,12,15,Desk,Plastic,White,Urban,Winter,Online,7300
+681,404,8,277,1,32,Desk,Wood,Green,Suburban,Winter,Retail,5448
+230,108,19,122,8,15,Chair,Plastic,Blue,Rural,Summer,Online,4370
+681,384,14,297,8,29,Desk,Wood,Blue,Rural,Fall,Retail,9534
+356,166,17,190,10,8,Desk,Plastic,Brown,Rural,Spring,Online,6052
+763,431,8,332,1,24,Desk,Wood,Green,Rural,Winter,Online,6104
+731,437,11,294,5,32,Desk,Wood,Red,Urban,Winter,Online,8041
+537,315,18,222,9,21,Desk,Glass,Brown,Suburban,Fall,Retail,9666
+910,569,18,341,13,45,Desk,Marble,White,Suburban,Spring,Online,16380
+286,152,19,134,11,24,Chair,Metal,Red,Suburban,Spring,Retail,5434
+199,99,22,100,11,14,Chair,Plastic,Green,Rural,Summer,Retail,4378
+507,299,22,208,9,15,Desk,Metal,Blue,Urban,Summer,Online,11154
+643,362,18,281,10,33,Desk,Glass,Black,Suburban,Winter,Retail,11574
+601,348,14,253,9,16,Desk,Glass,Green,Suburban,Spring,Retail,8414
+344,160,18,184,8,3,Desk,Plastic,Blue,Urban,Fall,Online,6192
+580,316,23,264,14,28,Desk,Metal,Brown,Urban,Fall,Online,13340
+590,318,24,272,11,26,Desk,Metal,Black,Urban,Fall,Online,14160
+355,178,13,177,9,15,Desk,Plastic,Red,Rural,Winter,Retail,4615
+706,388,24,318,17,27,Desk,Wood,Black,Suburban,Summer,Online,16944
+765,494,14,271,6,28,Desk,Marble,Green,Rural,Spring,Retail,10710
+641,373,19,268,10,27,Desk,Wood,Blue,Suburban,Summer,Retail,12179
+559,301,25,258,15,16,Desk,Glass,Black,Suburban,Summer,Online,13975
+939,602,18,337,9,44,Desk,Marble,Brown,Suburban,Spring,Retail,16902
+626,388,16,238,8,22,Desk,Wood,White,Rural,Winter,Retail,10016
+349,173,15,176,7,13,Desk,Plastic,White,Suburban,Winter,Online,5235
+760,504,18,256,11,38,Desk,Marble,Red,Suburban,Fall,Online,13680
+521,301,7,220,4,30,Desk,Metal,Green,Suburban,Winter,Online,3647
+413,188,25,225,16,19,Desk,Plastic,Brown,Suburban,Fall,Retail,10325
+502,256,17,246,10,25,Desk,Glass,Black,Rural,Spring,Online,8534
+568,336,26,232,13,27,Desk,Glass,Brown,Urban,Fall,Online,14768
+474,281,19,193,8,17,Desk,Metal,White,Suburban,Fall,Online,9006
+488,284,29,204,16,20,Desk,Metal,Black,Suburban,Fall,Retail,14152
+873,530,22,343,12,45,Desk,Marble,White,Rural,Fall,Retail,19206
+636,366,11,270,6,35,Desk,Wood,Blue,Urban,Spring,Online,6996
+592,328,22,264,11,29,Desk,Wood,Brown,Urban,Fall,Retail,13024
+349,170,11,179,3,14,Desk,Plastic,Blue,Rural,Winter,Retail,3839
+761,446,18,315,10,33,Desk,Wood,Brown,Suburban,Fall,Retail,13698
+205,99,18,106,13,13,Chair,Plastic,Blue,Rural,Winter,Online,3690
+555,303,14,252,10,28,Desk,Metal,Black,Rural,Winter,Retail,7770
+559,300,26,259,16,14,Desk,Metal,Black,Rural,Summer,Retail,14534
+574,318,25,256,10,13,Desk,Metal,Brown,Suburban,Summer,Retail,14350
+564,299,21,265,9,13,Desk,Metal,White,Suburban,Spring,Retail,11844
+412,207,25,205,14,8,Desk,Plastic,White,Suburban,Summer,Retail,10300
+832,549,14,283,9,32,Desk,Marble,Blue,Rural,Summer,Online,11648
+925,606,18,319,9,50,Desk,Marble,Blue,Urban,Summer,Online,16650
+491,275,13,216,5,28,Desk,Metal,Green,Suburban,Spring,Online,6383
+547,313,8,234,4,25,Desk,Glass,Green,Rural,Winter,Online,4376
+335,167,19,168,12,16,Desk,Plastic,Red,Rural,Summer,Retail,6365
+385,180,11,205,6,12,Desk,Plastic,Blue,Rural,Winter,Online,4235
+635,361,14,274,7,26,Desk,Wood,Green,Suburban,Spring,Online,8890
+389,190,19,199,11,19,Desk,Plastic,Black,Suburban,Spring,Retail,7391
+897,553,16,344,8,50,Desk,Marble,White,Rural,Fall,Online,14352
+371,157,16,214,4,24,Desk,Plastic,Blue,Rural,Spring,Retail,5936
+872,541,16,331,10,39,Desk,Marble,Red,Rural,Summer,Retail,13952
+338,185,23,153,16,10,Chair,Metal,Green,Suburban,Summer,Online,7774
+535,276,23,259,11,37,Desk,Metal,Black,Rural,Summer,Retail,12305
+799,501,10,298,7,39,Desk,Marble,Brown,Rural,Winter,Online,7990
+542,329,21,213,12,40,Desk,Glass,Red,Suburban,Summer,Online,11382
+506,268,14,238,10,18,Desk,Metal,Black,Suburban,Winter,Online,7084
+384,178,14,206,6,14,Desk,Plastic,Green,Rural,Summer,Online,5376
+895,593,16,302,10,26,Desk,Marble,Red,Rural,Summer,Online,14320
+834,526,12,308,5,47,Desk,Marble,Red,Urban,Spring,Online,10008
+758,477,22,281,11,41,Desk,Wood,Brown,Suburban,Fall,Retail,16676
+788,486,7,302,5,46,Desk,Marble,Blue,Suburban,Winter,Retail,5516
+749,439,18,310,11,33,Desk,Wood,Black,Urban,Winter,Retail,13482
+383,192,21,191,10,17,Desk,Plastic,Green,Suburban,Summer,Retail,8043
+787,493,11,294,10,36,Desk,Marble,White,Rural,Winter,Retail,8657
+731,436,25,295,14,31,Desk,Wood,Brown,Urban,Fall,Retail,18275
+796,447,14,349,10,37,Desk,Marble,Blue,Suburban,Fall,Online,11144
+354,193,17,161,8,10,Desk,Plastic,Blue,Rural,Summer,Retail,6018
+430,227,6,203,4,21,Desk,Metal,Blue,Rural,Winter,Online,2580
+677,440,12,237,6,48,Desk,Marble,Red,Suburban,Winter,Retail,8124
+705,393,12,312,7,25,Desk,Wood,Green,Suburban,Winter,Retail,8460
+475,266,17,209,9,23,Desk,Metal,Red,Rural,Spring,Online,8075
+518,287,15,231,7,22,Desk,Glass,Blue,Urban,Spring,Online,7770
+575,314,17,261,13,21,Desk,Glass,White,Suburban,Winter,Online,9775
+654,386,17,268,8,27,Desk,Wood,Blue,Rural,Summer,Online,11118
+720,388,27,332,15,28,Desk,Wood,White,Urban,Fall,Retail,19440
+516,270,20,246,11,19,Desk,Metal,White,Urban,Winter,Online,10320
+922,605,17,317,10,40,Desk,Marble,Blue,Suburban,Summer,Online,15674
+316,172,17,144,12,34,Chair,Metal,Blue,Suburban,Winter,Online,5372
+269,164,19,105,10,19,Chair,Metal,Green,Urban,Winter,Online,5111
+596,363,22,233,13,28,Desk,Wood,Black,Urban,Fall,Retail,13112
+703,450,12,253,5,47,Desk,Marble,Green,Urban,Winter,Retail,8436
+674,386,23,288,11,20,Desk,Glass,Black,Rural,Fall,Retail,15502
+559,314,25,245,13,41,Desk,Glass,White,Urban,Summer,Retail,13975
+233,106,22,127,9,6,Chair,Plastic,Blue,Suburban,Fall,Online,5126
+547,297,19,250,12,25,Desk,Metal,White,Rural,Fall,Online,10393
+339,186,17,153,7,11,Chair,Metal,Red,Suburban,Winter,Retail,5763
+756,461,13,295,7,39,Desk,Marble,Blue,Rural,Fall,Retail,9828
+746,468,15,278,7,47,Desk,Marble,Brown,Urban,Winter,Online,11190
+698,412,18,286,11,34,Desk,Wood,Red,Urban,Summer,Online,12564
+446,257,23,189,14,8,Desk,Metal,Brown,Suburban,Summer,Retail,10258
+650,349,14,301,8,32,Desk,Wood,Blue,Urban,Spring,Online,9100
+518,269,12,249,4,20,Desk,Metal,Red,Rural,Winter,Online,6216
+651,368,12,283,9,34,Desk,Wood,Brown,Rural,Spring,Online,7812
+685,395,12,290,6,25,Desk,Wood,Red,Suburban,Spring,Retail,8220
+692,408,12,284,7,34,Desk,Wood,White,Rural,Winter,Online,8304
+545,327,17,218,7,15,Desk,Metal,Blue,Urban,Fall,Retail,9265
+663,358,15,305,10,34,Desk,Wood,Green,Rural,Summer,Online,9945
+585,334,13,251,6,20,Desk,Metal,Red,Suburban,Winter,Online,7605
+352,201,13,151,4,16,Chair,Metal,Red,Urban,Winter,Online,4576
+627,384,18,243,11,32,Desk,Wood,Green,Urban,Spring,Online,11286
+934,599,16,335,10,44,Desk,Marble,Green,Rural,Summer,Online,14944
+585,332,23,253,12,24,Desk,Metal,Brown,Urban,Fall,Online,13455
+283,159,24,124,14,15,Chair,Metal,Blue,Suburban,Summer,Online,6792
+856,543,14,313,8,37,Desk,Marble,White,Urban,Winter,Online,11984
+515,294,19,221,12,38,Desk,Glass,Brown,Suburban,Summer,Online,9785
+708,426,23,282,15,44,Desk,Wood,White,Rural,Summer,Online,16284
+752,467,14,285,4,42,Desk,Marble,Blue,Urban,Spring,Online,10528
+586,347,16,239,10,30,Desk,Glass,Brown,Rural,Winter,Retail,9376
+677,398,18,279,12,26,Desk,Wood,Green,Rural,Summer,Online,12186
+378,181,26,197,17,10,Desk,Plastic,Black,Urban,Fall,Online,9828
+772,469,13,303,8,41,Desk,Marble,Brown,Urban,Winter,Online,10036
+642,385,12,257,8,43,Desk,Wood,Blue,Urban,Winter,Retail,7704
+601,336,26,265,17,30,Desk,Metal,White,Urban,Summer,Retail,15626
+354,159,28,195,16,16,Desk,Plastic,Black,Urban,Summer,Online,9912
+540,288,11,252,8,21,Desk,Metal,Red,Rural,Spring,Online,5940
+480,261,11,219,5,32,Desk,Metal,Blue,Rural,Winter,Retail,5280
+551,283,17,268,12,42,Desk,Metal,Red,Rural,Fall,Retail,9367
+498,274,14,224,9,25,Desk,Metal,Red,Rural,Fall,Retail,6972
+696,385,18,311,14,38,Desk,Wood,Red,Rural,Fall,Retail,12528
+538,295,21,243,11,7,Desk,Metal,White,Suburban,Spring,Retail,11298
+308,158,18,150,10,7,Desk,Plastic,White,Rural,Winter,Retail,5544
+805,481,17,324,13,38,Desk,Marble,White,Rural,Fall,Online,13685
+209,93,25,116,12,16,Chair,Plastic,Green,Urban,Fall,Online,5225
+349,182,16,167,10,4,Desk,Plastic,White,Rural,Winter,Retail,5584
+810,516,14,294,8,43,Desk,Marble,Blue,Suburban,Spring,Retail,11340
+298,146,23,152,15,27,Chair,Metal,Red,Urban,Fall,Retail,6854
+735,432,15,303,8,20,Desk,Wood,Green,Rural,Fall,Online,11025
+592,322,23,270,11,26,Desk,Glass,Brown,Suburban,Summer,Retail,13616
+745,447,21,298,12,30,Desk,Wood,Brown,Suburban,Summer,Retail,15645
+565,341,18,224,11,25,Desk,Wood,Blue,Urban,Summer,Online,10170
+555,323,25,232,15,18,Desk,Metal,White,Urban,Fall,Retail,13875
+318,166,27,152,17,19,Chair,Metal,Green,Urban,Fall,Retail,8586
+844,518,16,326,8,35,Desk,Marble,Black,Rural,Fall,Online,13504
+478,271,9,207,5,10,Desk,Glass,Green,Suburban,Winter,Online,4302
+353,163,18,190,12,11,Desk,Plastic,Blue,Suburban,Fall,Online,6354
+359,173,15,186,7,12,Desk,Plastic,Blue,Rural,Spring,Retail,5385
+513,291,18,222,11,25,Desk,Metal,White,Urban,Spring,Online,9234
+662,396,15,266,7,25,Desk,Wood,Brown,Urban,Winter,Retail,9930
+478,267,16,211,8,27,Desk,Metal,White,Suburban,Winter,Retail,7648
+721,420,5,301,4,18,Desk,Wood,Blue,Rural,Winter,Retail,3605
+632,364,20,268,6,21,Desk,Wood,Red,Suburban,Fall,Online,12640
+344,171,22,173,10,19,Desk,Plastic,Black,Urban,Fall,Online,7568
+375,174,22,201,12,7,Desk,Plastic,Blue,Suburban,Summer,Online,8250
+337,156,12,181,8,18,Desk,Plastic,White,Rural,Winter,Online,4044
+614,366,16,248,9,32,Desk,Wood,Brown,Urban,Spring,Online,9824
+390,187,14,203,11,22,Desk,Plastic,Brown,Rural,Winter,Online,5460
+632,366,17,266,13,30,Desk,Glass,Brown,Urban,Winter,Online,10744
+504,279,24,225,10,19,Desk,Metal,Black,Rural,Summer,Retail,12096
+398,180,13,218,8,18,Desk,Plastic,Blue,Suburban,Winter,Online,5174
+490,260,15,230,7,31,Desk,Metal,White,Suburban,Winter,Online,7350
+370,185,18,185,11,27,Desk,Plastic,Black,Suburban,Spring,Online,6660
+359,162,24,197,12,4,Desk,Plastic,Brown,Rural,Summer,Online,8616
+525,278,18,247,8,21,Desk,Glass,White,Urban,Winter,Retail,9450
+566,323,18,243,12,24,Desk,Glass,Brown,Suburban,Winter,Retail,10188
+612,331,21,281,13,28,Desk,Glass,Green,Rural,Summer,Retail,12852
+287,165,23,122,11,17,Chair,Metal,Red,Suburban,Summer,Online,6601
+555,318,24,237,13,37,Desk,Glass,Brown,Suburban,Fall,Retail,13320
+515,292,11,223,7,29,Desk,Glass,Red,Suburban,Spring,Online,5665
+595,341,18,254,11,18,Desk,Glass,Black,Rural,Spring,Online,10710
+736,459,17,277,9,42,Desk,Wood,White,Rural,Spring,Online,12512
+715,436,15,279,11,20,Desk,Wood,Black,Rural,Winter,Retail,10725
+631,374,19,257,10,39,Desk,Wood,Blue,Suburban,Summer,Retail,11989
+494,276,11,218,6,8,Desk,Metal,Red,Rural,Winter,Retail,5434
+445,242,25,203,12,22,Desk,Metal,White,Rural,Summer,Online,11125
+680,381,17,299,10,21,Desk,Glass,Brown,Urban,Winter,Online,11560
+761,470,11,291,5,39,Desk,Marble,Red,Urban,Winter,Retail,8371
+842,556,17,286,8,44,Desk,Marble,White,Rural,Winter,Retail,14314
+537,292,22,245,16,23,Desk,Glass,Brown,Urban,Summer,Retail,11814
+609,325,14,284,11,16,Desk,Glass,Green,Urban,Fall,Online,8526
+749,494,9,255,5,50,Desk,Marble,Red,Suburban,Winter,Online,6741
+685,411,18,274,13,27,Desk,Wood,Black,Urban,Spring,Retail,12330
+820,502,14,318,7,48,Desk,Marble,Blue,Rural,Summer,Retail,11480
+512,284,22,228,15,13,Desk,Metal,White,Urban,Fall,Online,11264
+607,374,13,233,11,30,Desk,Wood,Black,Urban,Winter,Retail,7891
+837,534,6,303,4,54,Desk,Marble,Green,Rural,Winter,Online,5022
+747,420,17,327,7,29,Desk,Wood,Red,Rural,Fall,Online,12699
+365,187,18,178,12,10,Desk,Plastic,Brown,Urban,Spring,Retail,6570
+311,157,16,154,5,17,Desk,Plastic,White,Rural,Spring,Online,4976
+443,239,12,204,5,29,Desk,Metal,Blue,Suburban,Spring,Online,5316
+730,396,21,334,12,38,Desk,Wood,Brown,Rural,Summer,Retail,15330
+338,176,14,162,9,27,Chair,Metal,Green,Urban,Winter,Online,4732
+507,271,26,236,15,6,Desk,Metal,Black,Urban,Fall,Retail,13182
+521,297,18,224,12,15,Desk,Metal,Black,Urban,Spring,Retail,9378
+588,317,18,271,10,25,Desk,Glass,White,Rural,Fall,Retail,10584
+250,125,15,125,9,18,Chair,Plastic,Green,Suburban,Winter,Retail,3750
+623,378,17,245,8,28,Desk,Glass,Brown,Rural,Winter,Online,10591
+430,220,13,210,4,3,Desk,Plastic,Brown,Rural,Winter,Online,5590
+614,342,22,272,11,21,Desk,Glass,Brown,Rural,Summer,Retail,13508
+883,556,16,327,6,53,Desk,Marble,Black,Urban,Winter,Online,14128
+894,587,13,307,9,33,Desk,Marble,Red,Suburban,Fall,Retail,11622
+853,562,16,291,10,53,Desk,Marble,White,Urban,Winter,Online,13648
+597,322,16,275,9,31,Desk,Glass,Black,Urban,Winter,Online,9552
+469,268,21,201,11,16,Desk,Metal,Blue,Urban,Summer,Retail,9849
+493,275,19,218,12,12,Desk,Metal,Green,Suburban,Fall,Retail,9367
+607,336,19,271,10,30,Desk,Wood,White,Suburban,Spring,Online,11533
+536,304,19,232,8,20,Desk,Metal,Blue,Urban,Fall,Retail,10184
+320,153,15,167,9,13,Desk,Plastic,Black,Suburban,Winter,Online,4800
+517,293,23,224,9,37,Desk,Metal,Black,Urban,Winter,Online,11891
+487,251,18,236,11,23,Desk,Metal,Brown,Rural,Fall,Online,8766
+640,362,10,278,7,38,Desk,Wood,Green,Urban,Winter,Retail,6400
+517,276,22,241,7,22,Desk,Metal,Brown,Suburban,Fall,Retail,11374
+607,334,16,273,11,28,Desk,Glass,Black,Rural,Spring,Online,9712
+528,297,16,231,11,14,Desk,Metal,Blue,Rural,Fall,Online,8448
+588,296,20,292,15,18,Desk,Glass,Black,Urban,Spring,Retail,11760
+633,366,24,267,15,27,Desk,Wood,Brown,Suburban,Fall,Retail,15192
+789,456,18,333,13,24,Desk,Wood,Brown,Urban,Winter,Retail,14202
+508,291,17,217,9,28,Desk,Glass,White,Urban,Winter,Retail,8636
+810,542,12,268,9,44,Desk,Marble,Red,Urban,Summer,Online,9720
+507,266,22,241,10,23,Desk,Metal,Blue,Urban,Fall,Retail,11154
+390,171,25,219,14,15,Desk,Plastic,White,Suburban,Fall,Retail,9750
+545,313,18,232,9,39,Desk,Glass,Blue,Rural,Fall,Online,9810
+619,349,13,270,7,24,Desk,Wood,Red,Rural,Spring,Online,8047
+314,185,18,129,8,11,Chair,Metal,Green,Suburban,Winter,Online,5652
+933,594,12,339,5,30,Desk,Marble,Brown,Suburban,Winter,Online,11196
+477,266,23,211,16,28,Desk,Metal,Black,Urban,Fall,Online,10971
+648,361,22,287,11,46,Desk,Wood,Red,Suburban,Summer,Retail,14256
+225,100,11,125,5,21,Chair,Plastic,Green,Rural,Winter,Online,2475
+323,157,20,166,10,30,Chair,Metal,Red,Urban,Spring,Retail,6460
+337,184,16,153,13,28,Chair,Metal,Blue,Rural,Winter,Retail,5392
+532,307,22,225,17,28,Desk,Glass,Green,Urban,Summer,Online,11704
+341,167,14,174,8,7,Desk,Plastic,Green,Suburban,Spring,Online,4774
+529,272,26,257,16,12,Desk,Metal,Brown,Suburban,Summer,Retail,13754
+543,291,22,252,14,29,Desk,Metal,Blue,Suburban,Fall,Retail,11946
+727,403,9,324,5,22,Desk,Wood,Brown,Rural,Winter,Retail,6543
+580,303,17,277,10,18,Desk,Glass,Red,Urban,Spring,Online,9860
+622,367,19,255,11,26,Desk,Wood,Green,Suburban,Fall,Online,11818
+535,291,17,244,7,22,Desk,Metal,Brown,Suburban,Spring,Online,9095
+334,159,17,175,11,9,Desk,Plastic,White,Urban,Spring,Retail,5678
+575,344,21,231,13,20,Desk,Glass,Red,Rural,Summer,Retail,12075
+579,329,17,250,10,31,Desk,Glass,Brown,Urban,Winter,Online,9843
+716,437,13,279,6,28,Desk,Wood,Red,Urban,Winter,Online,9308
+354,174,20,180,11,10,Desk,Plastic,Red,Urban,Fall,Retail,7080
+505,283,18,222,13,28,Desk,Metal,Brown,Suburban,Winter,Retail,9090
+353,181,15,172,9,9,Desk,Plastic,Black,Rural,Spring,Online,5295
+644,405,12,239,7,34,Desk,Wood,Blue,Suburban,Spring,Online,7728
+679,371,12,308,6,29,Desk,Wood,Red,Rural,Spring,Online,8148
+807,518,9,289,2,43,Desk,Marble,Blue,Rural,Winter,Retail,7263
+960,559,17,401,8,30,Desk,Marble,Black,Rural,Fall,Online,16320
+483,259,18,224,9,20,Desk,Glass,Blue,Urban,Spring,Retail,8694
+863,494,10,369,6,42,Dining Table,Glass,Green,Urban,Winter,Retail,8630
+578,330,18,248,8,19,Desk,Glass,Blue,Urban,Fall,Online,10404
+747,481,14,266,6,40,Desk,Marble,Brown,Urban,Winter,Online,10458
+633,351,20,282,12,29,Desk,Glass,Brown,Rural,Fall,Online,12660
+486,237,12,249,7,19,Desk,Metal,Red,Rural,Fall,Online,5832
+682,366,14,316,8,30,Desk,Wood,Black,Suburban,Winter,Retail,9548
+746,448,13,298,7,41,Desk,Marble,Red,Suburban,Winter,Online,9698
+744,454,13,290,5,43,Desk,Marble,Brown,Rural,Spring,Online,9672
+469,249,18,220,7,13,Desk,Metal,Red,Urban,Fall,Retail,8442
+365,166,25,199,13,14,Desk,Plastic,Brown,Urban,Summer,Online,9125
+861,528,5,333,3,47,Desk,Marble,Blue,Rural,Winter,Online,4305
+498,273,18,225,10,26,Desk,Metal,Green,Suburban,Fall,Online,8964
+339,168,15,171,13,8,Desk,Plastic,Blue,Rural,Spring,Retail,5085
+751,451,12,300,8,34,Desk,Wood,White,Suburban,Winter,Online,9012
+333,139,21,194,9,11,Desk,Plastic,Green,Suburban,Summer,Online,6993
+602,358,20,244,10,27,Desk,Wood,Black,Urban,Fall,Retail,12040
+571,299,15,272,9,24,Desk,Glass,Red,Suburban,Spring,Online,8565
+679,347,26,332,14,34,Desk,Wood,Brown,Urban,Summer,Online,17654
+598,336,22,262,11,32,Desk,Glass,Black,Urban,Spring,Retail,13156
+657,371,23,286,15,28,Desk,Glass,Brown,Suburban,Summer,Online,15111
+654,374,9,280,6,27,Desk,Wood,Blue,Rural,Winter,Retail,5886
+544,326,21,218,11,25,Desk,Metal,Green,Urban,Summer,Online,11424
+676,373,14,303,5,36,Desk,Wood,Black,Rural,Spring,Online,9464
+786,459,16,327,10,44,Desk,Marble,Red,Rural,Fall,Retail,12576
+736,443,16,293,8,45,Desk,Marble,White,Rural,Winter,Retail,11776
+687,375,16,312,10,28,Desk,Wood,Red,Urban,Summer,Online,10992
+665,403,7,262,4,37,Desk,Wood,Red,Suburban,Winter,Online,4655
+378,179,15,199,9,7,Desk,Plastic,Red,Rural,Spring,Retail,5670
+470,269,16,201,12,18,Desk,Metal,Black,Suburban,Winter,Online,7520
+873,568,9,305,5,36,Desk,Marble,Green,Rural,Winter,Retail,7857
+671,381,22,290,10,31,Desk,Wood,White,Urban,Fall,Online,14762
+609,322,18,287,6,25,Desk,Metal,Black,Suburban,Winter,Retail,10962
+601,323,25,278,14,37,Desk,Glass,Black,Urban,Fall,Online,15025
+680,401,14,279,5,46,Desk,Wood,Green,Suburban,Spring,Retail,9520
+359,175,14,184,5,4,Desk,Plastic,Red,Rural,Spring,Retail,5026
+448,261,13,187,6,13,Desk,Metal,Red,Suburban,Winter,Retail,5824
+478,262,12,216,8,17,Desk,Metal,Blue,Suburban,Spring,Online,5736
+814,511,11,303,8,42,Desk,Marble,Brown,Urban,Winter,Retail,8954
+571,326,15,245,6,32,Desk,Wood,Brown,Urban,Winter,Retail,8565
+761,448,19,313,9,18,Desk,Wood,Brown,Urban,Fall,Online,14459
+356,162,13,194,9,17,Desk,Plastic,Green,Suburban,Winter,Online,4628
+335,182,20,153,15,35,Chair,Metal,Red,Suburban,Fall,Online,6700
+811,520,15,291,7,42,Desk,Marble,Red,Urban,Fall,Online,12165
+662,413,22,249,11,28,Desk,Wood,Brown,Suburban,Fall,Online,14564
+589,306,18,283,10,31,Desk,Glass,White,Urban,Winter,Retail,10602
+831,510,16,321,12,45,Desk,Marble,Blue,Suburban,Fall,Retail,13296
+593,341,11,252,4,37,Desk,Glass,Green,Suburban,Winter,Online,6523
+348,178,17,170,12,7,Desk,Plastic,Red,Rural,Fall,Online,5916
+467,254,21,213,13,24,Desk,Metal,White,Rural,Summer,Retail,9807
+316,146,20,170,10,11,Desk,Plastic,Brown,Rural,Summer,Retail,6320
+768,506,19,262,9,50,Desk,Marble,Blue,Suburban,Summer,Retail,14592
+894,568,17,326,13,47,Desk,Marble,Brown,Rural,Fall,Online,15198
+528,298,18,230,12,20,Desk,Glass,White,Rural,Fall,Online,9504
+496,265,18,231,8,22,Desk,Metal,White,Urban,Winter,Retail,8928
+293,147,15,146,9,13,Desk,Plastic,Red,Suburban,Summer,Online,4395
+512,296,27,216,17,29,Desk,Metal,Black,Suburban,Summer,Retail,13824
+855,531,15,324,10,42,Desk,Marble,Brown,Suburban,Winter,Retail,12825
+422,214,24,208,12,18,Desk,Metal,White,Rural,Fall,Online,10128
+385,193,23,192,13,3,Desk,Plastic,White,Rural,Fall,Retail,8855
+603,326,13,277,7,19,Desk,Metal,Green,Suburban,Winter,Online,7839
+506,276,17,230,7,24,Desk,Metal,Red,Suburban,Spring,Online,8602
+771,437,16,334,6,40,Desk,Wood,Blue,Rural,Fall,Retail,12336
+328,163,13,165,5,13,Desk,Plastic,Brown,Rural,Spring,Online,4264
+531,294,20,237,11,19,Desk,Glass,Brown,Urban,Fall,Online,10620
+523,296,15,227,10,21,Desk,Glass,Red,Suburban,Fall,Retail,7845
+768,435,16,333,9,36,Desk,Wood,Red,Urban,Fall,Online,12288
+542,306,21,236,9,23,Desk,Wood,Blue,Suburban,Fall,Retail,11382
+461,250,12,211,7,13,Desk,Metal,Brown,Suburban,Winter,Online,5532
+498,272,15,226,8,16,Desk,Metal,Red,Rural,Fall,Online,7470
+325,166,23,159,13,18,Desk,Plastic,Blue,Urban,Summer,Retail,7475
+336,182,21,154,11,32,Chair,Metal,Blue,Suburban,Spring,Retail,7056
+363,175,19,188,12,8,Desk,Plastic,White,Suburban,Winter,Online,6897
+700,384,14,316,8,31,Desk,Wood,Blue,Suburban,Spring,Retail,9800
+322,169,19,153,12,18,Chair,Metal,Green,Urban,Winter,Retail,6118
+329,185,19,144,11,25,Chair,Metal,Red,Rural,Spring,Retail,6251
+342,194,24,148,12,24,Chair,Metal,Blue,Rural,Summer,Retail,8208
+552,301,20,251,11,22,Desk,Glass,Brown,Urban,Spring,Online,11040
+597,323,21,274,9,34,Desk,Glass,Red,Urban,Summer,Online,12537
+364,179,19,185,8,3,Desk,Plastic,Blue,Rural,Summer,Retail,6916
+536,290,24,246,15,24,Desk,Metal,Black,Rural,Summer,Retail,12864
+628,374,11,254,7,34,Desk,Wood,Red,Urban,Winter,Retail,6908
+783,522,17,261,9,50,Desk,Marble,Red,Suburban,Summer,Retail,13311
+334,177,13,157,8,19,Chair,Metal,Red,Rural,Winter,Online,4342
+653,394,18,259,13,29,Desk,Wood,Red,Suburban,Summer,Online,11754
+619,355,13,264,6,37,Desk,Wood,Green,Urban,Winter,Online,8047
+329,184,19,145,11,22,Chair,Metal,Red,Urban,Spring,Online,6251
+632,347,16,285,7,22,Desk,Glass,Brown,Suburban,Spring,Retail,10112
+342,180,16,162,8,22,Chair,Metal,Blue,Rural,Spring,Retail,5472
+669,367,7,302,6,32,Desk,Wood,Blue,Rural,Winter,Online,4683
+339,180,23,159,10,25,Chair,Metal,Red,Suburban,Fall,Retail,7797
+563,306,18,257,8,21,Desk,Metal,Brown,Urban,Spring,Online,10134
+661,358,15,303,10,25,Desk,Glass,Brown,Suburban,Winter,Online,9915
+739,472,14,267,8,42,Desk,Marble,White,Rural,Winter,Online,10346
+822,474,21,348,11,37,Desk,Marble,White,Suburban,Fall,Online,17262
+628,337,12,291,4,28,Desk,Glass,Red,Urban,Winter,Online,7536
+732,465,22,267,14,34,Desk,Marble,White,Urban,Summer,Online,16104
+568,306,16,262,5,24,Desk,Glass,Black,Rural,Winter,Retail,9088
+375,182,22,193,14,12,Desk,Plastic,Brown,Urban,Fall,Retail,8250
+564,304,15,260,9,19,Desk,Metal,White,Suburban,Winter,Online,8460
+603,328,20,275,10,19,Desk,Metal,Green,Urban,Fall,Online,12060
+807,494,6,313,3,40,Desk,Marble,Red,Rural,Winter,Retail,4842
+662,368,8,294,6,36,Desk,Glass,Blue,Rural,Winter,Online,5296
+318,162,21,156,11,4,Desk,Plastic,Black,Rural,Summer,Online,6678
+344,153,24,191,13,11,Desk,Plastic,White,Suburban,Summer,Retail,8256
+833,530,16,303,11,43,Desk,Marble,Red,Suburban,Fall,Online,13328
+754,440,22,314,9,13,Desk,Wood,White,Urban,Fall,Retail,16588
+788,474,11,314,9,28,Desk,Marble,Red,Rural,Spring,Retail,8668
+545,279,10,266,10,27,Desk,Metal,Red,Suburban,Spring,Online,5450
+390,228,12,162,10,16,Desk,Metal,Green,Urban,Winter,Online,4680
+360,174,12,186,7,17,Desk,Plastic,Red,Suburban,Spring,Retail,4320
+544,312,22,232,12,33,Desk,Glass,Black,Urban,Spring,Retail,11968
+368,191,14,177,10,11,Desk,Plastic,Blue,Suburban,Winter,Retail,5152
+377,184,25,193,15,10,Desk,Plastic,White,Urban,Fall,Online,9425
+499,252,10,247,3,17,Desk,Metal,Blue,Rural,Winter,Retail,4990
+666,397,24,269,14,29,Desk,Wood,White,Urban,Fall,Retail,15984
+373,171,26,202,18,8,Desk,Plastic,Black,Rural,Summer,Online,9698
+632,348,14,284,6,32,Desk,Wood,Black,Urban,Winter,Online,8848
+690,415,11,275,6,28,Desk,Wood,Red,Suburban,Winter,Retail,7590
+370,218,24,152,14,20,Chair,Metal,Red,Urban,Summer,Retail,8880
+350,163,14,187,7,18,Desk,Plastic,White,Suburban,Winter,Online,4900
+756,456,16,300,11,30,Desk,Wood,Red,Rural,Fall,Retail,12096
+517,267,27,250,17,16,Desk,Metal,White,Urban,Summer,Retail,13959
+525,320,20,205,9,24,Desk,Glass,Brown,Urban,Spring,Retail,10500
+552,318,24,234,16,26,Desk,Metal,Brown,Rural,Summer,Retail,13248
+367,187,21,180,10,4,Desk,Plastic,Red,Urban,Summer,Retail,7707
+601,326,19,275,11,24,Desk,Glass,Green,Suburban,Fall,Online,11419
+570,333,18,237,9,21,Desk,Glass,Black,Rural,Winter,Retail,10260
+680,382,15,298,8,31,Desk,Glass,Black,Suburban,Winter,Online,10200
+562,316,16,246,7,33,Desk,Glass,Green,Suburban,Summer,Online,8992
+835,480,12,355,5,24,Dining Table,Metal,White,Suburban,Spring,Retail,10020
+868,523,13,345,5,17,Dining Table,Metal,Black,Suburban,Winter,Retail,11284
+958,588,11,370,5,37,Dining Table,Wood,Brown,Urban,Winter,Online,10538
+1441,896,10,545,6,32,Dining Table,Marble,Black,Rural,Spring,Online,14410
+1352,875,15,477,10,42,Dining Table,Marble,Black,Urban,Spring,Retail,20280
+914,544,18,370,13,31,Dining Table,Glass,Brown,Suburban,Fall,Online,16452
+891,498,17,393,12,43,Dining Table,Glass,Black,Rural,Summer,Online,15147
+892,506,22,386,12,25,Dining Table,Glass,Black,Urban,Fall,Retail,19624
+1117,607,9,510,5,30,Dining Table,Wood,White,Urban,Winter,Online,10053
+1321,852,17,469,7,38,Dining Table,Marble,Black,Rural,Fall,Online,22457
+1177,685,16,492,11,19,Dining Table,Wood,Black,Rural,Fall,Online,18832
+999,564,16,435,11,37,Dining Table,Glass,White,Urban,Fall,Online,15984
+905,492,19,413,12,14,Dining Table,Metal,White,Rural,Summer,Retail,17195
+973,511,24,462,13,24,Dining Table,Metal,White,Urban,Fall,Retail,23352
+874,520,17,354,10,22,Dining Table,Glass,White,Urban,Winter,Retail,14858
+1013,605,6,408,1,30,Dining Table,Wood,Brown,Suburban,Winter,Online,6078
+844,454,20,390,8,20,Dining Table,Metal,Black,Urban,Summer,Online,16880
+890,505,18,385,6,35,Dining Table,Glass,Brown,Rural,Summer,Online,16020
+1081,695,10,386,7,45,Dining Table,Marble,Black,Suburban,Winter,Retail,10810
+1268,789,12,479,6,38,Dining Table,Marble,Brown,Rural,Fall,Retail,15216
+762,398,11,364,5,27,Dining Table,Metal,Black,Rural,Winter,Retail,8382
+1244,737,17,507,9,31,Dining Table,Marble,Black,Urban,Fall,Retail,21148
+986,546,11,440,6,30,Dining Table,Glass,White,Suburban,Winter,Online,10846
+939,508,16,431,13,13,Dining Table,Glass,White,Rural,Fall,Retail,15024
+757,400,16,357,9,24,Dining Table,Metal,Black,Urban,Winter,Retail,12112
+838,476,8,362,3,21,Dining Table,Glass,Brown,Rural,Winter,Retail,6704
+761,399,16,362,9,17,Dining Table,Metal,White,Rural,Fall,Online,12176
+868,495,20,373,14,24,Dining Table,Glass,Brown,Urban,Summer,Online,17360
+1101,657,12,444,4,22,Dining Table,Wood,Brown,Suburban,Spring,Retail,13212
+1119,643,11,476,6,31,Dining Table,Wood,Black,Rural,Winter,Retail,12309
+1116,636,17,480,11,22,Dining Table,Wood,White,Rural,Fall,Retail,18972
+884,529,18,355,10,26,Dining Table,Glass,Brown,Suburban,Winter,Online,15912
+923,538,12,385,5,41,Dining Table,Wood,White,Urban,Winter,Retail,11076
+908,486,18,422,11,22,Dining Table,Glass,White,Urban,Fall,Retail,16344
+747,379,15,368,9,27,Dining Table,Metal,White,Suburban,Spring,Retail,11205
+1313,881,6,432,4,44,Dining Table,Marble,Brown,Rural,Winter,Retail,7878
+783,435,19,348,11,21,Dining Table,Glass,Brown,Urban,Summer,Retail,14877
+1140,706,15,434,7,23,Dining Table,Wood,Black,Suburban,Spring,Retail,17100
+1118,623,23,495,16,40,Dining Table,Wood,Black,Urban,Summer,Retail,25714
+1033,581,20,452,9,18,Dining Table,Glass,Brown,Suburban,Summer,Online,20660
+1148,625,14,523,6,29,Dining Table,Wood,Black,Rural,Spring,Online,16072
+1016,575,18,441,9,31,Dining Table,Glass,White,Rural,Summer,Online,18288
+1248,757,13,491,4,34,Dining Table,Marble,White,Rural,Summer,Online,16224
+1343,843,8,500,6,43,Dining Table,Marble,White,Rural,Spring,Online,10744
+845,444,16,401,9,20,Dining Table,Metal,Brown,Rural,Summer,Online,13520
+1391,903,20,488,12,38,Dining Table,Marble,Brown,Suburban,Fall,Retail,27820
+1305,898,20,407,11,46,Dining Table,Marble,Black,Suburban,Fall,Retail,26100
+878,485,22,393,13,32,Dining Table,Glass,White,Urban,Summer,Online,19316
+1017,557,22,460,14,31,Dining Table,Glass,White,Urban,Summer,Retail,22374
+1237,781,13,456,6,45,Dining Table,Marble,White,Suburban,Winter,Online,16081
+839,431,18,408,7,23,Dining Table,Metal,White,Rural,Fall,Retail,15102
+905,487,19,418,10,22,Dining Table,Metal,Black,Urban,Summer,Retail,17195
+1083,634,20,449,8,36,Dining Table,Wood,Brown,Urban,Fall,Retail,21660
+1054,655,19,399,9,33,Dining Table,Marble,White,Urban,Fall,Online,20026
+999,567,19,432,7,33,Dining Table,Wood,White,Urban,Spring,Retail,18981
+802,425,14,377,5,24,Dining Table,Metal,Brown,Rural,Summer,Online,11228
+851,496,15,355,4,25,Dining Table,Metal,White,Rural,Summer,Online,12765
+1355,894,9,461,8,43,Dining Table,Marble,Black,Suburban,Spring,Online,12195
+1234,709,20,525,10,43,Dining Table,Wood,White,Suburban,Fall,Online,24680
+1039,563,16,476,11,38,Dining Table,Wood,Black,Rural,Fall,Online,16624
+897,511,13,386,10,32,Dining Table,Glass,Brown,Urban,Winter,Retail,11661
+1020,616,15,404,11,28,Dining Table,Wood,White,Rural,Fall,Online,15300
+1284,791,16,493,6,49,Dining Table,Marble,White,Urban,Summer,Retail,20544
+1352,825,17,527,9,47,Dining Table,Marble,Brown,Rural,Summer,Retail,22984
+1045,606,19,439,13,33,Dining Table,Wood,Black,Urban,Summer,Retail,19855
+1073,688,20,385,14,32,Dining Table,Wood,White,Suburban,Summer,Online,21460
+1039,614,18,425,9,37,Dining Table,Wood,Black,Rural,Summer,Retail,18702
+787,438,18,349,7,25,Dining Table,Metal,White,Suburban,Fall,Online,14166
+1128,656,17,472,9,26,Dining Table,Wood,White,Rural,Fall,Retail,19176
+1030,551,15,479,6,27,Dining Table,Wood,Black,Suburban,Spring,Online,15450
+1073,658,14,415,8,42,Dining Table,Marble,Brown,Urban,Spring,Online,15022
+1299,763,13,536,6,42,Dining Table,Marble,White,Rural,Spring,Retail,16887
+1122,576,19,546,10,33,Dining Table,Wood,Black,Rural,Fall,Online,21318
+1252,769,19,483,8,44,Dining Table,Marble,Brown,Suburban,Fall,Online,23788
+773,435,22,338,13,25,Dining Table,Metal,White,Urban,Summer,Online,17006
+1032,592,17,440,12,33,Dining Table,Wood,Black,Rural,Fall,Online,17544
+1067,625,12,442,8,35,Dining Table,Wood,Black,Rural,Winter,Retail,12804
+782,448,18,334,10,25,Dining Table,Metal,White,Suburban,Fall,Retail,14076
+722,393,18,329,10,27,Dining Table,Metal,White,Rural,Fall,Retail,12996
+1038,611,16,427,10,54,Dining Table,Marble,White,Urban,Spring,Retail,16608
+816,473,21,343,7,12,Dining Table,Metal,Black,Urban,Spring,Retail,17136
+775,399,15,376,8,18,Dining Table,Metal,White,Rural,Spring,Online,11625
+991,571,8,420,6,20,Dining Table,Glass,Brown,Rural,Winter,Online,7928
+762,442,10,320,5,19,Dining Table,Metal,White,Urban,Winter,Online,7620
+1035,534,15,501,9,38,Dining Table,Wood,Black,Suburban,Fall,Online,15525
+852,458,10,394,2,20,Dining Table,Metal,White,Rural,Winter,Retail,8520
+808,432,15,376,9,25,Dining Table,Metal,Black,Rural,Spring,Retail,12120
+1500,965,4,535,1,42,Dining Table,Marble,White,Rural,Winter,Retail,6000
+829,459,15,370,8,19,Dining Table,Glass,White,Suburban,Winter,Retail,12435
+1184,681,11,503,6,33,Dining Table,Wood,White,Urban,Winter,Online,13024
+848,476,14,372,10,21,Dining Table,Glass,Brown,Rural,Spring,Online,11872
+809,476,15,333,6,18,Dining Table,Metal,White,Urban,Spring,Retail,12135
+1136,656,17,480,10,28,Dining Table,Wood,Black,Rural,Fall,Retail,19312
+1127,691,13,436,8,37,Dining Table,Wood,Black,Rural,Spring,Online,14651
+954,561,11,393,6,28,Dining Table,Glass,Brown,Suburban,Spring,Retail,10494
+1062,593,19,469,9,32,Dining Table,Wood,Brown,Urban,Fall,Retail,20178
+960,532,22,428,11,22,Dining Table,Glass,Black,Suburban,Summer,Online,21120
+1091,622,20,469,11,33,Dining Table,Wood,Black,Rural,Summer,Retail,21820
+1154,622,12,532,7,19,Dining Table,Wood,Brown,Urban,Winter,Retail,13848
+811,442,9,369,8,23,Dining Table,Metal,White,Urban,Winter,Online,7299
+888,504,15,384,8,25,Dining Table,Wood,Black,Rural,Fall,Online,13320
+816,462,12,354,9,29,Dining Table,Glass,White,Suburban,Spring,Online,9792
+1093,618,11,475,6,31,Dining Table,Wood,Brown,Rural,Spring,Online,12023
+944,547,13,397,7,45,Dining Table,Wood,Black,Rural,Summer,Retail,12272
+1176,717,9,459,3,36,Dining Table,Marble,White,Rural,Winter,Online,10584
+1276,809,13,467,6,38,Dining Table,Marble,Black,Suburban,Winter,Retail,16588
+790,421,16,369,12,17,Dining Table,Metal,White,Suburban,Spring,Retail,12640
+964,557,10,407,3,22,Dining Table,Wood,White,Suburban,Winter,Retail,9640
+688,377,18,311,13,24,Dining Table,Metal,White,Urban,Fall,Online,12384
+1194,719,13,475,4,42,Dining Table,Marble,Black,Suburban,Spring,Retail,15522
+1387,863,14,524,4,33,Dining Table,Marble,White,Rural,Summer,Online,19418
+1297,813,13,484,4,47,Dining Table,Marble,Brown,Suburban,Spring,Retail,16861
+775,391,13,384,6,22,Dining Table,Metal,White,Urban,Spring,Online,10075
+1105,720,9,385,7,51,Dining Table,Marble,White,Suburban,Winter,Online,9945
+1270,780,10,490,2,48,Dining Table,Marble,Black,Rural,Winter,Retail,12700
+804,434,16,370,6,20,Dining Table,Metal,White,Rural,Summer,Retail,12864
+944,528,11,416,5,29,Dining Table,Glass,Black,Suburban,Spring,Retail,10384
+1462,916,18,546,10,40,Dining Table,Marble,White,Urban,Fall,Online,26316
+1181,717,16,464,10,47,Dining Table,Marble,Black,Suburban,Summer,Retail,18896
+1067,602,14,465,12,20,Dining Table,Wood,Black,Rural,Spring,Online,14938
+932,525,14,407,9,35,Dining Table,Glass,White,Rural,Spring,Retail,13048
+1262,863,17,399,11,33,Dining Table,Marble,White,Urban,Summer,Retail,21454
+791,451,18,340,9,29,Dining Table,Glass,White,Rural,Fall,Retail,14238
+841,494,7,347,4,28,Dining Table,Glass,White,Rural,Winter,Retail,5887
+1296,817,7,479,1,33,Dining Table,Marble,White,Rural,Winter,Online,9072
+1404,909,19,495,11,52,Dining Table,Marble,Black,Rural,Fall,Retail,26676
+799,460,15,339,7,27,Dining Table,Metal,White,Rural,Fall,Online,11985
+1150,768,15,382,8,50,Dining Table,Marble,Black,Suburban,Winter,Retail,17250
+1220,761,17,459,8,46,Dining Table,Marble,White,Suburban,Fall,Retail,20740
+874,495,19,379,7,25,Dining Table,Metal,Brown,Suburban,Summer,Retail,16606
+1032,557,15,475,8,39,Dining Table,Wood,White,Rural,Summer,Retail,15480
+840,444,11,396,4,16,Dining Table,Metal,Brown,Urban,Winter,Retail,9240
+913,537,25,376,17,23,Dining Table,Glass,Brown,Suburban,Summer,Retail,22825
+1165,679,19,486,11,27,Dining Table,Wood,Black,Urban,Spring,Retail,22135
+1401,855,8,546,4,40,Dining Table,Marble,Black,Rural,Winter,Retail,11208
+759,444,25,315,11,34,Dining Table,Glass,Black,Suburban,Fall,Retail,18975
+787,439,11,348,6,29,Dining Table,Glass,Black,Rural,Spring,Online,8657
+1166,730,11,436,4,49,Dining Table,Marble,Black,Suburban,Winter,Online,12826
+1172,666,18,506,6,26,Dining Table,Wood,White,Urban,Spring,Retail,21096
+940,549,22,391,14,26,Dining Table,Glass,Brown,Urban,Summer,Online,20680
+1132,657,13,475,9,33,Dining Table,Wood,Brown,Rural,Fall,Retail,14716
+1073,607,21,466,10,30,Dining Table,Wood,Black,Rural,Fall,Retail,22533
+1203,756,18,447,11,40,Dining Table,Marble,White,Suburban,Fall,Online,21654
+1358,887,7,471,3,38,Dining Table,Marble,White,Rural,Winter,Online,9506
+699,412,12,287,4,17,Dining Table,Metal,Black,Suburban,Winter,Retail,8388
+1182,777,11,405,4,37,Dining Table,Marble,Black,Urban,Winter,Online,13002
+837,492,10,345,6,29,Dining Table,Glass,Black,Rural,Spring,Online,8370
+840,467,19,373,6,22,Dining Table,Metal,Brown,Suburban,Fall,Retail,15960
+791,409,24,382,16,20,Dining Table,Metal,Black,Urban,Fall,Retail,18984
+1325,835,14,490,7,47,Dining Table,Marble,Brown,Suburban,Summer,Retail,18550
+1074,596,19,478,11,23,Dining Table,Wood,Black,Rural,Fall,Retail,20406
+1241,769,15,472,10,39,Dining Table,Marble,Black,Rural,Summer,Retail,18615
+911,551,15,360,6,26,Dining Table,Glass,Brown,Urban,Spring,Retail,13665
+1254,780,17,474,6,40,Dining Table,Marble,Black,Urban,Fall,Retail,21318
+1143,689,24,454,18,56,Dining Table,Marble,White,Urban,Summer,Online,27432
+795,415,16,380,7,20,Dining Table,Metal,Brown,Urban,Spring,Online,12720
+826,481,21,345,12,22,Dining Table,Glass,White,Urban,Summer,Retail,17346
+803,405,13,398,7,24,Dining Table,Metal,Brown,Urban,Winter,Retail,10439
+785,412,13,373,10,21,Dining Table,Metal,Brown,Rural,Spring,Retail,10205
+1457,827,5,630,2,34,Dining Table,Marble,White,Rural,Winter,Online,7285
+830,482,13,348,6,29,Dining Table,Wood,White,Rural,Fall,Online,10790
+877,477,14,400,6,33,Dining Table,Glass,White,Urban,Winter,Retail,12278
+895,457,16,438,11,14,Dining Table,Metal,Brown,Rural,Summer,Retail,14320
+786,435,20,351,13,21,Dining Table,Metal,Black,Rural,Fall,Retail,15720
+950,540,22,410,12,25,Dining Table,Glass,Black,Suburban,Fall,Online,20900
+878,463,18,415,5,35,Dining Table,Glass,White,Urban,Summer,Retail,15804
+1043,539,21,504,12,25,Dining Table,Glass,Brown,Urban,Fall,Online,21903
+1352,848,19,504,12,37,Dining Table,Marble,Brown,Urban,Spring,Retail,25688
+831,494,12,337,6,27,Dining Table,Glass,Black,Rural,Spring,Online,9972
+897,528,14,369,3,23,Dining Table,Glass,White,Rural,Fall,Online,12558
+764,408,9,356,3,13,Dining Table,Metal,Brown,Urban,Winter,Online,6876
+971,517,18,454,13,24,Dining Table,Glass,Brown,Rural,Summer,Retail,17478
+1313,860,19,453,9,36,Dining Table,Marble,White,Urban,Fall,Retail,24947
+891,494,11,397,5,22,Dining Table,Metal,White,Rural,Spring,Online,9801
+921,545,19,376,9,25,Dining Table,Wood,Brown,Suburban,Fall,Online,17499
+1048,603,14,445,9,31,Dining Table,Wood,Black,Rural,Winter,Retail,14672
+866,487,15,379,6,23,Dining Table,Glass,Black,Suburban,Spring,Online,12990
+1320,796,13,524,7,40,Dining Table,Marble,White,Suburban,Fall,Online,17160
+770,454,21,316,16,23,Dining Table,Glass,White,Urban,Fall,Online,16170
+1333,881,19,452,13,43,Dining Table,Marble,White,Urban,Summer,Online,25327
+1250,802,21,448,13,49,Dining Table,Marble,Black,Urban,Summer,Retail,26250
+904,501,21,403,11,21,Dining Table,Glass,White,Suburban,Summer,Online,18984
+1166,614,14,552,9,30,Dining Table,Wood,Black,Rural,Spring,Online,16324
+1171,667,16,504,6,23,Dining Table,Wood,Brown,Rural,Fall,Online,18736
+853,460,13,393,9,22,Dining Table,Metal,Black,Suburban,Spring,Online,11089
+772,421,23,351,15,22,Dining Table,Metal,Brown,Urban,Fall,Retail,17756
+1140,645,20,495,14,28,Dining Table,Wood,Black,Rural,Fall,Online,22800
+1308,854,12,454,9,46,Dining Table,Marble,Brown,Suburban,Winter,Retail,15696
+1114,602,24,512,13,31,Dining Table,Wood,Black,Urban,Summer,Retail,26736
+891,522,11,369,4,35,Dining Table,Glass,White,Rural,Spring,Online,9801
+1122,694,13,428,8,35,Dining Table,Wood,White,Suburban,Spring,Online,14586
+836,436,17,400,8,37,Dining Table,Glass,Black,Suburban,Fall,Online,14212
+1552,970,8,582,4,41,Dining Table,Marble,Brown,Rural,Winter,Retail,12416
+1310,836,16,474,9,38,Dining Table,Marble,White,Suburban,Fall,Retail,20960
+1020,581,11,439,7,27,Dining Table,Wood,Black,Rural,Winter,Retail,11220
+1168,679,12,489,6,41,Dining Table,Wood,Black,Rural,Winter,Retail,14016
+1002,579,23,423,11,36,Dining Table,Glass,Brown,Suburban,Summer,Retail,23046
+1162,734,15,428,4,34,Dining Table,Marble,Brown,Suburban,Fall,Online,17430
+861,493,14,368,10,24,Dining Table,Glass,White,Urban,Spring,Online,12054
+1192,791,19,401,10,32,Dining Table,Marble,Brown,Urban,Fall,Online,22648
+752,404,19,348,13,22,Dining Table,Metal,Black,Suburban,Fall,Online,14288
+1087,642,8,445,7,39,Dining Table,Wood,White,Suburban,Winter,Online,8696
+1342,897,18,445,10,50,Dining Table,Marble,Brown,Urban,Summer,Retail,24156
+1048,592,18,456,10,25,Dining Table,Wood,White,Urban,Spring,Online,18864
+1072,564,13,508,10,23,Dining Table,Wood,Brown,Rural,Spring,Online,13936
+1005,630,20,375,10,29,Dining Table,Wood,White,Suburban,Fall,Retail,20100
+1329,884,19,445,12,41,Dining Table,Marble,Brown,Urban,Fall,Online,25251
+925,522,8,403,4,33,Dining Table,Metal,Black,Rural,Winter,Online,7400
+908,503,13,405,7,23,Dining Table,Wood,White,Urban,Winter,Retail,11804
+593,321,23,272,11,15,Dining Table,Metal,Black,Urban,Summer,Online,13639
+875,512,19,363,10,13,Dining Table,Metal,Black,Urban,Summer,Online,16625
+1062,596,11,466,1,35,Dining Table,Wood,White,Suburban,Winter,Retail,11682
+1087,648,14,439,4,32,Dining Table,Marble,White,Rural,Fall,Online,15218
+842,433,17,409,9,36,Dining Table,Glass,Black,Rural,Summer,Online,14314
+1136,589,14,547,6,33,Dining Table,Wood,White,Suburban,Spring,Retail,15904
+785,439,14,346,7,12,Dining Table,Metal,White,Urban,Winter,Retail,10990
+871,501,11,370,6,30,Dining Table,Glass,Brown,Rural,Winter,Retail,9581
+1075,589,16,486,10,38,Dining Table,Wood,Black,Urban,Spring,Retail,17200
+1215,769,16,446,6,44,Dining Table,Marble,White,Suburban,Fall,Online,19440
+747,412,10,335,4,22,Dining Table,Metal,White,Suburban,Winter,Online,7470
+1309,841,10,468,5,44,Dining Table,Marble,Black,Suburban,Winter,Retail,13090
+780,429,11,351,6,27,Dining Table,Metal,White,Suburban,Winter,Retail,8580
+877,500,15,377,9,28,Dining Table,Metal,Black,Urban,Winter,Online,13155
+1255,822,12,433,10,47,Dining Table,Marble,Brown,Urban,Winter,Online,15060
+941,534,10,407,4,31,Dining Table,Glass,White,Suburban,Winter,Online,9410
+1144,765,18,379,11,48,Dining Table,Marble,White,Urban,Fall,Retail,20592
+910,508,11,402,7,29,Dining Table,Glass,White,Urban,Spring,Online,10010
+727,403,20,324,13,12,Dining Table,Metal,Black,Suburban,Fall,Retail,14540
+1218,761,15,457,9,30,Dining Table,Marble,White,Urban,Fall,Online,18270
+878,509,11,369,4,32,Dining Table,Wood,Brown,Suburban,Winter,Online,9658
+1088,647,20,441,8,30,Dining Table,Wood,White,Urban,Summer,Retail,21760
+1095,676,14,419,12,29,Dining Table,Wood,Black,Rural,Summer,Online,15330
+1190,741,13,449,7,37,Dining Table,Marble,Black,Suburban,Winter,Retail,15470
+1143,691,21,452,15,43,Dining Table,Wood,Black,Urban,Summer,Retail,24003
+857,498,13,359,8,39,Dining Table,Wood,White,Rural,Winter,Retail,11141
+844,434,16,410,9,30,Dining Table,Metal,White,Rural,Fall,Retail,13504
+888,487,18,401,10,27,Dining Table,Glass,White,Suburban,Summer,Online,15984
+1283,740,15,543,9,32,Dining Table,Wood,Black,Rural,Summer,Online,19245
+1077,605,16,472,8,27,Dining Table,Wood,White,Rural,Fall,Online,17232
+1215,795,8,420,4,40,Dining Table,Marble,White,Rural,Spring,Retail,9720
+1148,661,21,487,10,33,Dining Table,Wood,Black,Urban,Fall,Online,24108
+1329,840,21,489,13,44,Dining Table,Marble,Black,Suburban,Summer,Online,27909
+1415,905,16,510,11,55,Dining Table,Marble,Black,Rural,Summer,Retail,22640
+1035,617,16,418,9,19,Dining Table,Wood,Black,Urban,Spring,Retail,16560
+1008,564,23,444,10,38,Dining Table,Wood,White,Urban,Summer,Retail,23184
+1178,737,15,441,7,33,Dining Table,Marble,White,Rural,Summer,Retail,17670
+1204,732,18,472,12,35,Dining Table,Wood,Black,Rural,Fall,Online,21672
+991,536,18,455,13,28,Dining Table,Glass,Brown,Rural,Summer,Online,17838
+1269,772,10,497,5,24,Dining Table,Marble,Brown,Urban,Winter,Retail,12690
+855,503,22,352,12,18,Dining Table,Metal,Black,Urban,Summer,Online,18810
+792,463,14,329,12,13,Dining Table,Metal,White,Rural,Summer,Online,11088
+880,469,16,411,4,28,Dining Table,Metal,Black,Urban,Spring,Retail,14080
+1319,866,9,453,8,43,Dining Table,Marble,White,Urban,Winter,Online,11871
+1069,607,21,462,12,33,Dining Table,Wood,Black,Suburban,Fall,Retail,22449
+726,398,9,328,3,11,Dining Table,Metal,Black,Rural,Winter,Retail,6534
+1362,854,11,508,4,43,Dining Table,Marble,Black,Urban,Winter,Online,14982
+1174,737,11,437,7,46,Dining Table,Marble,White,Urban,Winter,Online,12914
+1206,701,14,505,6,40,Dining Table,Marble,White,Urban,Spring,Online,16884
+746,406,21,340,11,15,Dining Table,Metal,Black,Suburban,Summer,Online,15666
+1075,631,15,444,9,37,Dining Table,Wood,White,Rural,Fall,Online,16125
+915,520,19,395,11,14,Dining Table,Metal,White,Suburban,Summer,Retail,17385
+911,553,17,358,9,21,Dining Table,Glass,Black,Urban,Spring,Retail,15487
+1417,883,18,534,9,35,Dining Table,Marble,Black,Rural,Summer,Retail,25506
+880,471,8,409,3,36,Dining Table,Glass,White,Rural,Winter,Online,7040
+1341,855,14,486,9,41,Dining Table,Marble,White,Rural,Fall,Retail,18774
+1414,883,18,531,9,43,Dining Table,Marble,Brown,Rural,Summer,Online,25452
+1252,788,10,464,3,32,Dining Table,Marble,Black,Urban,Winter,Retail,12520
+1201,728,18,473,9,41,Dining Table,Marble,Brown,Suburban,Summer,Online,21618
+1409,909,13,500,8,46,Dining Table,Marble,White,Rural,Summer,Retail,18317
+798,420,13,378,7,24,Dining Table,Metal,White,Rural,Spring,Online,10374
+953,544,18,409,7,27,Dining Table,Glass,Black,Suburban,Fall,Online,17154
+800,437,13,363,8,16,Dining Table,Metal,White,Rural,Spring,Online,10400
+1361,869,17,492,9,55,Dining Table,Marble,White,Urban,Fall,Online,23137
+943,526,11,417,6,29,Dining Table,Glass,Black,Urban,Winter,Retail,10373
+974,561,20,413,13,21,Dining Table,Wood,Black,Suburban,Summer,Retail,19480
+888,492,12,396,7,31,Dining Table,Glass,Brown,Rural,Spring,Online,10656
+1387,964,7,423,5,41,Dining Table,Marble,White,Rural,Winter,Online,9709
+1066,594,13,472,6,22,Dining Table,Wood,Brown,Suburban,Spring,Online,13858
+1076,609,11,467,5,33,Dining Table,Wood,White,Rural,Spring,Online,11836
+919,518,10,401,5,23,Dining Table,Metal,Black,Rural,Winter,Retail,9190
+1233,766,20,467,12,39,Dining Table,Marble,White,Urban,Summer,Online,24660
+1100,635,13,465,8,28,Dining Table,Wood,Black,Suburban,Spring,Online,14300
+1227,795,18,432,13,35,Dining Table,Marble,Brown,Urban,Summer,Retail,22086
+1336,855,12,481,7,47,Dining Table,Marble,Brown,Urban,Winter,Retail,16032
+1061,605,14,456,12,24,Dining Table,Wood,Black,Suburban,Spring,Retail,14854
+1385,844,16,541,11,35,Dining Table,Marble,White,Rural,Summer,Online,22160
+1007,606,19,401,9,40,Dining Table,Wood,Black,Rural,Summer,Online,19133
+1272,814,18,458,8,52,Dining Table,Marble,Black,Urban,Spring,Retail,22896
+1223,768,8,455,9,42,Dining Table,Marble,Black,Rural,Winter,Retail,9784
+1364,899,8,465,6,40,Dining Table,Marble,White,Suburban,Winter,Online,10912
+916,523,18,393,5,23,Dining Table,Wood,White,Suburban,Summer,Online,16488
+1280,820,14,460,8,38,Dining Table,Marble,Brown,Suburban,Spring,Retail,17920
+934,491,21,443,9,31,Dining Table,Glass,White,Suburban,Summer,Retail,19614
+1006,623,8,383,3,24,Dining Table,Wood,Black,Rural,Winter,Online,8048
+1133,623,15,510,9,25,Dining Table,Wood,Black,Urban,Spring,Retail,16995
+1182,730,7,452,2,42,Dining Table,Marble,White,Urban,Winter,Online,8274
+930,540,16,390,9,30,Dining Table,Wood,White,Rural,Summer,Online,14880
+872,486,16,386,8,23,Dining Table,Wood,Brown,Urban,Spring,Retail,13952
+1197,731,8,466,4,33,Dining Table,Wood,White,Urban,Winter,Online,9576
+1028,521,11,507,5,27,Dining Table,Glass,Black,Rural,Winter,Online,11308
+1058,657,24,401,13,24,Dining Table,Wood,Black,Urban,Fall,Retail,25392
+1086,620,15,466,10,25,Dining Table,Glass,Brown,Rural,Summer,Online,16290
+1241,815,16,426,11,43,Dining Table,Marble,White,Urban,Summer,Retail,19856
+847,470,15,377,7,24,Dining Table,Metal,Black,Rural,Summer,Online,12705
+1128,652,16,476,8,25,Dining Table,Wood,Black,Suburban,Summer,Online,18048
+1017,602,18,415,7,29,Dining Table,Wood,Black,Rural,Fall,Retail,18306
+1111,650,17,461,9,23,Dining Table,Wood,White,Suburban,Fall,Online,18887
+1048,590,13,458,3,15,Dining Table,Glass,Black,Suburban,Spring,Online,13624
+767,442,12,325,6,16,Dining Table,Metal,White,Urban,Winter,Retail,9204
+1441,989,13,452,6,45,Dining Table,Marble,Brown,Urban,Summer,Online,18733
+1115,632,14,483,9,39,Dining Table,Wood,Brown,Rural,Fall,Online,15610
+929,523,17,406,7,27,Dining Table,Wood,Black,Rural,Fall,Online,15793
+1198,703,11,495,7,22,Dining Table,Wood,Black,Urban,Winter,Online,13178
+818,459,18,359,11,23,Dining Table,Metal,White,Rural,Fall,Online,14724
+1056,606,14,450,10,33,Dining Table,Wood,Brown,Rural,Spring,Retail,14784
+913,492,16,421,8,31,Dining Table,Glass,Black,Rural,Summer,Retail,14608
+1098,672,13,426,4,26,Dining Table,Wood,Black,Rural,Spring,Retail,14274
+971,550,12,421,7,23,Dining Table,Glass,Black,Suburban,Winter,Online,11652
+1139,646,13,493,7,20,Dining Table,Wood,Black,Suburban,Winter,Retail,14807
+1217,698,13,519,8,30,Dining Table,Wood,Black,Suburban,Winter,Online,15821
+877,496,20,381,9,23,Dining Table,Glass,Black,Urban,Summer,Online,17540
+920,510,19,410,12,18,Dining Table,Wood,White,Urban,Summer,Online,17480
+855,499,22,356,15,15,Dining Table,Metal,Black,Urban,Fall,Online,18810
+1200,714,11,486,10,32,Dining Table,Marble,Black,Rural,Winter,Online,13200
+898,473,12,425,5,35,Dining Table,Glass,Black,Suburban,Spring,Retail,10776
+783,446,12,337,5,30,Dining Table,Metal,Brown,Suburban,Winter,Online,9396
+989,561,10,428,5,28,Dining Table,Wood,Black,Rural,Winter,Online,9890
+1154,702,15,452,8,38,Dining Table,Wood,Black,Suburban,Fall,Retail,17310
+1450,822,7,628,4,39,Dining Table,Marble,Brown,Suburban,Winter,Online,10150
+1146,679,20,467,11,29,Dining Table,Wood,Black,Urban,Fall,Online,22920
+959,550,21,409,12,21,Dining Table,Glass,White,Urban,Fall,Retail,20139
+1198,759,9,439,3,44,Dining Table,Marble,White,Rural,Winter,Online,10782
+1118,641,9,477,6,25,Dining Table,Wood,Black,Rural,Winter,Online,10062
+1417,831,10,586,7,50,Dining Table,Marble,White,Suburban,Winter,Online,14170
+747,398,14,349,6,26,Dining Table,Glass,White,Urban,Winter,Online,10458
+1177,651,19,526,8,30,Dining Table,Wood,Black,Urban,Summer,Retail,22363
+1009,587,13,422,8,26,Dining Table,Wood,Brown,Suburban,Spring,Online,13117
+1131,680,20,451,12,27,Dining Table,Wood,Black,Rural,Summer,Retail,22620
+1071,584,13,487,9,26,Dining Table,Wood,White,Urban,Winter,Retail,13923
+1181,710,20,471,9,30,Dining Table,Wood,White,Rural,Summer,Online,23620
+1207,748,20,459,13,42,Dining Table,Marble,White,Urban,Fall,Retail,24140
+869,463,16,406,9,30,Dining Table,Glass,White,Urban,Spring,Retail,13904
+885,474,12,411,9,24,Dining Table,Metal,Black,Rural,Spring,Online,10620
+785,471,14,314,9,24,Dining Table,Glass,Black,Suburban,Spring,Online,10990
+827,489,12,338,6,18,Dining Table,Metal,Black,Suburban,Spring,Retail,9924
+1259,783,14,476,9,39,Dining Table,Marble,Brown,Suburban,Spring,Online,17626
+1000,581,15,419,8,22,Dining Table,Glass,White,Rural,Fall,Retail,15000
+1297,805,20,492,10,42,Dining Table,Marble,White,Urban,Summer,Retail,25940
+867,472,23,395,10,27,Dining Table,Glass,Black,Suburban,Summer,Retail,19941
+1155,708,17,447,12,29,Dining Table,Wood,Black,Suburban,Summer,Online,19635
+1092,641,10,451,8,34,Dining Table,Wood,Black,Rural,Spring,Retail,10920
+1017,575,15,442,8,30,Dining Table,Wood,Brown,Suburban,Winter,Online,15255
+716,390,18,326,9,23,Dining Table,Metal,Black,Rural,Fall,Online,12888
+1090,622,11,468,6,29,Dining Table,Wood,White,Rural,Winter,Retail,11990
+1274,745,11,529,8,47,Dining Table,Marble,White,Urban,Winter,Online,14014
+1100,636,14,464,13,23,Dining Table,Wood,White,Suburban,Spring,Online,15400
+1363,875,15,488,5,54,Dining Table,Marble,Black,Suburban,Spring,Online,20445
+985,546,23,439,13,39,Dining Table,Glass,White,Suburban,Summer,Online,22655
+1103,584,18,519,9,22,Dining Table,Wood,Black,Suburban,Fall,Online,19854
+822,466,12,356,9,16,Dining Table,Glass,White,Urban,Winter,Retail,9864
+1250,802,11,448,5,44,Dining Table,Marble,White,Rural,Spring,Online,13750
+1193,731,5,462,5,40,Dining Table,Marble,Black,Rural,Winter,Online,5965
+1174,731,16,443,12,37,Dining Table,Marble,White,Suburban,Spring,Retail,18784
+1489,936,22,553,14,37,Dining Table,Marble,Black,Urban,Summer,Retail,32758
+843,437,21,406,12,25,Dining Table,Glass,White,Urban,Summer,Retail,17703
+727,408,18,319,10,18,Dining Table,Metal,White,Urban,Spring,Retail,13086
+1310,795,18,515,11,48,Dining Table,Marble,White,Suburban,Fall,Retail,23580
+1025,621,22,404,11,30,Dining Table,Glass,White,Urban,Summer,Online,22550
+1143,720,15,423,7,45,Dining Table,Marble,Brown,Rural,Summer,Online,17145
+787,472,16,315,13,24,Dining Table,Metal,Brown,Rural,Fall,Online,12592
+822,463,25,359,13,27,Dining Table,Glass,White,Urban,Summer,Retail,20550
+1345,874,9,471,2,38,Dining Table,Marble,Brown,Rural,Winter,Online,12105
+1233,870,5,363,3,58,Dining Table,Marble,Brown,Rural,Winter,Online,6165
+1340,889,14,451,5,39,Dining Table,Marble,Brown,Suburban,Spring,Online,18760
+1062,568,15,494,10,42,Dining Table,Wood,Black,Urban,Fall,Online,15930
+746,408,15,338,10,14,Dining Table,Metal,Brown,Urban,Winter,Online,11190
+1297,830,8,467,3,39,Dining Table,Marble,Black,Urban,Winter,Retail,10376
+1050,641,12,409,7,34,Dining Table,Marble,Brown,Suburban,Spring,Online,12600
+931,517,13,414,6,13,Dining Table,Glass,White,Rural,Spring,Retail,12103
+1136,672,17,464,8,22,Dining Table,Wood,White,Suburban,Fall,Online,19312
+1316,814,18,502,11,39,Dining Table,Marble,White,Suburban,Summer,Online,23688
+1200,751,17,449,6,43,Dining Table,Marble,White,Suburban,Fall,Online,20400
+804,443,17,361,7,20,Dining Table,Glass,Black,Suburban,Winter,Online,13668
+863,478,12,385,7,30,Dining Table,Glass,White,Suburban,Spring,Retail,10356
+840,469,10,371,4,22,Dining Table,Metal,White,Suburban,Winter,Online,8400
+841,445,15,396,8,36,Dining Table,Metal,White,Urban,Spring,Online,12615
+993,590,14,403,6,30,Dining Table,Glass,Black,Rural,Spring,Online,13902
+1192,662,17,530,10,33,Dining Table,Wood,White,Rural,Summer,Retail,20264
+1173,675,12,498,13,27,Dining Table,Wood,Brown,Urban,Winter,Retail,14076
+946,552,17,394,9,29,Dining Table,Wood,White,Suburban,Fall,Retail,16082
+1053,666,13,387,10,43,Dining Table,Marble,Brown,Urban,Spring,Online,13689
+900,532,18,368,11,20,Dining Table,Metal,Black,Rural,Fall,Online,16200
+1338,832,13,506,7,49,Dining Table,Marble,White,Urban,Summer,Online,17394
+1379,860,8,519,4,42,Dining Table,Marble,Brown,Rural,Spring,Online,11032
+1156,699,17,457,10,45,Dining Table,Marble,White,Suburban,Summer,Online,19652
+994,529,19,465,12,21,Dining Table,Wood,White,Urban,Summer,Online,18886
+990,558,13,432,9,28,Dining Table,Wood,White,Suburban,Winter,Online,12870
+858,457,11,401,2,16,Dining Table,Metal,White,Suburban,Winter,Online,9438
+1189,714,19,475,8,48,Dining Table,Marble,Brown,Urban,Summer,Online,22591
+1132,663,15,469,9,26,Dining Table,Wood,Black,Urban,Winter,Retail,16980
+780,442,10,338,7,21,Dining Table,Metal,White,Rural,Spring,Retail,7800
+1365,864,17,501,13,41,Dining Table,Marble,Black,Suburban,Summer,Retail,23205
+1306,805,10,501,6,39,Dining Table,Marble,White,Suburban,Spring,Online,13060
+1281,811,13,470,9,46,Dining Table,Marble,Brown,Rural,Fall,Online,16653
+1087,660,7,427,2,38,Dining Table,Marble,Black,Rural,Winter,Online,7609
+938,537,15,401,6,28,Dining Table,Glass,White,Suburban,Fall,Online,14070
+1256,817,10,439,6,37,Dining Table,Marble,Brown,Rural,Spring,Retail,12560
+1059,630,17,429,7,36,Dining Table,Wood,Black,Rural,Fall,Online,18003
+888,507,19,381,10,31,Dining Table,Glass,White,Suburban,Fall,Online,16872
+776,419,18,357,7,35,Dining Table,Metal,Black,Urban,Fall,Online,13968
+898,494,25,404,10,33,Dining Table,Glass,Black,Urban,Summer,Online,22450
+1326,831,15,495,8,51,Dining Table,Marble,Black,Rural,Fall,Online,19890
+890,487,19,403,10,16,Dining Table,Metal,Black,Urban,Summer,Online,16910
+1013,580,8,433,3,28,Dining Table,Wood,Black,Rural,Winter,Retail,8104
+1181,789,11,392,7,46,Dining Table,Marble,Brown,Rural,Fall,Retail,12991
+1047,603,15,444,8,34,Dining Table,Wood,White,Rural,Fall,Online,15705
+950,522,18,428,11,29,Dining Table,Glass,Black,Urban,Fall,Online,17100
+867,465,18,402,6,33,Dining Table,Metal,Brown,Urban,Winter,Retail,15606
+1216,763,19,453,14,51,Dining Table,Marble,Black,Rural,Summer,Online,23104
+1130,667,10,463,3,30,Dining Table,Wood,White,Suburban,Spring,Online,11300
+1114,666,17,448,12,39,Dining Table,Wood,White,Rural,Fall,Online,18938
+826,411,23,415,12,19,Dining Table,Metal,Black,Suburban,Summer,Retail,18998
+904,477,18,427,7,12,Dining Table,Glass,White,Suburban,Fall,Online,16272
+777,456,12,321,8,21,Dining Table,Metal,Black,Suburban,Winter,Online,9324
+1329,774,17,555,8,34,Dining Table,Marble,Brown,Suburban,Summer,Retail,22593
+1083,639,20,444,11,34,Dining Table,Wood,Brown,Suburban,Summer,Retail,21660
+1089,639,16,450,10,33,Dining Table,Wood,Black,Rural,Summer,Online,17424
+835,454,20,381,8,23,Dining Table,Glass,Black,Rural,Fall,Retail,16700
+1172,699,12,473,8,28,Dining Table,Wood,Black,Rural,Winter,Retail,14064
+929,587,16,342,7,31,Dining Table,Wood,Black,Suburban,Spring,Online,14864
+1009,583,18,426,8,41,Dining Table,Wood,White,Rural,Summer,Retail,18162
+886,486,18,400,8,27,Dining Table,Glass,Black,Suburban,Spring,Retail,15948
+1491,943,19,548,9,36,Dining Table,Marble,White,Urban,Summer,Retail,28329
+894,552,19,342,12,30,Dining Table,Glass,Black,Rural,Fall,Online,16986
+1373,854,13,519,7,45,Dining Table,Marble,White,Suburban,Spring,Retail,17849
+980,536,14,444,8,23,Dining Table,Wood,White,Rural,Fall,Online,13720
+1139,628,10,511,3,34,Dining Table,Wood,Brown,Suburban,Winter,Online,11390
+951,504,17,447,10,35,Dining Table,Wood,Black,Rural,Fall,Retail,16167
+1319,845,17,474,10,50,Dining Table,Marble,Black,Suburban,Fall,Online,22423
+1278,774,16,504,11,45,Dining Table,Marble,Black,Suburban,Spring,Online,20448
+1220,783,13,437,6,46,Dining Table,Marble,White,Suburban,Winter,Retail,15860
+728,384,20,344,12,20,Dining Table,Metal,Brown,Suburban,Fall,Online,14560
+1188,726,15,462,8,47,Dining Table,Marble,Black,Suburban,Winter,Retail,17820
+845,471,16,374,8,29,Dining Table,Metal,White,Urban,Spring,Online,13520
+1081,618,17,463,9,32,Dining Table,Wood,Brown,Rural,Fall,Retail,18377
+1011,542,11,469,3,24,Dining Table,Wood,Black,Urban,Spring,Online,11121
+1013,588,16,425,10,23,Dining Table,Wood,White,Rural,Fall,Online,16208
+1483,930,10,553,5,44,Dining Table,Marble,Brown,Rural,Spring,Retail,14830
+360,168,14,192,5,15,Desk,Plastic,Green,Rural,Winter,Retail,5040
+866,475,9,391,5,28,Dining Table,Metal,Brown,Suburban,Winter,Online,7794
+1080,612,7,468,4,18,Dining Table,Wood,Brown,Urban,Winter,Online,7560
+887,471,21,416,14,22,Dining Table,Metal,Brown,Suburban,Summer,Online,18627
+1045,657,11,388,5,27,Dining Table,Wood,White,Urban,Winter,Retail,11495
+1019,591,19,428,5,24,Dining Table,Wood,Black,Suburban,Fall,Retail,19361
+1194,718,20,476,8,18,Dining Table,Wood,Black,Urban,Spring,Online,23880
+970,518,12,452,5,33,Dining Table,Glass,White,Rural,Winter,Retail,11640
+879,489,19,390,12,22,Dining Table,Glass,Brown,Rural,Fall,Online,16701
+1012,678,17,334,10,37,Dining Table,Marble,Black,Rural,Summer,Retail,17204
+1263,770,16,493,4,46,Dining Table,Marble,White,Suburban,Summer,Online,20208
+838,444,18,394,9,19,Dining Table,Metal,Black,Suburban,Spring,Retail,15084
+1182,790,14,392,6,36,Dining Table,Marble,Brown,Rural,Spring,Online,16548
+882,511,17,371,9,31,Dining Table,Glass,Brown,Rural,Fall,Retail,14994
+907,502,11,405,5,32,Dining Table,Glass,White,Suburban,Winter,Online,9977
+822,451,18,371,12,20,Dining Table,Metal,Black,Rural,Summer,Online,14796
+1502,914,5,588,3,44,Dining Table,Marble,Black,Rural,Winter,Online,7510
+780,493,10,287,8,26,Dining Table,Metal,White,Rural,Winter,Online,7800
+1113,620,10,493,7,22,Dining Table,Wood,Black,Rural,Winter,Retail,11130
+1040,687,8,353,5,40,Dining Table,Marble,White,Rural,Winter,Online,8320
+1372,817,15,555,7,49,Dining Table,Marble,Brown,Rural,Summer,Retail,20580
+1247,767,15,480,10,41,Dining Table,Marble,White,Suburban,Spring,Retail,18705
+1329,795,12,534,5,40,Dining Table,Marble,Brown,Suburban,Spring,Retail,15948
+1150,645,21,505,13,25,Dining Table,Wood,Black,Urban,Summer,Online,24150
+1495,932,12,563,5,45,Dining Table,Marble,White,Rural,Fall,Online,17940
+896,505,14,391,6,17,Dining Table,Glass,Black,Rural,Summer,Retail,12544
+1153,650,11,503,6,37,Dining Table,Wood,Black,Rural,Spring,Online,12683
+964,561,14,403,7,26,Dining Table,Glass,Brown,Rural,Fall,Online,13496
+978,565,12,413,8,19,Dining Table,Wood,White,Rural,Spring,Retail,11736
+794,438,16,356,10,19,Dining Table,Metal,Brown,Urban,Winter,Online,12704
+1201,777,19,424,9,43,Dining Table,Marble,White,Urban,Fall,Retail,22819
+1430,923,9,507,2,46,Dining Table,Marble,White,Urban,Winter,Online,12870
+1081,654,14,427,6,30,Dining Table,Wood,White,Suburban,Winter,Retail,15134
+1197,702,9,495,7,43,Dining Table,Marble,Brown,Urban,Winter,Online,10773
+823,421,19,402,10,22,Dining Table,Metal,Black,Rural,Summer,Retail,15637
+781,424,18,357,11,11,Dining Table,Metal,White,Rural,Summer,Online,14058
+844,457,20,387,12,26,Dining Table,Metal,Black,Suburban,Summer,Online,16880
+1492,932,16,560,7,46,Dining Table,Marble,Black,Rural,Fall,Online,23872
+795,463,7,332,1,30,Dining Table,Glass,White,Rural,Winter,Online,5565
+1125,700,16,425,8,30,Dining Table,Wood,White,Rural,Summer,Retail,18000
+956,535,15,421,6,17,Dining Table,Wood,White,Urban,Spring,Retail,14340
+955,555,13,400,9,35,Dining Table,Wood,Black,Urban,Spring,Online,12415
+1129,649,17,480,7,32,Dining Table,Wood,Brown,Rural,Summer,Retail,19193
+1135,660,16,475,5,29,Dining Table,Wood,White,Urban,Fall,Retail,18160
+794,479,9,315,2,24,Dining Table,Metal,White,Rural,Spring,Online,7146
+1022,664,17,358,12,24,Dining Table,Wood,White,Urban,Fall,Retail,17374
+1082,620,15,462,11,33,Dining Table,Wood,Black,Rural,Summer,Online,16230
+1178,780,14,398,10,43,Dining Table,Marble,White,Suburban,Fall,Online,16492
+836,470,16,366,5,34,Dining Table,Glass,White,Rural,Summer,Retail,13376
+769,408,9,361,5,10,Dining Table,Metal,White,Rural,Spring,Online,6921
+754,418,16,336,10,26,Dining Table,Metal,Black,Rural,Fall,Retail,12064
+1161,666,13,495,6,41,Dining Table,Wood,Black,Urban,Spring,Online,15093
+941,533,18,408,14,35,Dining Table,Glass,Brown,Rural,Summer,Online,16938
+1127,717,15,410,8,42,Dining Table,Marble,Black,Rural,Spring,Online,16905
+1010,598,11,412,9,24,Dining Table,Wood,Brown,Urban,Winter,Retail,11110
+1242,788,15,454,8,43,Dining Table,Marble,White,Suburban,Fall,Online,18630
+1242,786,14,456,10,31,Dining Table,Marble,White,Suburban,Fall,Retail,17388
+1207,803,6,404,7,38,Dining Table,Marble,White,Urban,Winter,Online,7242
+871,487,13,384,7,30,Dining Table,Glass,White,Suburban,Winter,Online,11323
+1387,928,16,459,8,35,Dining Table,Marble,Brown,Suburban,Fall,Online,22192
+770,417,11,353,8,10,Dining Table,Metal,Brown,Urban,Winter,Online,8470
+863,500,11,363,6,30,Dining Table,Glass,Black,Suburban,Winter,Online,9493
+1189,726,9,463,1,30,Dining Table,Wood,White,Rural,Spring,Online,10701
+1182,730,14,452,10,39,Dining Table,Marble,Brown,Rural,Summer,Retail,16548
+887,518,12,369,6,28,Dining Table,Glass,Brown,Suburban,Winter,Online,10644
+1432,932,13,500,8,43,Dining Table,Marble,White,Urban,Spring,Online,18616
+903,489,12,414,11,17,Dining Table,Metal,Brown,Suburban,Winter,Online,10836
+1274,852,14,422,9,44,Dining Table,Marble,White,Urban,Winter,Online,17836
+1292,758,12,534,9,39,Dining Table,Marble,Black,Urban,Spring,Online,15504
+1247,792,10,455,5,29,Dining Table,Marble,White,Urban,Winter,Online,12470
+921,515,12,406,6,30,Dining Table,Glass,White,Suburban,Winter,Retail,11052
+989,610,22,379,14,29,Dining Table,Wood,White,Urban,Summer,Retail,21758
+1055,637,6,418,3,44,Dining Table,Marble,Brown,Urban,Winter,Online,6330
+940,501,18,439,7,38,Dining Table,Metal,White,Suburban,Fall,Retail,16920
+865,504,15,361,8,20,Dining Table,Metal,Black,Urban,Spring,Online,12975
+1062,649,13,413,8,49,Dining Table,Marble,Black,Suburban,Spring,Online,13806
+1107,625,16,482,8,41,Dining Table,Wood,Black,Rural,Summer,Retail,17712
+1091,632,11,459,7,33,Dining Table,Wood,Brown,Rural,Winter,Online,12001
+984,595,10,389,5,22,Dining Table,Wood,Black,Suburban,Winter,Retail,9840
+921,519,14,402,6,19,Dining Table,Metal,Brown,Urban,Spring,Online,12894
+1094,581,21,513,13,29,Dining Table,Wood,Brown,Suburban,Summer,Retail,22974
+1105,669,11,436,7,26,Dining Table,Wood,Brown,Suburban,Winter,Online,12155
+1249,786,9,463,6,35,Dining Table,Marble,Brown,Urban,Spring,Online,11241
+1318,830,11,488,2,45,Dining Table,Marble,Black,Rural,Spring,Retail,14498
+1300,823,19,477,9,49,Dining Table,Marble,White,Urban,Summer,Online,24700
+1002,522,7,480,2,20,Sofa,Fabric,Blue,Rural,Fall,Online,7014
+1564,907,17,657,6,30,Sofa,Wood,Black,Suburban,Fall,Online,26588
+1307,815,5,492,6,40,Sofa,Wood,Blue,Urban,Winter,Retail,6535
+950,466,17,484,8,17,Sofa,Fabric,Blue,Urban,Summer,Retail,16150
+969,457,9,512,6,16,Sofa,Fabric,Blue,Suburban,Winter,Retail,8721
+911,453,11,458,10,30,Sofa,Fabric,White,Rural,Spring,Retail,10021
+1494,928,9,566,7,31,Sofa,Wood,Green,Rural,Summer,Retail,13446
+998,537,13,461,6,13,Sofa,Fabric,Black,Urban,Spring,Online,12974
+1070,556,5,514,3,10,Sofa,Fabric,Green,Rural,Winter,Retail,5350
+1122,581,17,541,8,14,Sofa,Fabric,White,Urban,Fall,Online,19074
+1051,506,12,545,7,21,Sofa,Fabric,Green,Suburban,Fall,Online,12612
+1110,577,7,533,2,17,Sofa,Fabric,Brown,Rural,Winter,Online,7770
+1629,954,8,675,2,39,Sofa,Wood,Green,Rural,Spring,Retail,13032
+929,432,10,497,3,27,Sofa,Fabric,Red,Suburban,Summer,Online,9290
+922,471,6,451,1,21,Sofa,Fabric,Blue,Rural,Spring,Retail,5532
+1044,490,17,554,8,7,Sofa,Fabric,Brown,Suburban,Fall,Online,17748
+1640,934,13,706,6,26,Sofa,Wood,Brown,Urban,Fall,Retail,21320
+1477,812,11,665,7,29,Sofa,Wood,Red,Rural,Summer,Retail,16247
+1748,1021,15,727,8,30,Sofa,Wood,Black,Rural,Summer,Retail,26220
+1617,917,8,700,3,26,Sofa,Wood,Blue,Suburban,Spring,Retail,12936
+1387,753,13,634,5,36,Sofa,Wood,White,Rural,Summer,Online,18031
+1577,901,10,676,6,36,Sofa,Wood,Green,Rural,Summer,Retail,15770
+1375,812,15,563,8,32,Sofa,Wood,White,Suburban,Fall,Online,20625
+1402,890,9,512,4,38,Sofa,Wood,Green,Rural,Fall,Online,12618
+1468,864,2,604,4,28,Sofa,Wood,Red,Rural,Winter,Retail,2936
+1704,1030,12,674,8,37,Sofa,Wood,Green,Suburban,Fall,Retail,20448
+1556,908,7,648,5,35,Sofa,Wood,White,Rural,Winter,Online,10892
+1519,970,13,549,10,38,Sofa,Leather,Black,Urban,Spring,Retail,19747
+1582,980,8,602,1,28,Sofa,Leather,Green,Suburban,Fall,Retail,12656
+1784,1037,9,747,7,37,Sofa,Leather,White,Suburban,Spring,Retail,16056
+1494,894,7,600,6,37,Sofa,Leather,Green,Rural,Summer,Online,10458
+925,433,2,492,2,22,Sofa,Fabric,Green,Suburban,Winter,Retail,1850
+1615,934,8,681,6,18,Sofa,Leather,Green,Suburban,Fall,Retail,12920
+1060,519,6,541,8,22,Sofa,Fabric,White,Rural,Winter,Retail,6360
+1508,870,6,638,1,20,Sofa,Wood,Red,Suburban,Fall,Online,9048
+1573,892,7,681,3,37,Sofa,Leather,Green,Urban,Spring,Retail,11011
+1620,963,8,657,2,36,Sofa,Leather,Red,Rural,Fall,Retail,12960
+1040,574,17,466,10,25,Sofa,Fabric,Black,Rural,Summer,Online,17680
+1338,757,2,581,3,34,Sofa,Wood,Blue,Suburban,Spring,Online,2676
+948,499,8,449,2,17,Sofa,Fabric,Brown,Rural,Winter,Retail,7584
+1021,559,9,462,6,18,Sofa,Fabric,Black,Suburban,Winter,Online,9189
+1148,554,15,594,8,15,Sofa,Fabric,Red,Suburban,Summer,Retail,17220
+1496,928,1,568,1,26,Sofa,Wood,Red,Rural,Winter,Online,1496
+1087,578,4,509,1,14,Sofa,Fabric,Red,Suburban,Winter,Retail,4348
+937,483,12,454,6,8,Sofa,Fabric,Brown,Suburban,Spring,Retail,11244
+967,457,12,510,8,22,Sofa,Fabric,Green,Suburban,Fall,Online,11604
+994,518,7,476,5,26,Sofa,Fabric,Red,Suburban,Winter,Retail,6958
+999,471,6,528,7,11,Sofa,Fabric,Red,Urban,Spring,Retail,5994
+1051,527,10,524,8,27,Sofa,Fabric,Red,Rural,Summer,Online,10510
+944,476,12,468,4,22,Sofa,Fabric,Green,Urban,Fall,Online,11328
+1042,520,15,522,5,23,Sofa,Fabric,Blue,Urban,Fall,Online,15630
+967,458,9,509,5,15,Sofa,Fabric,Red,Suburban,Spring,Retail,8703
+1722,943,13,779,6,32,Sofa,Wood,Brown,Urban,Summer,Online,22386
+1019,508,14,511,6,20,Sofa,Fabric,White,Suburban,Fall,Retail,14266
+864,445,6,419,6,21,Sofa,Fabric,Red,Suburban,Spring,Online,5184
+1059,535,4,524,3,17,Sofa,Fabric,White,Suburban,Winter,Online,4236
+1107,531,8,576,7,13,Sofa,Fabric,White,Urban,Winter,Retail,8856
+1557,851,9,706,6,29,Sofa,Wood,Blue,Rural,Summer,Retail,14013
+1439,866,7,573,2,20,Sofa,Wood,Blue,Urban,Fall,Retail,10073
+954,458,16,496,8,21,Sofa,Fabric,Brown,Suburban,Fall,Online,15264
+1091,585,13,506,1,20,Sofa,Fabric,Green,Urban,Summer,Retail,14183
+1138,534,14,604,9,21,Sofa,Fabric,Black,Rural,Fall,Retail,15932
+1047,538,1,509,2,15,Sofa,Fabric,Green,Rural,Winter,Online,1047
+1173,635,6,538,6,14,Sofa,Fabric,Green,Rural,Spring,Retail,7038
+1034,531,4,503,1,31,Sofa,Fabric,Green,Rural,Winter,Online,4136
+1513,923,2,590,1,29,Sofa,Wood,Green,Urban,Winter,Online,3026
+1514,871,10,643,10,21,Sofa,Wood,White,Suburban,Spring,Online,15140
+1444,770,16,674,9,33,Sofa,Wood,Black,Urban,Fall,Retail,23104
+1521,842,3,679,2,33,Sofa,Leather,Green,Suburban,Spring,Online,4563
+1739,1079,14,660,9,34,Sofa,Wood,White,Suburban,Summer,Online,24346
+1147,598,11,549,4,13,Sofa,Fabric,White,Suburban,Spring,Online,12617
+1481,829,9,652,5,21,Sofa,Wood,Red,Urban,Fall,Retail,13329
+1473,961,7,512,6,35,Sofa,Leather,Green,Urban,Fall,Retail,10311
+1496,927,3,569,2,33,Sofa,Leather,Red,Suburban,Spring,Online,4488
+1475,852,8,623,6,38,Sofa,Wood,Red,Urban,Spring,Retail,11800
+997,497,18,500,11,9,Sofa,Fabric,Black,Suburban,Fall,Retail,17946
+989,511,5,478,1,24,Sofa,Fabric,Blue,Rural,Winter,Online,4945
+1371,808,11,563,5,29,Sofa,Wood,Black,Urban,Spring,Online,15081
+1057,553,17,504,11,11,Sofa,Fabric,White,Urban,Summer,Online,17969
+1497,844,4,653,3,39,Sofa,Leather,Green,Urban,Winter,Retail,5988
+1649,1023,7,626,4,30,Sofa,Leather,Brown,Urban,Spring,Retail,11543
+1586,902,12,684,10,38,Sofa,Wood,Brown,Rural,Summer,Online,19032
+1032,495,15,537,8,16,Sofa,Fabric,Brown,Rural,Fall,Online,15480
+1005,481,14,524,10,24,Sofa,Fabric,Black,Rural,Fall,Online,14070
+1456,784,11,672,6,24,Sofa,Wood,Brown,Suburban,Summer,Retail,16016
+1026,515,19,511,6,17,Sofa,Fabric,White,Suburban,Summer,Retail,19494
+1539,879,16,660,7,28,Sofa,Wood,Black,Suburban,Summer,Retail,24624
+1072,511,4,561,4,16,Sofa,Fabric,Green,Rural,Winter,Retail,4288
+1020,487,9,533,3,11,Sofa,Fabric,Brown,Suburban,Winter,Online,9180
+1099,559,15,540,5,8,Sofa,Fabric,Black,Urban,Spring,Retail,16485
+955,464,6,491,3,16,Sofa,Fabric,Red,Urban,Winter,Retail,5730
+893,476,16,417,12,13,Sofa,Fabric,Black,Rural,Fall,Online,14288
+907,443,11,464,6,19,Sofa,Fabric,White,Rural,Fall,Online,9977
+1044,472,7,572,4,29,Sofa,Fabric,Blue,Suburban,Spring,Retail,7308
+1082,528,10,554,9,20,Sofa,Fabric,White,Urban,Winter,Online,10820
+1458,932,4,526,4,34,Sofa,Wood,Blue,Rural,Spring,Online,5832
+953,478,7,475,5,19,Sofa,Fabric,Green,Suburban,Spring,Online,6671
+978,487,18,491,11,9,Sofa,Fabric,Black,Suburban,Summer,Online,17604
+1133,601,17,532,10,27,Sofa,Fabric,Black,Suburban,Fall,Retail,19261
+1078,541,10,537,9,19,Sofa,Fabric,White,Suburban,Spring,Retail,10780
+993,488,6,505,1,21,Sofa,Fabric,Brown,Rural,Winter,Online,5958
+1113,547,14,566,7,18,Sofa,Fabric,Red,Suburban,Fall,Retail,15582
+991,512,9,479,8,13,Sofa,Fabric,Blue,Urban,Spring,Retail,8919
+1022,567,15,455,6,15,Sofa,Fabric,Red,Urban,Fall,Online,15330
+1093,528,5,565,3,12,Sofa,Fabric,Red,Urban,Winter,Online,5465
+1001,479,12,522,8,21,Sofa,Fabric,Blue,Rural,Fall,Retail,12012
+1101,546,8,555,6,10,Sofa,Fabric,White,Suburban,Winter,Online,8808
+955,456,15,499,9,18,Sofa,Fabric,Green,Suburban,Summer,Online,14325
+1088,592,10,496,6,23,Sofa,Fabric,Red,Suburban,Summer,Online,10880
+1130,520,14,610,6,16,Sofa,Fabric,Black,Suburban,Spring,Retail,15820
+1480,830,7,650,6,33,Sofa,Wood,Green,Rural,Fall,Retail,10360
+1100,524,13,576,10,18,Sofa,Fabric,Black,Urban,Spring,Retail,14300
+1004,457,4,547,2,15,Sofa,Fabric,Green,Urban,Winter,Retail,4016
+981,483,12,498,11,3,Sofa,Fabric,Black,Rural,Fall,Online,11772
+1064,538,7,526,2,18,Sofa,Fabric,Brown,Suburban,Winter,Online,7448
+1400,812,6,588,1,36,Sofa,Wood,Blue,Urban,Spring,Retail,8400
+1103,559,10,544,9,8,Sofa,Fabric,White,Suburban,Winter,Online,11030
+1052,501,10,551,5,24,Sofa,Fabric,Black,Rural,Spring,Retail,10520
+979,543,9,436,3,14,Sofa,Fabric,Brown,Urban,Winter,Retail,8811
+968,476,14,492,6,17,Sofa,Fabric,White,Suburban,Fall,Online,13552
+932,442,15,490,8,4,Sofa,Fabric,Brown,Urban,Fall,Retail,13980
+1534,945,1,589,1,27,Sofa,Wood,Blue,Rural,Winter,Retail,1534
+860,424,7,436,4,19,Sofa,Fabric,Red,Suburban,Winter,Retail,6020
+1521,915,11,606,7,39,Sofa,Wood,Red,Urban,Summer,Online,16731
+1477,878,12,599,7,37,Sofa,Leather,Green,Suburban,Summer,Online,17724
+1577,888,5,689,1,20,Sofa,Wood,Red,Suburban,Spring,Retail,7885
+1466,917,12,549,5,27,Sofa,Wood,White,Urban,Spring,Online,17592
+1826,1067,9,759,2,32,Sofa,Leather,Black,Urban,Winter,Online,16434
+1072,543,10,529,4,18,Sofa,Fabric,Brown,Rural,Spring,Retail,10720
+1037,529,2,508,1,13,Sofa,Fabric,Green,Suburban,Winter,Retail,2074
+1611,913,7,698,7,40,Sofa,Leather,Green,Rural,Summer,Online,11277
+1398,790,12,608,8,12,Sofa,Wood,Black,Urban,Spring,Retail,16776
+1155,606,17,549,10,22,Sofa,Fabric,Brown,Suburban,Fall,Retail,19635
+1539,933,7,606,2,34,Sofa,Leather,White,Rural,Spring,Online,10773
+1003,482,10,521,5,13,Sofa,Fabric,Black,Rural,Spring,Retail,10030
+981,470,7,511,3,25,Sofa,Fabric,Red,Urban,Winter,Retail,6867
+863,423,9,440,1,29,Sofa,Fabric,Brown,Rural,Winter,Online,7767
+968,473,11,495,4,15,Sofa,Fabric,White,Suburban,Fall,Online,10648
+1513,822,9,691,4,29,Sofa,Wood,Green,Suburban,Summer,Retail,13617
+1014,488,5,526,1,10,Sofa,Fabric,Green,Rural,Winter,Retail,5070
+1550,947,15,603,8,27,Sofa,Wood,Brown,Urban,Spring,Online,23250
+1535,890,8,645,2,33,Sofa,Wood,Red,Rural,Fall,Retail,12280
+1068,535,8,533,5,18,Sofa,Fabric,Green,Urban,Winter,Retail,8544
+1180,584,8,596,4,25,Sofa,Fabric,Blue,Suburban,Spring,Retail,9440
+1141,582,15,559,11,29,Sofa,Fabric,White,Rural,Summer,Retail,17115
+1431,883,5,548,6,30,Sofa,Wood,Blue,Rural,Fall,Retail,7155
+909,456,8,453,2,19,Sofa,Fabric,Green,Rural,Spring,Retail,7272
+1019,563,18,456,12,26,Sofa,Fabric,Black,Urban,Fall,Online,18342
+1575,898,9,677,7,38,Sofa,Wood,Black,Rural,Fall,Online,14175
+1060,541,14,519,2,13,Sofa,Fabric,White,Rural,Summer,Online,14840
+1059,564,12,495,7,21,Sofa,Fabric,White,Suburban,Winter,Online,12708
+1429,809,12,620,2,23,Sofa,Wood,Brown,Urban,Summer,Retail,17148
+827,408,6,419,5,17,Sofa,Fabric,White,Suburban,Winter,Retail,4962
+974,500,9,474,5,16,Sofa,Fabric,Green,Suburban,Fall,Online,8766
+1410,828,13,582,9,35,Sofa,Wood,White,Rural,Fall,Retail,18330
+1659,964,9,695,5,36,Sofa,Wood,Red,Rural,Summer,Retail,14931
+1387,842,7,545,1,27,Sofa,Wood,Green,Rural,Summer,Online,9709
+1499,920,10,579,7,37,Sofa,Wood,Red,Rural,Fall,Retail,14990
+1700,971,4,729,1,28,Sofa,Wood,White,Rural,Winter,Online,6800
+1504,868,2,636,3,23,Sofa,Wood,Green,Urban,Winter,Online,3008
+1063,521,14,542,7,27,Sofa,Fabric,White,Rural,Fall,Retail,14882
+1562,915,12,647,6,34,Sofa,Wood,White,Rural,Fall,Online,18744
+1095,600,19,495,12,16,Sofa,Fabric,Brown,Urban,Summer,Retail,20805
+969,453,12,516,5,25,Sofa,Fabric,Brown,Urban,Spring,Online,11628
+1366,807,15,559,8,33,Sofa,Wood,Black,Suburban,Fall,Retail,20490
+1412,795,10,617,5,25,Sofa,Wood,Brown,Suburban,Spring,Retail,14120
+1706,953,13,753,10,23,Sofa,Leather,White,Rural,Fall,Retail,22178
+1510,880,5,630,3,25,Sofa,Wood,Brown,Suburban,Winter,Online,7550
+1020,511,16,509,11,19,Sofa,Fabric,Black,Urban,Spring,Retail,16320
+1702,986,14,716,6,40,Sofa,Leather,Brown,Urban,Fall,Retail,23828
+1853,1127,11,726,3,40,Sofa,Leather,Black,Rural,Summer,Retail,20383
+1045,503,19,542,14,26,Sofa,Fabric,Black,Suburban,Fall,Retail,19855
+978,515,6,463,4,20,Sofa,Fabric,Red,Urban,Winter,Retail,5868
+936,446,12,490,4,25,Sofa,Fabric,White,Rural,Fall,Online,11232
+1618,1010,2,608,4,29,Sofa,Leather,White,Rural,Winter,Online,3236
+1767,1079,1,688,2,26,Sofa,Wood,Blue,Suburban,Winter,Online,1767
+1452,901,13,551,7,41,Sofa,Leather,Black,Urban,Spring,Online,18876
+1017,555,3,462,6,15,Sofa,Fabric,Blue,Suburban,Winter,Retail,3051
+1068,602,12,466,6,10,Sofa,Fabric,Blue,Suburban,Summer,Online,12816
+1746,1050,2,696,1,19,Sofa,Wood,Red,Suburban,Winter,Online,3492
+953,480,6,473,3,22,Sofa,Fabric,Blue,Suburban,Winter,Retail,5718
+993,512,12,481,7,20,Sofa,Fabric,Black,Rural,Spring,Retail,11916
+1045,562,14,483,6,13,Sofa,Fabric,Black,Suburban,Spring,Retail,14630
+1010,467,13,543,6,5,Sofa,Fabric,Blue,Urban,Fall,Online,13130
+954,438,15,516,5,21,Sofa,Fabric,Brown,Suburban,Summer,Online,14310
+1023,513,13,510,8,5,Sofa,Fabric,Blue,Urban,Summer,Retail,13299
+1065,493,6,572,4,24,Sofa,Fabric,Red,Urban,Spring,Online,6390
+1082,539,7,543,4,26,Sofa,Fabric,Black,Rural,Spring,Online,7574
+1528,850,5,678,6,22,Sofa,Wood,Brown,Rural,Spring,Online,7640
+923,490,12,433,7,21,Sofa,Fabric,Red,Urban,Summer,Online,11076
+1031,542,6,489,6,14,Sofa,Fabric,Red,Suburban,Spring,Retail,6186
+1050,488,19,562,15,21,Sofa,Fabric,White,Urban,Summer,Online,19950
+957,485,6,472,1,16,Sofa,Fabric,Blue,Urban,Spring,Online,5742
+1007,499,8,508,7,10,Sofa,Fabric,Green,Urban,Spring,Retail,8056
+1091,547,15,544,7,11,Sofa,Fabric,White,Urban,Fall,Retail,16365
+1036,543,9,493,5,13,Sofa,Fabric,Red,Rural,Fall,Retail,9324
+1491,918,4,573,1,24,Sofa,Wood,White,Suburban,Winter,Retail,5964
+1023,489,9,534,3,17,Sofa,Fabric,Blue,Urban,Spring,Retail,9207
+1081,466,4,615,2,16,Sofa,Fabric,Brown,Rural,Winter,Online,4324
+959,450,10,509,4,16,Sofa,Fabric,Green,Urban,Winter,Retail,9590
+1081,500,6,581,3,17,Sofa,Fabric,Brown,Rural,Winter,Retail,6486
+1071,510,12,561,9,12,Sofa,Fabric,Brown,Suburban,Spring,Retail,12852
+1029,538,17,491,13,14,Sofa,Fabric,Brown,Urban,Summer,Retail,17493
+1480,854,8,626,3,38,Sofa,Wood,White,Urban,Winter,Retail,11840
+957,466,14,491,8,18,Sofa,Fabric,White,Suburban,Spring,Online,13398
+1581,970,16,611,7,25,Sofa,Wood,Black,Suburban,Fall,Online,25296
+1436,928,3,508,1,35,Sofa,Wood,Red,Urban,Winter,Retail,4308
+865,430,4,435,1,19,Sofa,Fabric,Green,Urban,Winter,Retail,3460
+1538,938,6,600,3,38,Sofa,Leather,Blue,Urban,Winter,Online,9228
+1503,917,11,586,9,30,Sofa,Leather,Green,Urban,Fall,Retail,16533
+1015,510,8,505,4,11,Sofa,Fabric,Brown,Rural,Winter,Retail,8120
+1270,754,7,516,5,33,Sofa,Wood,Blue,Rural,Summer,Retail,8890
+995,519,2,476,1,18,Sofa,Fabric,Blue,Rural,Spring,Retail,1990
+1815,1053,8,762,5,28,Sofa,Leather,Green,Urban,Spring,Online,14520
+1466,787,1,679,3,20,Sofa,Wood,Blue,Suburban,Winter,Online,1466
+911,448,12,463,6,19,Sofa,Fabric,White,Urban,Spring,Retail,10932
+1003,508,15,495,11,23,Sofa,Fabric,Black,Rural,Summer,Online,15045
+1454,845,5,609,2,32,Sofa,Wood,Green,Suburban,Spring,Online,7270
+990,533,10,457,3,14,Sofa,Fabric,White,Urban,Winter,Online,9900
+965,440,17,525,11,18,Sofa,Fabric,White,Rural,Fall,Retail,16405
+979,511,8,468,5,20,Sofa,Fabric,Brown,Suburban,Spring,Online,7832
+1120,550,1,570,4,20,Sofa,Fabric,Blue,Rural,Winter,Online,1120
+1110,547,6,563,3,23,Sofa,Fabric,Blue,Suburban,Spring,Retail,6660
+1260,612,14,648,7,26,Sofa,Fabric,Brown,Urban,Spring,Retail,17640
+1144,579,17,565,11,3,Sofa,Fabric,Brown,Suburban,Summer,Online,19448
+1155,654,18,501,8,16,Sofa,Fabric,Black,Suburban,Summer,Online,20790
+1038,577,19,461,12,20,Sofa,Fabric,White,Suburban,Summer,Retail,19722
+1427,850,8,577,3,28,Sofa,Wood,Blue,Suburban,Winter,Online,11416
+1118,600,17,518,7,10,Sofa,Fabric,Black,Suburban,Summer,Online,19006
+1625,895,13,730,6,35,Sofa,Wood,Brown,Rural,Fall,Retail,21125
+1663,1018,11,645,5,27,Sofa,Wood,Blue,Rural,Summer,Online,18293
+1123,518,12,605,4,18,Sofa,Fabric,Brown,Urban,Winter,Retail,13476
+1072,510,10,562,5,16,Sofa,Fabric,Brown,Suburban,Winter,Retail,10720
+1095,532,15,563,10,30,Sofa,Fabric,Blue,Suburban,Summer,Retail,16425
+950,498,11,452,6,13,Sofa,Fabric,Black,Suburban,Winter,Online,10450
+916,479,7,437,7,18,Sofa,Fabric,Blue,Suburban,Winter,Retail,6412
+1497,779,6,718,5,24,Sofa,Wood,Black,Suburban,Winter,Online,8982
+1443,866,11,577,6,18,Sofa,Wood,White,Urban,Spring,Online,15873
+981,465,18,516,7,21,Sofa,Fabric,Black,Rural,Summer,Online,17658
+1630,963,11,667,10,25,Sofa,Wood,Black,Urban,Spring,Retail,17930
+1470,880,6,590,2,26,Sofa,Wood,Brown,Rural,Winter,Retail,8820
+1491,775,1,716,2,15,Sofa,Wood,Blue,Rural,Winter,Online,1491
+980,490,16,490,8,21,Sofa,Fabric,White,Urban,Fall,Retail,15680
+1437,744,4,693,3,30,Sofa,Wood,Blue,Rural,Spring,Online,5748
+938,427,12,511,6,24,Sofa,Fabric,Red,Urban,Spring,Online,11256
+1522,879,4,643,5,37,Sofa,Wood,Green,Rural,Winter,Retail,6088
+1411,784,14,627,8,29,Sofa,Wood,White,Rural,Summer,Online,19754
+1373,745,11,628,6,24,Sofa,Wood,Green,Rural,Summer,Retail,15103
+1441,794,1,647,1,32,Sofa,Wood,Blue,Rural,Winter,Retail,1441
+1638,977,7,661,4,31,Sofa,Leather,Blue,Urban,Winter,Online,11466
+1072,560,13,512,11,19,Sofa,Fabric,Brown,Suburban,Fall,Online,13936
+1535,966,9,569,9,40,Sofa,Leather,White,Rural,Spring,Online,13815
+1493,897,6,596,5,24,Sofa,Leather,Green,Urban,Spring,Online,8958
+1540,878,3,662,1,24,Sofa,Wood,Green,Suburban,Spring,Online,4620
+1081,558,13,523,9,15,Sofa,Fabric,Black,Suburban,Spring,Retail,14053
+1061,545,13,516,6,13,Sofa,Fabric,Red,Suburban,Summer,Retail,13793
+937,476,3,461,1,21,Sofa,Fabric,Green,Rural,Winter,Retail,2811
+1095,518,15,577,10,19,Sofa,Fabric,Black,Suburban,Spring,Retail,16425
+1419,867,12,552,10,29,Sofa,Wood,Blue,Urban,Summer,Retail,17028
+733,345,10,388,6,23,Sofa,Fabric,Blue,Suburban,Spring,Retail,7330
+1797,1151,15,646,10,39,Sofa,Leather,Black,Urban,Summer,Online,26955
+969,499,15,470,10,29,Sofa,Fabric,Black,Urban,Spring,Online,14535
+1952,1182,12,770,8,35,Sofa,Leather,Brown,Rural,Summer,Retail,23424
+1628,957,8,671,3,25,Sofa,Wood,Black,Urban,Spring,Online,13024
+863,444,21,419,9,24,Sofa,Fabric,Black,Urban,Summer,Online,18123
+1354,761,5,593,4,38,Sofa,Wood,Black,Rural,Winter,Online,6770
+1471,863,15,608,9,23,Sofa,Wood,Brown,Urban,Summer,Online,22065
+967,481,1,486,1,18,Sofa,Fabric,Blue,Suburban,Winter,Online,967
+1417,811,7,606,7,27,Sofa,Wood,White,Urban,Winter,Online,9919
+919,461,16,458,8,18,Sofa,Fabric,Brown,Urban,Spring,Retail,14704
+1410,790,16,620,10,31,Sofa,Wood,Black,Suburban,Summer,Online,22560
+984,517,13,467,8,20,Sofa,Fabric,Red,Urban,Summer,Retail,12792
+909,439,5,470,3,19,Sofa,Fabric,Blue,Suburban,Spring,Online,4545
+969,474,15,495,9,20,Sofa,Fabric,Black,Suburban,Fall,Online,14535
+1580,963,9,617,7,23,Sofa,Wood,Black,Rural,Spring,Online,14220
+955,485,12,470,9,11,Sofa,Fabric,Blue,Suburban,Summer,Retail,11460
+1049,569,7,480,2,28,Sofa,Fabric,Blue,Rural,Fall,Online,7343
+1010,481,12,529,8,24,Sofa,Fabric,Red,Urban,Fall,Retail,12120
+820,406,12,414,10,18,Sofa,Fabric,White,Rural,Fall,Online,9840
+1564,876,10,688,1,36,Sofa,Wood,Blue,Urban,Summer,Online,15640
+1631,930,13,701,12,26,Sofa,Wood,White,Urban,Summer,Online,21203
+1008,529,10,479,4,31,Sofa,Fabric,Green,Rural,Fall,Online,10080
+893,458,3,435,1,20,Sofa,Fabric,Green,Suburban,Winter,Online,2679
+875,443,11,432,5,25,Sofa,Fabric,Red,Rural,Fall,Online,9625
+1549,918,4,631,1,32,Sofa,Wood,Green,Urban,Spring,Online,6196
+1589,929,5,660,4,23,Sofa,Wood,Black,Suburban,Winter,Retail,7945
+1632,1032,13,600,7,33,Sofa,Wood,Blue,Urban,Fall,Online,21216
+900,444,14,456,4,20,Sofa,Fabric,Black,Suburban,Winter,Online,12600
+1493,886,13,607,9,30,Sofa,Wood,Brown,Suburban,Summer,Online,19409
+1383,771,5,612,1,35,Sofa,Wood,Brown,Rural,Winter,Online,6915
+1312,836,9,476,8,44,Sofa,Leather,Green,Suburban,Summer,Retail,11808
+1468,908,12,560,7,39,Sofa,Wood,White,Rural,Summer,Online,17616
+1553,968,6,585,6,30,Sofa,Leather,Blue,Rural,Fall,Retail,9318
+1091,551,13,540,3,18,Sofa,Fabric,Blue,Urban,Fall,Online,14183
+1046,535,9,511,7,17,Sofa,Fabric,Green,Rural,Summer,Online,9414
+1367,803,7,564,2,22,Sofa,Wood,White,Suburban,Winter,Retail,9569
+1099,532,13,567,10,16,Sofa,Fabric,White,Rural,Fall,Retail,14287
+1047,510,8,537,1,28,Sofa,Fabric,White,Rural,Spring,Online,8376
+1534,903,9,631,3,31,Sofa,Wood,Red,Suburban,Fall,Online,13806
+955,485,20,470,11,22,Sofa,Fabric,Black,Urban,Summer,Retail,19100
+1561,921,2,640,1,30,Sofa,Wood,Red,Suburban,Spring,Online,3122
+1120,558,14,562,8,16,Sofa,Fabric,White,Rural,Summer,Online,15680
+1558,844,5,714,6,35,Sofa,Wood,Brown,Rural,Spring,Online,7790
+951,487,4,464,1,19,Sofa,Fabric,Blue,Urban,Winter,Online,3804
+959,511,17,448,8,18,Sofa,Fabric,White,Suburban,Summer,Retail,16303
+1445,865,4,580,1,34,Sofa,Wood,Blue,Rural,Spring,Online,5780
+1104,562,4,542,1,24,Sofa,Fabric,Red,Rural,Winter,Online,4416
+1039,550,15,489,9,8,Sofa,Fabric,Brown,Rural,Summer,Retail,15585
+1370,797,12,573,4,15,Sofa,Wood,Black,Rural,Summer,Retail,16440
+923,467,11,456,7,7,Sofa,Fabric,Red,Suburban,Summer,Retail,10153
+1154,611,1,543,1,18,Sofa,Fabric,Blue,Urban,Winter,Retail,1154
+898,433,9,465,1,22,Sofa,Fabric,Black,Rural,Winter,Retail,8082
+1022,474,14,548,9,14,Sofa,Fabric,Brown,Suburban,Spring,Online,14308
+1093,529,7,564,3,19,Sofa,Fabric,Red,Rural,Fall,Retail,7651
+1012,505,17,507,9,19,Sofa,Fabric,White,Urban,Fall,Retail,17204
+1593,922,12,671,6,25,Sofa,Wood,Green,Urban,Summer,Online,19116
+885,451,4,434,1,10,Sofa,Fabric,Green,Suburban,Winter,Online,3540
+1176,599,15,577,8,14,Sofa,Fabric,Black,Suburban,Fall,Online,17640
+1018,514,2,504,1,19,Sofa,Fabric,Red,Rural,Spring,Online,2036
+938,489,13,449,7,22,Sofa,Fabric,Black,Urban,Spring,Retail,12194
+1511,907,5,604,3,34,Sofa,Wood,Red,Suburban,Spring,Retail,7555
+978,481,15,497,10,14,Sofa,Fabric,Blue,Urban,Summer,Retail,14670
+1071,513,6,558,4,18,Sofa,Fabric,Brown,Rural,Spring,Online,6426
+959,457,17,502,10,24,Sofa,Fabric,Black,Suburban,Fall,Online,16303
+1536,875,13,661,11,30,Sofa,Wood,Brown,Urban,Spring,Retail,19968
+989,495,17,494,7,19,Sofa,Fabric,Brown,Urban,Summer,Retail,16813
+1470,821,9,649,10,32,Sofa,Wood,Green,Urban,Spring,Retail,13230
+1406,815,8,591,4,30,Sofa,Wood,Brown,Rural,Spring,Online,11248
+1068,509,11,559,5,29,Sofa,Fabric,Black,Suburban,Winter,Retail,11748
+1452,778,16,674,6,53,Sofa,Wood,Black,Rural,Summer,Retail,23232
+1132,587,8,545,6,23,Sofa,Fabric,Brown,Urban,Winter,Retail,9056
+1500,850,13,650,8,34,Sofa,Wood,Black,Rural,Summer,Retail,19500
+1413,812,8,601,7,30,Sofa,Wood,Green,Suburban,Spring,Retail,11304
+1428,851,1,577,1,25,Sofa,Wood,Green,Suburban,Winter,Retail,1428
+1411,829,6,582,7,40,Sofa,Wood,Green,Urban,Winter,Retail,8466
+1428,837,6,591,4,28,Sofa,Wood,Green,Urban,Spring,Retail,8568
+1558,943,1,615,3,34,Sofa,Wood,Red,Suburban,Winter,Online,1558
+966,465,8,501,2,29,Sofa,Fabric,Blue,Rural,Spring,Online,7728
+1896,1158,11,738,6,28,Sofa,Leather,Brown,Urban,Spring,Online,20856
+1742,1020,7,722,8,35,Sofa,Leather,White,Rural,Spring,Online,12194
+1835,1139,17,696,11,42,Sofa,Wood,Black,Suburban,Fall,Retail,31195
+983,479,10,504,3,13,Sofa,Fabric,Blue,Rural,Summer,Online,9830
+966,508,13,458,7,15,Sofa,Fabric,Green,Suburban,Summer,Online,12558
+955,449,8,506,1,19,Sofa,Fabric,White,Rural,Spring,Retail,7640
+1031,502,5,529,4,22,Sofa,Fabric,Green,Urban,Winter,Online,5155
+979,499,12,480,3,25,Sofa,Fabric,Blue,Suburban,Fall,Retail,11748
+1066,545,19,521,13,10,Sofa,Fabric,White,Urban,Summer,Retail,20254
+1214,589,15,625,5,12,Sofa,Fabric,White,Urban,Summer,Online,18210
+1002,488,5,514,4,6,Sofa,Fabric,Green,Urban,Spring,Online,5010
+1366,865,16,501,8,31,Sofa,Wood,White,Urban,Fall,Retail,21856
+1540,916,14,624,8,31,Sofa,Wood,Brown,Suburban,Summer,Online,21560
+954,463,5,491,1,19,Sofa,Fabric,Blue,Rural,Winter,Retail,4770
+916,427,15,489,7,20,Sofa,Fabric,White,Urban,Summer,Online,13740
+1696,963,16,733,8,40,Sofa,Wood,Black,Urban,Summer,Online,27136
+1064,521,14,543,7,20,Sofa,Fabric,Blue,Urban,Summer,Online,14896
+922,429,12,493,6,13,Sofa,Fabric,Red,Suburban,Summer,Retail,11064
+1011,504,14,507,10,21,Sofa,Fabric,Black,Suburban,Fall,Online,14154
+1457,851,3,606,4,35,Sofa,Wood,Green,Rural,Winter,Retail,4371
+954,523,8,431,6,20,Sofa,Fabric,Blue,Rural,Fall,Online,7632
+1037,539,11,498,2,27,Sofa,Fabric,Black,Suburban,Spring,Retail,11407
+1095,547,10,548,4,28,Sofa,Fabric,Black,Suburban,Winter,Online,10950
+1044,501,17,543,12,28,Sofa,Fabric,Brown,Rural,Summer,Retail,17748
+1313,752,8,561,5,37,Sofa,Wood,Black,Rural,Spring,Retail,10504
+1466,838,16,628,10,37,Sofa,Wood,Brown,Urban,Fall,Retail,23456
+886,414,5,472,2,26,Sofa,Fabric,Green,Suburban,Winter,Retail,4430
+1427,846,3,581,6,26,Sofa,Wood,Red,Rural,Spring,Retail,4281
+1426,900,12,526,6,27,Sofa,Wood,White,Rural,Spring,Retail,17112
+1528,887,14,641,8,38,Sofa,Wood,Brown,Urban,Fall,Online,21392
+1369,866,1,503,1,36,Sofa,Wood,Blue,Rural,Spring,Online,1369
+1545,941,13,604,7,19,Sofa,Wood,White,Suburban,Spring,Retail,20085
+1078,533,17,545,7,15,Sofa,Fabric,White,Suburban,Summer,Online,18326
+1054,532,13,522,9,17,Sofa,Fabric,White,Rural,Summer,Online,13702
+1548,885,11,663,1,34,Sofa,Wood,White,Rural,Fall,Online,17028
+1622,909,12,713,8,30,Sofa,Wood,Brown,Suburban,Summer,Retail,19464
+1006,514,10,492,4,15,Sofa,Fabric,White,Suburban,Spring,Retail,10060
+1386,844,6,542,3,31,Sofa,Wood,Blue,Rural,Spring,Retail,8316
+1779,1019,6,760,5,36,Sofa,Wood,Brown,Rural,Spring,Online,10674
+1004,512,3,492,1,20,Sofa,Fabric,Red,Suburban,Winter,Online,3012
+1779,1020,14,759,4,34,Sofa,Leather,Brown,Rural,Summer,Retail,24906
+1571,965,10,606,4,27,Sofa,Wood,Brown,Suburban,Spring,Retail,15710
+1589,879,12,710,2,22,Sofa,Wood,Blue,Rural,Summer,Retail,19068
+1549,919,6,630,3,25,Sofa,Wood,Green,Urban,Spring,Retail,9294
+1019,540,10,479,7,20,Sofa,Fabric,White,Rural,Fall,Online,10190
+1582,1007,12,575,7,41,Sofa,Leather,Blue,Urban,Fall,Online,18984
+937,450,13,487,9,16,Sofa,Fabric,Black,Suburban,Winter,Retail,12181
+1474,903,11,571,2,32,Sofa,Leather,Brown,Suburban,Fall,Online,16214
+947,495,11,452,4,26,Sofa,Fabric,Brown,Rural,Fall,Retail,10417
+970,515,7,455,2,25,Sofa,Fabric,Blue,Urban,Winter,Online,6790
+1714,1003,6,711,5,28,Sofa,Leather,Red,Suburban,Fall,Online,10284
+1160,603,15,557,4,16,Sofa,Fabric,Black,Urban,Fall,Online,17400
+1075,503,16,572,6,26,Sofa,Fabric,Brown,Rural,Summer,Retail,17200
+1047,586,9,461,9,26,Sofa,Fabric,Brown,Suburban,Winter,Online,9423
+1670,938,11,732,5,36,Sofa,Leather,Red,Urban,Fall,Online,18370
+961,498,6,463,3,19,Sofa,Fabric,Brown,Rural,Winter,Online,5766
+778,404,13,374,11,21,Sofa,Fabric,White,Urban,Spring,Retail,10114
+1733,969,11,764,5,33,Sofa,Wood,Black,Rural,Fall,Online,19063
+1083,494,10,589,4,11,Sofa,Fabric,White,Suburban,Winter,Retail,10830
+921,469,4,452,3,16,Sofa,Fabric,Red,Suburban,Winter,Retail,3684
+1020,474,10,546,8,20,Sofa,Fabric,Black,Rural,Spring,Retail,10200
+1105,549,16,556,7,27,Sofa,Fabric,Brown,Rural,Fall,Online,17680
+1151,546,11,605,6,24,Sofa,Fabric,Black,Suburban,Winter,Online,12661
+1618,991,4,627,1,26,Sofa,Wood,Brown,Suburban,Winter,Online,6472
+931,460,2,471,1,25,Sofa,Fabric,Red,Rural,Winter,Online,1862
+1058,548,4,510,2,27,Sofa,Fabric,Green,Urban,Winter,Online,4232
+921,456,11,465,6,29,Sofa,Fabric,Green,Rural,Summer,Online,10131
+1411,841,1,570,1,29,Sofa,Wood,Green,Suburban,Winter,Online,1411
+1662,964,16,698,9,28,Sofa,Wood,Black,Suburban,Fall,Online,26592
+954,432,5,522,4,18,Sofa,Fabric,Red,Rural,Spring,Online,4770
+1496,921,6,575,4,30,Sofa,Wood,Green,Suburban,Spring,Retail,8976
+1016,471,11,545,4,22,Sofa,Fabric,Green,Urban,Summer,Online,11176
+962,471,18,491,8,9,Sofa,Fabric,Black,Rural,Summer,Retail,17316
+888,480,10,408,4,3,Sofa,Fabric,Red,Rural,Fall,Retail,8880
+1020,491,10,529,9,23,Sofa,Fabric,Blue,Suburban,Summer,Retail,10200
+982,452,9,530,8,27,Sofa,Fabric,Red,Urban,Winter,Online,8838
+1622,938,7,684,4,40,Sofa,Wood,Black,Urban,Winter,Online,11354
+983,464,8,519,3,28,Sofa,Fabric,Green,Suburban,Spring,Retail,7864
+1321,734,8,587,2,14,Sofa,Wood,Blue,Rural,Summer,Retail,10568
+1398,766,5,632,5,33,Sofa,Wood,Brown,Rural,Winter,Online,6990
+1399,812,10,587,5,23,Sofa,Wood,Black,Rural,Spring,Retail,13990
+972,507,8,465,5,15,Sofa,Fabric,Red,Suburban,Spring,Online,7776
+987,485,13,502,5,27,Sofa,Fabric,Blue,Urban,Summer,Retail,12831
+987,487,12,500,5,4,Sofa,Fabric,Brown,Rural,Fall,Retail,11844
+1615,934,10,681,6,28,Sofa,Wood,Black,Rural,Fall,Online,16150
+1376,734,1,642,2,29,Sofa,Wood,Blue,Rural,Winter,Online,1376
+1430,845,11,585,6,27,Sofa,Leather,White,Rural,Fall,Online,15730
+948,466,15,482,11,17,Sofa,Fabric,Brown,Rural,Summer,Online,14220
+881,434,13,447,6,10,Sofa,Fabric,Red,Suburban,Summer,Retail,11453
+1460,886,12,574,5,28,Sofa,Leather,Green,Suburban,Summer,Retail,17520
+1523,895,11,628,5,36,Sofa,Wood,Red,Suburban,Fall,Online,16753
+1448,793,6,655,4,34,Sofa,Wood,Red,Urban,Winter,Retail,8688
+1703,1044,7,659,1,30,Sofa,Leather,Red,Rural,Summer,Online,11921
+1485,840,4,645,5,29,Sofa,Wood,Red,Suburban,Winter,Retail,5940
+1489,946,9,543,5,21,Sofa,Leather,Red,Suburban,Fall,Online,13401
+1302,784,8,518,7,43,Sofa,Wood,Brown,Suburban,Winter,Retail,10416
+1032,516,14,516,8,24,Sofa,Fabric,Black,Urban,Spring,Retail,14448
+971,524,8,447,5,26,Sofa,Fabric,Brown,Suburban,Spring,Retail,7768
+1504,896,1,608,4,37,Sofa,Wood,Green,Rural,Winter,Online,1504
+1387,739,4,648,1,18,Sofa,Wood,Green,Suburban,Spring,Retail,5548
+1020,523,8,497,4,25,Sofa,Fabric,Blue,Urban,Spring,Online,8160
+1024,571,6,453,4,13,Sofa,Fabric,Blue,Suburban,Spring,Online,6144
+1001,523,16,478,11,24,Sofa,Fabric,White,Suburban,Fall,Online,16016
+964,416,12,548,11,11,Sofa,Fabric,White,Suburban,Summer,Online,11568
+1124,547,6,577,5,24,Sofa,Fabric,Brown,Suburban,Winter,Online,6744
+1111,542,12,569,7,29,Sofa,Fabric,Black,Urban,Winter,Online,13332
+1051,550,14,501,11,28,Sofa,Fabric,White,Urban,Fall,Retail,14714
+959,511,4,448,3,16,Sofa,Fabric,Brown,Rural,Winter,Online,3836
+919,455,9,464,7,11,Sofa,Fabric,Black,Rural,Spring,Online,8271
+974,463,9,511,5,23,Sofa,Fabric,White,Rural,Winter,Retail,8766
+1410,825,8,585,4,28,Sofa,Wood,Red,Urban,Spring,Online,11280
+1023,523,5,500,1,15,Sofa,Fabric,Red,Urban,Winter,Online,5115
+914,524,6,390,1,16,Sofa,Fabric,Blue,Rural,Spring,Retail,5484
+925,517,18,408,9,25,Sofa,Fabric,White,Urban,Summer,Online,16650
+1589,892,1,697,1,28,Sofa,Wood,Blue,Urban,Winter,Online,1589
+1004,497,6,507,4,18,Sofa,Fabric,Red,Rural,Spring,Online,6024
+1118,508,17,610,7,21,Sofa,Fabric,Black,Suburban,Summer,Online,19006
+1588,894,2,694,5,39,Sofa,Wood,Red,Suburban,Spring,Retail,3176
+1143,543,18,600,10,20,Sofa,Fabric,Black,Suburban,Summer,Online,20574
+1682,1070,8,612,5,39,Sofa,Wood,Brown,Rural,Spring,Retail,13456
+1017,507,6,510,7,26,Sofa,Fabric,Red,Rural,Spring,Retail,6102
+798,436,5,362,1,26,Sofa,Fabric,Green,Suburban,Winter,Retail,3990
+1042,525,7,517,7,23,Sofa,Fabric,Blue,Suburban,Spring,Online,7294
+1415,757,12,658,6,27,Sofa,Wood,White,Urban,Fall,Online,16980
+1609,888,9,721,8,25,Sofa,Wood,Green,Rural,Summer,Retail,14481
+1578,900,10,678,6,24,Sofa,Wood,Brown,Suburban,Winter,Online,15780
+1337,748,10,589,7,22,Sofa,Wood,Blue,Urban,Summer,Retail,13370
+1524,893,13,631,10,39,Sofa,Wood,Green,Suburban,Fall,Retail,19812
+968,485,12,483,11,18,Sofa,Fabric,White,Rural,Summer,Online,11616
+1664,1003,10,661,4,29,Sofa,Wood,Red,Urban,Summer,Online,16640
+965,478,16,487,11,29,Sofa,Fabric,Green,Urban,Summer,Online,15440
+1278,706,4,572,7,44,Sofa,Wood,Green,Suburban,Spring,Online,5112
+1001,503,11,498,10,22,Sofa,Fabric,Black,Rural,Spring,Online,11011
+1785,1083,1,702,1,30,Sofa,Leather,Green,Rural,Winter,Online,1785
+1764,1105,20,659,12,34,Sofa,Leather,Black,Suburban,Fall,Retail,35280
+1506,912,6,594,1,28,Sofa,Leather,Blue,Urban,Winter,Retail,9036
+1462,952,7,510,3,37,Sofa,Leather,Brown,Rural,Winter,Retail,10234
+1143,559,17,584,9,20,Sofa,Fabric,Brown,Suburban,Fall,Retail,19431
+1021,526,4,495,1,20,Sofa,Fabric,Blue,Urban,Winter,Online,4084
+988,495,12,493,6,17,Sofa,Fabric,Red,Rural,Summer,Online,11856
+1026,511,11,515,4,10,Sofa,Fabric,Blue,Suburban,Fall,Retail,11286
+1435,873,14,562,7,32,Sofa,Wood,Green,Suburban,Summer,Online,20090
+1695,1036,5,659,4,38,Sofa,Leather,White,Rural,Spring,Online,8475
+1444,885,10,559,4,28,Sofa,Leather,Black,Rural,Spring,Retail,14440
+1788,1102,13,686,5,31,Sofa,Leather,White,Suburban,Spring,Online,23244
+948,455,13,493,7,9,Sofa,Fabric,Blue,Urban,Summer,Retail,12324
+1430,808,17,622,9,33,Sofa,Wood,Brown,Urban,Summer,Online,24310
+997,476,17,521,11,25,Sofa,Fabric,White,Urban,Fall,Retail,16949
+1095,611,15,484,8,17,Sofa,Fabric,Blue,Rural,Summer,Retail,16425
+1503,879,10,624,2,32,Sofa,Wood,Red,Suburban,Summer,Retail,15030
