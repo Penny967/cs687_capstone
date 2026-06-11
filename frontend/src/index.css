@@ -725,3 +725,69 @@ a {
 .replenishment-explanation-card {
   margin-top: 24px;
 }
+
+.page-state-message {
+  padding: 32px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 14px;
+}
+
+.table-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.success-message {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 14px;
+}
+
+.warning-box {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}

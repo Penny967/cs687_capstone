@@ -1,23 +1,21 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-import { mockInventory } from "../data/mockInventory";
-import { mockOrderItems, mockOrders } from "../data/mockOrders";
-import type { SalesAnalyticsRecord } from "../types/analytics";
-import type { InventoryItem } from "../types/inventory";
+import { apiRequest } from "../api/client";
 import type {
   CustomerOrder,
-  CustomerOrderItem,
-  OrderStatus,
+  CustomerOrderDetail,
+  CustomerOrderStatus,
+  CustomerOrderStatusUpdateRequest,
 } from "../types/order";
-import {
-  calculateAvailableInventoryBySku,
-  calculateDeliveryDays,
-  getSeason,
-} from "../utils/analyticsUtils";
 
-type OrderStatusFilter = "all" | OrderStatus;
+type OrderStatusFilter = "all" | CustomerOrderStatus;
 
-const orderStatusLabels: Record<OrderStatus, string> = {
+type StatusUpdateFormState = {
+  status: CustomerOrderStatus;
+  note: string;
+};
+
+const orderStatusLabels: Record<CustomerOrderStatus, string> = {
   inquiry: "Inquiry",
   deposit_paid: "Deposit Paid",
   preparing: "Preparing",
@@ -27,7 +25,7 @@ const orderStatusLabels: Record<OrderStatus, string> = {
   refunded: "Refunded",
 };
 
-const orderStatusClassNames: Record<OrderStatus, string> = {
+const orderStatusClassNames: Record<CustomerOrderStatus, string> = {
   inquiry: "badge badge-blue",
   deposit_paid: "badge badge-purple",
   preparing: "badge badge-yellow",
@@ -37,220 +35,340 @@ const orderStatusClassNames: Record<OrderStatus, string> = {
   refunded: "badge badge-red",
 };
 
-const orderStatusOptions: { value: OrderStatusFilter; label: string }[] = [
+const orderStatusOptions: Array<{
+  value: CustomerOrderStatus;
+  label: string;
+}> = [
+  { value: "inquiry", label: "Inquiry" },
+  { value: "deposit_paid", label: "Deposit Paid" },
+  { value: "preparing", label: "Preparing" },
+  {
+    value: "scheduled_delivery",
+    label: "Scheduled Delivery",
+  },
+  { value: "delivered", label: "Delivered" },
+  { value: "cancelled", label: "Cancelled" },
+  { value: "refunded", label: "Refunded" },
+];
+
+const orderStatusFilterOptions: Array<{
+  value: OrderStatusFilter;
+  label: string;
+}> = [
   { value: "all", label: "All Statuses" },
-  { value: "inquiry", label: "Inquiry" },
-  { value: "deposit_paid", label: "Deposit Paid" },
-  { value: "preparing", label: "Preparing" },
-  { value: "scheduled_delivery", label: "Scheduled Delivery" },
-  { value: "delivered", label: "Delivered" },
-  { value: "cancelled", label: "Cancelled" },
-  { value: "refunded", label: "Refunded" },
+  ...orderStatusOptions,
 ];
 
-const orderStatusUpdateOptions: { value: OrderStatus; label: string }[] = [
-  { value: "inquiry", label: "Inquiry" },
-  { value: "deposit_paid", label: "Deposit Paid" },
-  { value: "preparing", label: "Preparing" },
-  { value: "scheduled_delivery", label: "Scheduled Delivery" },
-  { value: "delivered", label: "Delivered" },
-  { value: "cancelled", label: "Cancelled" },
-  { value: "refunded", label: "Refunded" },
-];
+function formatCurrency(value: string | number | null): string {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(Number(value ?? 0));
+}
 
-function formatCurrency(value: number) {
-  return `$${value.toFixed(2)}`;
+function formatDate(value: string | null): string {
+  if (!value) {
+    return "-";
+  }
+
+  const parsedDate = new Date(`${value}T00:00:00`);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }).format(parsedDate);
+}
+
+function formatDateTime(value: string | null): string {
+  if (!value) {
+    return "-";
+  }
+
+  const parsedDate = new Date(value);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(parsedDate);
 }
 
 function OrdersPage() {
-  const [orders, setOrders] = useState<CustomerOrder[]>(mockOrders);
-
-  const [inventoryItems, setInventoryItems] =
-    useState<InventoryItem[]>(mockInventory);
-
-  const [salesAnalyticsRecords, setSalesAnalyticsRecords] = useState<
-    SalesAnalyticsRecord[]
-  >([]);
+  const [orders, setOrders] = useState<CustomerOrder[]>([]);
 
   const [selectedStatus, setSelectedStatus] =
     useState<OrderStatusFilter>("all");
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [selectedOrder, setSelectedOrder] = useState<CustomerOrder | null>(null);
+  const [detailOrder, setDetailOrder] =
+    useState<CustomerOrderDetail | null>(null);
 
-  const [detailOrder, setDetailOrder] = useState<CustomerOrder | null>(null);
+  const [statusOrder, setStatusOrder] =
+    useState<CustomerOrder | null>(null);
 
-  const [newOrderStatus, setNewOrderStatus] =
-    useState<OrderStatus>("inquiry");
+  const [statusUpdateForm, setStatusUpdateForm] =
+    useState<StatusUpdateFormState>({
+      status: "inquiry",
+      note: "",
+    });
 
-  const [statusNote, setStatusNote] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [isDetailLoading, setIsDetailLoading] = useState(false);
+  const [isUpdatingStatus, setIsUpdatingStatus] = useState(false);
 
-  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [detailErrorMessage, setDetailErrorMessage] =
+    useState<string | null>(null);
+  const [modalErrorMessage, setModalErrorMessage] =
+    useState<string | null>(null);
 
-  const filteredOrders = orders.filter((order) => {
-    const matchesStatus =
-      selectedStatus === "all" || order.status === selectedStatus;
+  async function loadOrders() {
+    try {
+      setIsLoading(true);
+      setErrorMessage(null);
 
-    const matchesSearch =
-      normalizedSearchTerm === "" ||
-      order.orderNumber.toLowerCase().includes(normalizedSearchTerm) ||
-      order.customerName.toLowerCase().includes(normalizedSearchTerm) ||
-      order.customerPhone.toLowerCase().includes(normalizedSearchTerm);
+      const data = await apiRequest<CustomerOrder[]>(
+        "/api/orders?limit=200"
+      );
 
-    return matchesStatus && matchesSearch;
-  });
-
-  const activeOrdersCount = orders.filter(
-    (order) =>
-      order.status !== "delivered" &&
-      order.status !== "cancelled" &&
-      order.status !== "refunded"
-  ).length;
-
-  const deliveredOrdersCount = orders.filter(
-    (order) => order.status === "delivered"
-  ).length;
-
-  const totalRevenue = orders
-    .filter((order) => order.status === "delivered")
-    .reduce((sum, order) => sum + order.totalAmount, 0);
-
-  const totalBalanceDue = orders.reduce(
-    (sum, order) => sum + order.balanceDue,
-    0
-  );
-
-  const detailOrderItems: CustomerOrderItem[] = detailOrder
-    ? mockOrderItems.filter((item) => item.orderId === detailOrder.id)
-    : [];
-
-  function openStatusModal(order: CustomerOrder) {
-    setSelectedOrder(order);
-    setNewOrderStatus(order.status);
-    setStatusNote("");
+      setOrders(data);
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to load customer orders."
+      );
+    } finally {
+      setIsLoading(false);
+    }
   }
 
-  function closeStatusModal() {
-    setSelectedOrder(null);
-    setStatusNote("");
-  }
+  useEffect(() => {
+    void loadOrders();
+  }, []);
 
-  function openDetailModal(order: CustomerOrder) {
-    setDetailOrder(order);
+  const filteredOrders = useMemo(() => {
+    const normalizedSearch = searchTerm.trim().toLowerCase();
+
+    return orders.filter((order) => {
+      const matchesStatus =
+        selectedStatus === "all" ||
+        order.status === selectedStatus;
+
+      const searchableValues = [
+        order.order_number,
+        order.customer_name,
+        order.customer_phone ?? "",
+        order.status,
+      ];
+
+      const matchesSearch =
+        normalizedSearch === "" ||
+        searchableValues.some((value) =>
+          value.toLowerCase().includes(normalizedSearch)
+        );
+
+      return matchesStatus && matchesSearch;
+    });
+  }, [orders, searchTerm, selectedStatus]);
+
+  const orderSummary = useMemo(() => {
+    const activeStatuses: CustomerOrderStatus[] = [
+      "inquiry",
+      "deposit_paid",
+      "preparing",
+      "scheduled_delivery",
+    ];
+
+    const activeOrders = orders.filter((order) =>
+      activeStatuses.includes(order.status)
+    ).length;
+
+    const deliveredOrders = orders.filter(
+      (order) => order.status === "delivered"
+    ).length;
+
+    const totalBalanceDue = orders.reduce(
+      (sum, order) => sum + Number(order.balance_due),
+      0
+    );
+
+    const deliveredRevenue = orders
+      .filter((order) => order.status === "delivered")
+      .reduce(
+        (sum, order) => sum + Number(order.total_amount),
+        0
+      );
+
+    return {
+      total: orders.length,
+      active: activeOrders,
+      delivered: deliveredOrders,
+      totalBalanceDue,
+      deliveredRevenue,
+    };
+  }, [orders]);
+
+  async function openDetailModal(order: CustomerOrder) {
+    setDetailOrder(null);
+    setDetailErrorMessage(null);
+    setIsDetailLoading(true);
+
+    try {
+      const data = await apiRequest<CustomerOrderDetail>(
+        `/api/orders/${order.id}`
+      );
+
+      setDetailOrder(data);
+    } catch (error) {
+      setDetailErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to load order details."
+      );
+    } finally {
+      setIsDetailLoading(false);
+    }
   }
 
   function closeDetailModal() {
     setDetailOrder(null);
+    setDetailErrorMessage(null);
+    setIsDetailLoading(false);
   }
 
-  function handleSaveOrderStatus() {
-    if (!selectedOrder) {
+  function openStatusModal(order: CustomerOrder) {
+    setStatusOrder(order);
+    setModalErrorMessage(null);
+
+    setStatusUpdateForm({
+      status: order.status,
+      note: "",
+    });
+  }
+
+  function closeStatusModal() {
+    if (isUpdatingStatus) {
       return;
     }
 
-    const previousStatus = selectedOrder.status;
+    setStatusOrder(null);
+    setModalErrorMessage(null);
 
-    const isChangingToDelivered =
-      previousStatus !== "delivered" && newOrderStatus === "delivered";
+    setStatusUpdateForm({
+      status: "inquiry",
+      note: "",
+    });
+  }
 
-    let relatedOrderItems: CustomerOrderItem[] = [];
-
-    if (isChangingToDelivered) {
-      const deliveredDate =
-        selectedOrder.scheduledDeliveryDate ||
-        new Date().toISOString().slice(0, 10);
-
-      relatedOrderItems = mockOrderItems.filter(
-        (item) => item.orderId === selectedOrder.id
-      );
-
-      const generatedRecords: SalesAnalyticsRecord[] = relatedOrderItems.map(
-        (orderItem) => {
-          const linkedInventoryItem = inventoryItems.find(
-            (inventoryItem) => inventoryItem.id === orderItem.inventoryItemId
-          );
-
-          const deliveryDays = calculateDeliveryDays(
-            linkedInventoryItem?.productionStartDate,
-            linkedInventoryItem?.actualArrivalDate
-          );
-
-          const inventory = calculateAvailableInventoryBySku(
-            inventoryItems,
-            orderItem.sku
-          );
-
-          return {
-            id: `sales-record-${Date.now()}-${orderItem.id}`,
-
-            orderId: selectedOrder.id,
-            orderNumber: selectedOrder.orderNumber,
-            orderItemId: orderItem.id,
-            inventoryItemId: orderItem.inventoryItemId,
-
-            sku: orderItem.sku,
-            productName: orderItem.productName,
-
-            price: orderItem.finalPrice,
-            cost: linkedInventoryItem?.cost ?? 0,
-            sales: orderItem.quantity,
-            inventory,
-            deliveryDays,
-
-            category: linkedInventoryItem?.category ?? "Unknown",
-            material: linkedInventoryItem?.material ?? "Unknown",
-            color: linkedInventoryItem?.color ?? "Unknown",
-            location: linkedInventoryItem?.location ?? "Unknown",
-            season: getSeason(deliveredDate),
-            storeType: linkedInventoryItem?.storeType ?? "unknown",
-
-            recordDate: deliveredDate,
-          };
-        }
-      );
-
-      setSalesAnalyticsRecords((currentRecords) => [
-        ...currentRecords,
-        ...generatedRecords,
-      ]);
-
-      setInventoryItems((currentItems) =>
-        currentItems.map((item) => {
-          const soldOrderItem = relatedOrderItems.find(
-            (orderItem) => orderItem.inventoryItemId === item.id
-          );
-
-          if (!soldOrderItem) {
-            return item;
-          }
-
-          return {
-            ...item,
-            status: "sold",
-          };
-        })
-      );
+  async function handleUpdateOrderStatus() {
+    if (!statusOrder) {
+      return;
     }
 
-    setOrders((currentOrders) =>
-      currentOrders.map((order) => {
-        if (order.id !== selectedOrder.id) {
-          return order;
+    setModalErrorMessage(null);
+
+    if (
+      statusOrder.status === "delivered" &&
+      statusUpdateForm.status !== "delivered"
+    ) {
+      setModalErrorMessage(
+        "A delivered order cannot be changed directly to another status."
+      );
+      return;
+    }
+
+    const payload: CustomerOrderStatusUpdateRequest = {
+      status: statusUpdateForm.status,
+      note: statusUpdateForm.note.trim() || null,
+    };
+
+    try {
+      setIsUpdatingStatus(true);
+
+      const updatedOrder = await apiRequest<CustomerOrderDetail>(
+        `/api/orders/${statusOrder.id}/status`,
+        {
+          method: "PATCH",
+          body: JSON.stringify(payload),
         }
+      );
 
-        const isDelivered = newOrderStatus === "delivered";
+      setOrders((currentOrders) =>
+        currentOrders.map((order) =>
+          order.id === updatedOrder.id
+            ? {
+                id: updatedOrder.id,
+                order_number: updatedOrder.order_number,
+                customer_name: updatedOrder.customer_name,
+                customer_phone: updatedOrder.customer_phone,
+                status: updatedOrder.status,
+                total_amount: updatedOrder.total_amount,
+                deposit_amount: updatedOrder.deposit_amount,
+                balance_due: updatedOrder.balance_due,
+                scheduled_delivery_date:
+                  updatedOrder.scheduled_delivery_date,
+                delivered_at: updatedOrder.delivered_at,
+                notes: updatedOrder.notes,
+                created_at: updatedOrder.created_at,
+                updated_at: updatedOrder.updated_at,
+              }
+            : order
+        )
+      );
 
-        return {
-          ...order,
-          status: newOrderStatus,
-          balanceDue: isDelivered ? 0 : order.balanceDue,
-          notes: statusNote.trim() || order.notes,
-        };
-      })
-    );
+      if (detailOrder?.id === updatedOrder.id) {
+        setDetailOrder(updatedOrder);
+      }
 
-    closeStatusModal();
+      closeStatusModal();
+    } catch (error) {
+      setModalErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to update order status."
+      );
+    } finally {
+      setIsUpdatingStatus(false);
+    }
+  }
+
+  function openStatusFromDetail() {
+    if (!detailOrder) {
+      return;
+    }
+
+    const orderForStatus: CustomerOrder = {
+      id: detailOrder.id,
+      order_number: detailOrder.order_number,
+      customer_name: detailOrder.customer_name,
+      customer_phone: detailOrder.customer_phone,
+      status: detailOrder.status,
+      total_amount: detailOrder.total_amount,
+      deposit_amount: detailOrder.deposit_amount,
+      balance_due: detailOrder.balance_due,
+      scheduled_delivery_date:
+        detailOrder.scheduled_delivery_date,
+      delivered_at: detailOrder.delivered_at,
+      notes: detailOrder.notes,
+      created_at: detailOrder.created_at,
+      updated_at: detailOrder.updated_at,
+    };
+
+    closeDetailModal();
+    openStatusModal(orderForStatus);
   }
 
   return (
@@ -259,33 +377,43 @@ function OrdersPage() {
         <div>
           <h2>Customer Orders</h2>
           <p>
-            Track customer orders from inquiry, deposit, preparation, scheduled
-            delivery, and final delivery.
+            Track customer orders from inquiry through final delivery.
+            Delivered orders automatically generate analytics records
+            and update linked inventory.
           </p>
         </div>
 
-        <button className="primary-button">Add Order</button>
+        <button
+          className="primary-button"
+          type="button"
+          disabled
+          title="The create order API will be added later."
+        >
+          Add Order
+        </button>
       </div>
 
       <div className="inventory-summary-grid">
         <div className="summary-card">
           <span className="summary-label">Total Orders</span>
-          <strong>{orders.length}</strong>
+          <strong>{orderSummary.total}</strong>
         </div>
 
         <div className="summary-card">
           <span className="summary-label">Active Orders</span>
-          <strong>{activeOrdersCount}</strong>
+          <strong>{orderSummary.active}</strong>
         </div>
 
         <div className="summary-card">
-          <span className="summary-label">Delivered</span>
-          <strong>{deliveredOrdersCount}</strong>
+          <span className="summary-label">Delivered Orders</span>
+          <strong>{orderSummary.delivered}</strong>
         </div>
 
         <div className="summary-card">
           <span className="summary-label">Balance Due</span>
-          <strong>{formatCurrency(totalBalanceDue)}</strong>
+          <strong>
+            {formatCurrency(orderSummary.totalBalanceDue)}
+          </strong>
         </div>
       </div>
 
@@ -295,33 +423,45 @@ function OrdersPage() {
             <h3>Order List</h3>
             <p>
               Showing {filteredOrders.length} of {orders.length} orders.
-              Delivered revenue: {formatCurrency(totalRevenue)}.
+              Delivered revenue:{" "}
+              {formatCurrency(orderSummary.deliveredRevenue)}.
             </p>
           </div>
 
           <div className="table-actions">
             <div className="search-group">
               <label htmlFor="order-search">Search</label>
+
               <input
                 id="order-search"
-                type="text"
+                type="search"
                 placeholder="Search order, customer, phone..."
                 value={searchTerm}
-                onChange={(event) => setSearchTerm(event.target.value)}
+                onChange={(event) =>
+                  setSearchTerm(event.target.value)
+                }
               />
             </div>
 
             <div className="filter-group">
-              <label htmlFor="order-status-filter">Status</label>
+              <label htmlFor="order-status-filter">
+                Status
+              </label>
+
               <select
                 id="order-status-filter"
                 value={selectedStatus}
                 onChange={(event) =>
-                  setSelectedStatus(event.target.value as OrderStatusFilter)
+                  setSelectedStatus(
+                    event.target.value as OrderStatusFilter
+                  )
                 }
               >
-                {orderStatusOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
+                {orderStatusFilterOptions.map((option) => (
+                  <option
+                    value={option.value}
+                    key={option.value}
+                  >
                     {option.label}
                   </option>
                 ))}
@@ -330,161 +470,435 @@ function OrdersPage() {
           </div>
         </div>
 
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Order Number</th>
-              <th>Customer</th>
-              <th>Phone</th>
-              <th>Status</th>
-              <th>Total</th>
-              <th>Deposit</th>
-              <th>Balance Due</th>
-              <th>Scheduled Delivery</th>
-              <th>Created</th>
-              <th>Action</th>
-            </tr>
-          </thead>
+        {isLoading && (
+          <div className="page-state-message">
+            Loading customer orders from the database...
+          </div>
+        )}
 
-          <tbody>
-            {filteredOrders.map((order) => (
-              <tr key={order.id}>
-                <td>{order.orderNumber}</td>
-                <td>{order.customerName}</td>
-                <td>{order.customerPhone}</td>
-                <td>
-                  <span className={orderStatusClassNames[order.status]}>
-                    {orderStatusLabels[order.status]}
-                  </span>
-                </td>
-                <td>{formatCurrency(order.totalAmount)}</td>
-                <td>{formatCurrency(order.depositAmount)}</td>
-                <td>{formatCurrency(order.balanceDue)}</td>
-                <td>{order.scheduledDeliveryDate ?? "-"}</td>
-                <td>{order.createdAt}</td>
-                <td>
-                  <div className="row-actions">
-                    <button
-                      className="secondary-button"
-                      onClick={() => openDetailModal(order)}
+        {!isLoading && errorMessage && (
+          <div className="error-message" role="alert">
+            <strong>Unable to load customer orders.</strong>
+            <span>{errorMessage}</span>
+
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={() => void loadOrders()}
+            >
+              Try Again
+            </button>
+          </div>
+        )}
+
+        {!isLoading && !errorMessage && (
+          <div className="table-scroll-container">
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>Order Number</th>
+                  <th>Customer</th>
+                  <th>Phone</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                  <th>Deposit</th>
+                  <th>Balance Due</th>
+                  <th>Scheduled Delivery</th>
+                  <th>Created</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {filteredOrders.map((order) => (
+                  <tr key={order.id}>
+                    <td>{order.order_number}</td>
+                    <td>{order.customer_name}</td>
+                    <td>{order.customer_phone ?? "-"}</td>
+
+                    <td>
+                      <span
+                        className={
+                          orderStatusClassNames[order.status]
+                        }
+                      >
+                        {orderStatusLabels[order.status]}
+                      </span>
+                    </td>
+
+                    <td>
+                      {formatCurrency(order.total_amount)}
+                    </td>
+
+                    <td>
+                      {formatCurrency(order.deposit_amount)}
+                    </td>
+
+                    <td>
+                      {formatCurrency(order.balance_due)}
+                    </td>
+
+                    <td>
+                      {formatDate(
+                        order.scheduled_delivery_date
+                      )}
+                    </td>
+
+                    <td>{formatDateTime(order.created_at)}</td>
+
+                    <td>
+                      <div className="row-actions">
+                        <button
+                          className="secondary-button"
+                          type="button"
+                          onClick={() =>
+                            void openDetailModal(order)
+                          }
+                        >
+                          View Details
+                        </button>
+
+                        <button
+                          className="secondary-button"
+                          type="button"
+                          onClick={() =>
+                            openStatusModal(order)
+                          }
+                        >
+                          Update Status
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+
+                {filteredOrders.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan={10}
+                      className="empty-table-message"
                     >
-                      View Details
-                    </button>
-
-                    <button
-                      className="secondary-button"
-                      onClick={() => openStatusModal(order)}
-                    >
-                      Update Status
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-
-            {filteredOrders.length === 0 && (
-              <tr>
-                <td colSpan={10} className="empty-table-message">
-                  No customer orders match the current filters.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+                      No customer orders match the current
+                      filters.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
 
-      {salesAnalyticsRecords.length > 0 && (
-        <div className="card analytics-preview-card">
-          <div className="card-header">
-            <div>
-              <h3>Generated Sales Analytics Records</h3>
-              <p>
-                These records are automatically generated when an order is marked
-                as Delivered.
-              </p>
+      {(isDetailLoading ||
+        detailErrorMessage ||
+        detailOrder) && (
+        <div className="modal-backdrop">
+          <div className="modal-card order-detail-modal-card">
+            <div className="modal-header">
+              <div>
+                <h3>Order Details</h3>
+
+                <p>
+                  {detailOrder
+                    ? `${detailOrder.order_number} · ${detailOrder.customer_name}`
+                    : "Loading order information"}
+                </p>
+              </div>
+
+              <button
+                className="icon-button"
+                type="button"
+                onClick={closeDetailModal}
+                aria-label="Close order detail modal"
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="modal-body">
+              {isDetailLoading && (
+                <div className="page-state-message">
+                  Loading order details...
+                </div>
+              )}
+
+              {!isDetailLoading && detailErrorMessage && (
+                <div className="error-message" role="alert">
+                  <strong>
+                    Unable to load order details.
+                  </strong>
+                  <span>{detailErrorMessage}</span>
+                </div>
+              )}
+
+              {!isDetailLoading &&
+                !detailErrorMessage &&
+                detailOrder && (
+                  <>
+                    <div className="order-detail-grid">
+                      <div className="detail-box">
+                        <span>Order Number</span>
+                        <strong>
+                          {detailOrder.order_number}
+                        </strong>
+                      </div>
+
+                      <div className="detail-box">
+                        <span>Customer</span>
+                        <strong>
+                          {detailOrder.customer_name}
+                        </strong>
+                      </div>
+
+                      <div className="detail-box">
+                        <span>Phone</span>
+                        <strong>
+                          {detailOrder.customer_phone ?? "-"}
+                        </strong>
+                      </div>
+
+                      <div className="detail-box">
+                        <span>Status</span>
+
+                        <strong>
+                          <span
+                            className={
+                              orderStatusClassNames[
+                                detailOrder.status
+                              ]
+                            }
+                          >
+                            {
+                              orderStatusLabels[
+                                detailOrder.status
+                              ]
+                            }
+                          </span>
+                        </strong>
+                      </div>
+
+                      <div className="detail-box">
+                        <span>Total Amount</span>
+                        <strong>
+                          {formatCurrency(
+                            detailOrder.total_amount
+                          )}
+                        </strong>
+                      </div>
+
+                      <div className="detail-box">
+                        <span>Deposit Amount</span>
+                        <strong>
+                          {formatCurrency(
+                            detailOrder.deposit_amount
+                          )}
+                        </strong>
+                      </div>
+
+                      <div className="detail-box">
+                        <span>Balance Due</span>
+                        <strong>
+                          {formatCurrency(
+                            detailOrder.balance_due
+                          )}
+                        </strong>
+                      </div>
+
+                      <div className="detail-box">
+                        <span>Scheduled Delivery</span>
+                        <strong>
+                          {formatDate(
+                            detailOrder.scheduled_delivery_date
+                          )}
+                        </strong>
+                      </div>
+
+                      <div className="detail-box">
+                        <span>Delivered At</span>
+                        <strong>
+                          {formatDateTime(
+                            detailOrder.delivered_at
+                          )}
+                        </strong>
+                      </div>
+
+                      <div className="detail-box">
+                        <span>Created At</span>
+                        <strong>
+                          {formatDateTime(
+                            detailOrder.created_at
+                          )}
+                        </strong>
+                      </div>
+                    </div>
+
+                    {detailOrder.notes && (
+                      <div className="order-note-box">
+                        <span>Notes</span>
+                        <p>{detailOrder.notes}</p>
+                      </div>
+                    )}
+
+                    <div className="section-header">
+                      <div>
+                        <h4>Order Items</h4>
+                        <p>
+                          {detailOrder.items.length} item record(s)
+                          in this order.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="table-scroll-container">
+                      <table className="data-table compact-table">
+                        <thead>
+                          <tr>
+                            <th>SKU</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Discount</th>
+                            <th>Final Price</th>
+                            <th>Inventory Item</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          {detailOrder.items.map((item) => (
+                            <tr key={item.id}>
+                              <td>{item.sku}</td>
+                              <td>{item.product_name}</td>
+                              <td>{item.quantity}</td>
+                              <td>
+                                {formatCurrency(
+                                  item.unit_price
+                                )}
+                              </td>
+                              <td>
+                                {formatCurrency(
+                                  item.discount_amount
+                                )}
+                              </td>
+                              <td>
+                                {formatCurrency(
+                                  item.final_price
+                                )}
+                              </td>
+                              <td>
+                                {item.inventory_item_id ?? "-"}
+                              </td>
+                            </tr>
+                          ))}
+
+                          {detailOrder.items.length === 0 && (
+                            <tr>
+                              <td
+                                colSpan={7}
+                                className="empty-table-message"
+                              >
+                                No items were found for this
+                                order.
+                              </td>
+                            </tr>
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                  </>
+                )}
+            </div>
+
+            <div className="modal-footer">
+              <button
+                className="secondary-button"
+                type="button"
+                onClick={closeDetailModal}
+              >
+                Close
+              </button>
+
+              {detailOrder && (
+                <button
+                  className="primary-button"
+                  type="button"
+                  onClick={openStatusFromDetail}
+                >
+                  Update Status
+                </button>
+              )}
             </div>
           </div>
-
-          <table className="data-table compact-table">
-            <thead>
-              <tr>
-                <th>Order</th>
-                <th>SKU</th>
-                <th>Price</th>
-                <th>Cost</th>
-                <th>Sales</th>
-                <th>Inventory</th>
-                <th>Delivery Days</th>
-                <th>Category</th>
-                <th>Material</th>
-                <th>Color</th>
-                <th>Location</th>
-                <th>Season</th>
-                <th>Store Type</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {salesAnalyticsRecords.map((record) => (
-                <tr key={record.id}>
-                  <td>{record.orderNumber}</td>
-                  <td>{record.sku}</td>
-                  <td>{formatCurrency(record.price)}</td>
-                  <td>{formatCurrency(record.cost)}</td>
-                  <td>{record.sales}</td>
-                  <td>{record.inventory}</td>
-                  <td>{record.deliveryDays ?? "-"}</td>
-                  <td>{record.category}</td>
-                  <td>{record.material}</td>
-                  <td>{record.color}</td>
-                  <td>{record.location}</td>
-                  <td>{record.season}</td>
-                  <td>{record.storeType}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       )}
 
-      {selectedOrder && (
+      {statusOrder && (
         <div className="modal-backdrop">
           <div className="modal-card">
             <div className="modal-header">
               <div>
                 <h3>Update Order Status</h3>
                 <p>
-                  {selectedOrder.orderNumber} · {selectedOrder.customerName}
+                  {statusOrder.order_number} ·{" "}
+                  {statusOrder.customer_name}
                 </p>
               </div>
 
-              <button className="icon-button" onClick={closeStatusModal}>
+              <button
+                className="icon-button"
+                type="button"
+                onClick={closeStatusModal}
+                aria-label="Close order status modal"
+              >
                 ×
               </button>
             </div>
 
             <div className="modal-body">
+              {modalErrorMessage && (
+                <div className="error-message" role="alert">
+                  <strong>
+                    Unable to update order status.
+                  </strong>
+                  <span>{modalErrorMessage}</span>
+                </div>
+              )}
+
               <div className="detail-row">
                 <span>Current Status</span>
-                <strong>{orderStatusLabels[selectedOrder.status]}</strong>
+                <strong>
+                  {orderStatusLabels[statusOrder.status]}
+                </strong>
               </div>
 
               <div className="detail-row">
-                <span>Balance Due</span>
-                <strong>{formatCurrency(selectedOrder.balanceDue)}</strong>
+                <span>Current Balance Due</span>
+                <strong>
+                  {formatCurrency(statusOrder.balance_due)}
+                </strong>
               </div>
 
               <div className="form-group">
-                <label htmlFor="new-order-status">New Status</label>
+                <label htmlFor="new-order-status">
+                  New Status
+                </label>
+
                 <select
                   id="new-order-status"
-                  value={newOrderStatus}
+                  value={statusUpdateForm.status}
+                  disabled={statusOrder.status === "delivered"}
                   onChange={(event) =>
-                    setNewOrderStatus(event.target.value as OrderStatus)
+                    setStatusUpdateForm((current) => ({
+                      ...current,
+                      status: event.target
+                        .value as CustomerOrderStatus,
+                    }))
                   }
                 >
-                  {orderStatusUpdateOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
+                  {orderStatusOptions.map((option) => (
+                    <option
+                      value={option.value}
+                      key={option.value}
+                    >
                       {option.label}
                     </option>
                   ))}
@@ -492,157 +906,73 @@ function OrdersPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="order-status-note">Status Note</label>
+                <label htmlFor="order-status-note">
+                  Status Note
+                </label>
+
                 <textarea
                   id="order-status-note"
                   rows={4}
-                  placeholder="Example: Customer confirmed delivery schedule."
-                  value={statusNote}
-                  onChange={(event) => setStatusNote(event.target.value)}
+                  placeholder="Example: Customer confirmed the delivery."
+                  value={statusUpdateForm.note}
+                  onChange={(event) =>
+                    setStatusUpdateForm((current) => ({
+                      ...current,
+                      note: event.target.value,
+                    }))
+                  }
                 />
               </div>
 
-              {newOrderStatus === "delivered" && (
+              {statusUpdateForm.status === "delivered" &&
+                statusOrder.status !== "delivered" && (
+                  <div className="warning-box">
+                    Marking this order as Delivered will:
+                    <br />
+                    set the balance due to $0.00,
+                    <br />
+                    mark linked inventory as Sold,
+                    <br />
+                    create inventory movement records,
+                    <br />
+                    and generate sales analytics records.
+                  </div>
+                )}
+
+              {statusOrder.status === "delivered" && (
                 <div className="warning-box">
-                  Marking this order as Delivered will set the balance due to
-                  $0.00, generate sales analytics records, and mark linked
-                  inventory items as Sold in this mock UI.
+                  This order has already been delivered. Its
+                  inventory and analytics records have already been
+                  generated. A delivered order cannot be changed
+                  directly to another status.
                 </div>
               )}
             </div>
 
             <div className="modal-footer">
-              <button className="secondary-button" onClick={closeStatusModal}>
+              <button
+                className="secondary-button"
+                type="button"
+                disabled={isUpdatingStatus}
+                onClick={closeStatusModal}
+              >
                 Cancel
-              </button>
-
-              <button className="primary-button" onClick={handleSaveOrderStatus}>
-                Save Status
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {detailOrder && (
-        <div className="modal-backdrop">
-          <div className="modal-card order-detail-modal-card">
-            <div className="modal-header">
-              <div>
-                <h3>Order Details</h3>
-                <p>
-                  {detailOrder.orderNumber} · {detailOrder.customerName}
-                </p>
-              </div>
-
-              <button className="icon-button" onClick={closeDetailModal}>
-                ×
-              </button>
-            </div>
-
-            <div className="modal-body">
-              <div className="order-detail-grid">
-                <div className="detail-box">
-                  <span>Customer</span>
-                  <strong>{detailOrder.customerName}</strong>
-                </div>
-
-                <div className="detail-box">
-                  <span>Phone</span>
-                  <strong>{detailOrder.customerPhone}</strong>
-                </div>
-
-                <div className="detail-box">
-                  <span>Status</span>
-                  <strong>{orderStatusLabels[detailOrder.status]}</strong>
-                </div>
-
-                <div className="detail-box">
-                  <span>Scheduled Delivery</span>
-                  <strong>{detailOrder.scheduledDeliveryDate ?? "-"}</strong>
-                </div>
-
-                <div className="detail-box">
-                  <span>Total Amount</span>
-                  <strong>{formatCurrency(detailOrder.totalAmount)}</strong>
-                </div>
-
-                <div className="detail-box">
-                  <span>Deposit</span>
-                  <strong>{formatCurrency(detailOrder.depositAmount)}</strong>
-                </div>
-
-                <div className="detail-box">
-                  <span>Balance Due</span>
-                  <strong>{formatCurrency(detailOrder.balanceDue)}</strong>
-                </div>
-
-                <div className="detail-box">
-                  <span>Created At</span>
-                  <strong>{detailOrder.createdAt}</strong>
-                </div>
-              </div>
-
-              {detailOrder.notes && (
-                <div className="order-note-box">
-                  <span>Notes</span>
-                  <p>{detailOrder.notes}</p>
-                </div>
-              )}
-
-              <div className="section-header">
-                <h4>Order Items</h4>
-                <p>{detailOrderItems.length} item(s) in this order.</p>
-              </div>
-
-              <table className="data-table compact-table">
-                <thead>
-                  <tr>
-                    <th>SKU</th>
-                    <th>Product Name</th>
-                    <th>Qty</th>
-                    <th>Unit Price</th>
-                    <th>Final Price</th>
-                    <th>Inventory Item</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {detailOrderItems.map((item) => (
-                    <tr key={item.id}>
-                      <td>{item.sku}</td>
-                      <td>{item.productName}</td>
-                      <td>{item.quantity}</td>
-                      <td>{formatCurrency(item.unitPrice)}</td>
-                      <td>{formatCurrency(item.finalPrice)}</td>
-                      <td>{item.inventoryItemId ?? "-"}</td>
-                    </tr>
-                  ))}
-
-                  {detailOrderItems.length === 0 && (
-                    <tr>
-                      <td colSpan={6} className="empty-table-message">
-                        No items found for this order.
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="modal-footer">
-              <button className="secondary-button" onClick={closeDetailModal}>
-                Close
               </button>
 
               <button
                 className="primary-button"
-                onClick={() => {
-                  closeDetailModal();
-                  openStatusModal(detailOrder);
-                }}
+                type="button"
+                disabled={
+                  isUpdatingStatus ||
+                  statusOrder.status === "delivered"
+                }
+                onClick={() =>
+                  void handleUpdateOrderStatus()
+                }
               >
-                Update Status
+                {isUpdatingStatus
+                  ? "Saving..."
+                  : "Save Status"}
               </button>
             </div>
           </div>

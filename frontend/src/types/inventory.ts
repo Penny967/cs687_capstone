@@ -8,59 +8,77 @@ export type InventoryStatus =
   | "damaged"
   | "returned";
 
-export type InventoryCondition =
-  | "new"
-  | "display"
-  | "open_box"
-  | "damaged"
-  | "returned";
-
-export type StoreType =
-  | "factory"
-  | "warehouse"
-  | "showroom"
-  | "in_transit"
-  | "online"
-  | "other";
-
 export interface InventoryItem {
   id: string;
+  product_id: string;
 
-  productId: string;
   sku: string;
-  productName: string;
-
+  product_name: string;
   category: string;
   material: string;
   color: string;
 
-  price: number;
-  cost: number;
-
   status: InventoryStatus;
   location: string;
-  storeType: StoreType;
+  store_type: string;
+  condition: string;
 
-  condition: InventoryCondition;
-  batchNumber: string;
+  batch_number: string | null;
 
-  productionStartDate?: string;
-  receivedDate?: string;
-  estimatedArrivalDate?: string;
-  actualArrivalDate?: string;
+  unit_cost: string | null;
+  expected_selling_price: string | null;
 
-  reservedOrderNumber?: string;
-  notes?: string;
+  production_start_date: string | null;
+  estimated_arrival_date: string | null;
+  actual_arrival_date: string | null;
+  received_date: string | null;
+
+  reserved_order_id: string | null;
+  notes: string | null;
+
+  created_at: string;
+  updated_at: string;
 }
 
 export interface InventoryMovement {
   id: string;
-  inventoryItemId: string;
-  fromStatus?: InventoryStatus;
-  toStatus: InventoryStatus;
-  fromLocation?: string;
-  toLocation: string;
-  movementReason: string;
-  performedBy: string;
-  createdAt: string;
+  inventory_item_id: string;
+
+  from_status: InventoryStatus | null;
+  to_status: InventoryStatus;
+
+  from_location: string | null;
+  to_location: string | null;
+
+  movement_reason: string | null;
+  performed_by: string | null;
+  created_at: string;
+}
+
+export interface InventoryItemCreateRequest {
+  product_id: string;
+
+  status: InventoryStatus;
+  location: string;
+  store_type: string;
+  condition: string;
+
+  batch_number: string | null;
+
+  unit_cost: number | null;
+  expected_selling_price: number | null;
+
+  production_start_date: string | null;
+  estimated_arrival_date: string | null;
+  actual_arrival_date: string | null;
+  received_date: string | null;
+
+  notes: string | null;
+}
+
+export interface InventoryStatusUpdateRequest {
+  status: InventoryStatus;
+  location?: string;
+  store_type?: string;
+  movement_reason?: string;
 }

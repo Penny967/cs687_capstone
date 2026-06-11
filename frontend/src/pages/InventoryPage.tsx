@@ -1,16 +1,39 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-import { mockInventory } from "../data/mockInventory";
-import { mockInventoryMovements } from "../data/mockInventoryMovements";
+import { apiRequest } from "../api/client";
 import type {
-  InventoryCondition,
   InventoryItem,
+  InventoryItemCreateRequest,
   InventoryMovement,
   InventoryStatus,
-  StoreType,
+  InventoryStatusUpdateRequest,
 } from "../types/inventory";
+import type { Product } from "../types/product";
 
 type InventoryStatusFilter = "all" | InventoryStatus;
+
+type InventoryFormState = {
+  productId: string;
+  status: InventoryStatus;
+  location: string;
+  storeType: string;
+  condition: string;
+  batchNumber: string;
+  unitCost: string;
+  expectedSellingPrice: string;
+  productionStartDate: string;
+  estimatedArrivalDate: string;
+  actualArrivalDate: string;
+  receivedDate: string;
+  notes: string;
+};
+
+type StatusUpdateFormState = {
+  status: InventoryStatus;
+  location: string;
+  storeType: string;
+  movementReason: string;
+};
 
 const statusLabels: Record<InventoryStatus, string> = {
   in_production: "In Production",
@@ -34,38 +57,29 @@ const statusClassNames: Record<InventoryStatus, string> = {
   returned: "badge badge-indigo",
 };
 
-const statusFilterOptions: { value: InventoryStatusFilter; label: string }[] = [
+const statusOptions: Array<{
+  value: InventoryStatus;
+  label: string;
+}> = [
+  { value: "in_production", label: "In Production" },
+  { value: "in_transit", label: "In Transit" },
+  { value: "local_warehouse", label: "Local Warehouse" },
+  { value: "showroom", label: "Showroom" },
+  { value: "reserved", label: "Reserved" },
+  { value: "sold", label: "Sold" },
+  { value: "damaged", label: "Damaged" },
+  { value: "returned", label: "Returned" },
+];
+
+const statusFilterOptions: Array<{
+  value: InventoryStatusFilter;
+  label: string;
+}> = [
   { value: "all", label: "All Statuses" },
-  { value: "in_production", label: "In Production" },
-  { value: "in_transit", label: "In Transit" },
-  { value: "local_warehouse", label: "Local Warehouse" },
-  { value: "showroom", label: "Showroom" },
-  { value: "reserved", label: "Reserved" },
-  { value: "sold", label: "Sold" },
-  { value: "damaged", label: "Damaged" },
-  { value: "returned", label: "Returned" },
+  ...statusOptions,
 ];
 
-const statusUpdateOptions: { value: InventoryStatus; label: string }[] = [
-  { value: "in_production", label: "In Production" },
-  { value: "in_transit", label: "In Transit" },
-  { value: "local_warehouse", label: "Local Warehouse" },
-  { value: "showroom", label: "Showroom" },
-  { value: "reserved", label: "Reserved" },
-  { value: "sold", label: "Sold" },
-  { value: "damaged", label: "Damaged" },
-  { value: "returned", label: "Returned" },
-];
-
-const conditionOptions: { value: InventoryCondition; label: string }[] = [
-  { value: "new", label: "New" },
-  { value: "display", label: "Display" },
-  { value: "open_box", label: "Open Box" },
-  { value: "damaged", label: "Damaged" },
-  { value: "returned", label: "Returned" },
-];
-
-const storeTypeOptions: { value: StoreType; label: string }[] = [
+const storeTypeOptions = [
   { value: "factory", label: "Factory" },
   { value: "warehouse", label: "Warehouse" },
   { value: "showroom", label: "Showroom" },
@@ -74,275 +88,556 @@ const storeTypeOptions: { value: StoreType; label: string }[] = [
   { value: "other", label: "Other" },
 ];
 
-function formatCurrency(value: number) {
-  return `$${value.toFixed(2)}`;
+const conditionOptions = [
+  { value: "new", label: "New" },
+  { value: "display", label: "Display" },
+  { value: "open_box", label: "Open Box" },
+  { value: "damaged", label: "Damaged" },
+  { value: "returned", label: "Returned" },
+];
+
+const initialInventoryForm: InventoryFormState = {
+  productId: "",
+  status: "local_warehouse",
+  location: "Seattle Warehouse",
+  storeType: "warehouse",
+  condition: "new",
+  batchNumber: "",
+  unitCost: "",
+  expectedSellingPrice: "",
+  productionStartDate: "",
+  estimatedArrivalDate: "",
+  actualArrivalDate: "",
+  receivedDate: "",
+  notes: "",
+};
+
+const initialStatusUpdateForm: StatusUpdateFormState = {
+  status: "local_warehouse",
+  location: "",
+  storeType: "warehouse",
+  movementReason: "",
+};
+
+function formatCurrency(value: string | number | null): string {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(Number(value ?? 0));
+}
+
+function formatDate(value: string | null): string {
+  if (!value) {
+    return "-";
+  }
+
+  const parsedDate = new Date(`${value}T00:00:00`);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }).format(parsedDate);
+}
+
+function formatDateTime(value: string): string {
+  const parsedDate = new Date(value);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(parsedDate);
+}
+
+function formatText(value: string | null): string {
+  if (!value) {
+    return "-";
+  }
+
+  return value
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function emptyStringToNull(value: string): string | null {
+  const trimmedValue = value.trim();
+  return trimmedValue === "" ? null : trimmedValue;
+}
+
+function parseOptionalNumber(value: string): number | null {
+  const trimmedValue = value.trim();
+
+  if (trimmedValue === "") {
+    return null;
+  }
+
+  const parsedValue = Number(trimmedValue);
+
+  return Number.isFinite(parsedValue) ? parsedValue : null;
+}
+
+function getSuggestedLocation(status: InventoryStatus): {
+  location: string;
+  storeType: string;
+} {
+  switch (status) {
+    case "in_production":
+      return {
+        location: "Foshan Factory",
+        storeType: "factory",
+      };
+
+    case "in_transit":
+      return {
+        location: "Pacific Ocean Shipping",
+        storeType: "in_transit",
+      };
+
+    case "local_warehouse":
+      return {
+        location: "Seattle Warehouse",
+        storeType: "warehouse",
+      };
+
+    case "showroom":
+    case "reserved":
+      return {
+        location: "Redmond Showroom",
+        storeType: "showroom",
+      };
+
+    case "sold":
+      return {
+        location: "Customer Delivery",
+        storeType: "other",
+      };
+
+    case "damaged":
+    case "returned":
+      return {
+        location: "Seattle Warehouse",
+        storeType: "warehouse",
+      };
+
+    default:
+      return {
+        location: "",
+        storeType: "other",
+      };
+  }
 }
 
 function InventoryPage() {
-  const [inventoryItems, setInventoryItems] =
-    useState<InventoryItem[]>(mockInventory);
-
-  const [inventoryMovements, setInventoryMovements] =
-    useState<InventoryMovement[]>(mockInventoryMovements);
+  const [inventoryItems, setInventoryItems] = useState<InventoryItem[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   const [selectedStatus, setSelectedStatus] =
     useState<InventoryStatusFilter>("all");
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [selectedItem, setSelectedItem] = useState<InventoryItem | null>(null);
+  const [timelineItem, setTimelineItem] =
+    useState<InventoryItem | null>(null);
 
-  const [timelineItem, setTimelineItem] = useState<InventoryItem | null>(null);
+  const [timelineMovements, setTimelineMovements] = useState<
+    InventoryMovement[]
+  >([]);
+
+  const [statusItem, setStatusItem] =
+    useState<InventoryItem | null>(null);
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  const [newStatus, setNewStatus] =
-    useState<InventoryStatus>("local_warehouse");
+  const [inventoryForm, setInventoryForm] =
+    useState<InventoryFormState>(initialInventoryForm);
 
-  const [movementNote, setMovementNote] = useState("");
+  const [statusUpdateForm, setStatusUpdateForm] =
+    useState<StatusUpdateFormState>(initialStatusUpdateForm);
 
-  const [newInventoryItem, setNewInventoryItem] = useState({
-    productId: "",
-    sku: "",
-    productName: "",
+  const [isLoading, setIsLoading] = useState(true);
+  const [isProductsLoading, setIsProductsLoading] = useState(false);
+  const [isTimelineLoading, setIsTimelineLoading] = useState(false);
+  const [isCreating, setIsCreating] = useState(false);
+  const [isUpdatingStatus, setIsUpdatingStatus] = useState(false);
 
-    category: "",
-    material: "",
-    color: "",
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [modalErrorMessage, setModalErrorMessage] =
+    useState<string | null>(null);
+  const [timelineErrorMessage, setTimelineErrorMessage] =
+    useState<string | null>(null);
 
-    price: "",
-    cost: "",
+  async function loadInventory() {
+    try {
+      setIsLoading(true);
+      setErrorMessage(null);
 
-    status: "local_warehouse" as InventoryStatus,
-    location: "",
-    storeType: "warehouse" as StoreType,
+      const data = await apiRequest<InventoryItem[]>(
+        "/api/inventory/items?limit=500"
+      );
 
-    condition: "new" as InventoryCondition,
-    batchNumber: "",
-
-    receivedDate: "",
-    estimatedArrivalDate: "",
-    actualArrivalDate: "",
-
-    reservedOrderNumber: "",
-    notes: "",
-  });
-
-  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
-
-  const filteredInventory = inventoryItems.filter((item) => {
-    const matchesStatus =
-      selectedStatus === "all" || item.status === selectedStatus;
-
-    const matchesSearch =
-      normalizedSearchTerm === "" ||
-      item.sku.toLowerCase().includes(normalizedSearchTerm) ||
-      item.productName.toLowerCase().includes(normalizedSearchTerm) ||
-      item.category.toLowerCase().includes(normalizedSearchTerm) ||
-      item.material.toLowerCase().includes(normalizedSearchTerm) ||
-      item.color.toLowerCase().includes(normalizedSearchTerm) ||
-      item.location.toLowerCase().includes(normalizedSearchTerm) ||
-      item.storeType.toLowerCase().includes(normalizedSearchTerm) ||
-      item.batchNumber.toLowerCase().includes(normalizedSearchTerm) ||
-      item.reservedOrderNumber?.toLowerCase().includes(normalizedSearchTerm);
-
-    return matchesStatus && matchesSearch;
-  });
-
-  const selectedTimelineMovements = timelineItem
-    ? inventoryMovements.filter(
-        (movement) => movement.inventoryItemId === timelineItem.id
-      )
-    : [];
-
-  function openStatusModal(item: InventoryItem) {
-    setSelectedItem(item);
-    setNewStatus(item.status);
-    setMovementNote("");
+      setInventoryItems(data);
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to load inventory."
+      );
+    } finally {
+      setIsLoading(false);
+    }
   }
 
-  function closeStatusModal() {
-    setSelectedItem(null);
-    setMovementNote("");
-  }
-
-  function openTimelineModal(item: InventoryItem) {
-    setTimelineItem(item);
-  }
-
-  function closeTimelineModal() {
-    setTimelineItem(null);
-  }
-
-  function openAddModal() {
-    setIsAddModalOpen(true);
-  }
-
-  function closeAddModal() {
-    setIsAddModalOpen(false);
-    resetNewInventoryItem();
-  }
-
-  function resetNewInventoryItem() {
-    setNewInventoryItem({
-      productId: "",
-      sku: "",
-      productName: "",
-
-      category: "",
-      material: "",
-      color: "",
-
-      price: "",
-      cost: "",
-
-      status: "local_warehouse",
-      location: "",
-      storeType: "warehouse",
-
-      condition: "new",
-      batchNumber: "",
-
-      receivedDate: "",
-      estimatedArrivalDate: "",
-      actualArrivalDate: "",
-
-      reservedOrderNumber: "",
-      notes: "",
-    });
-  }
-
-  function handleSaveStatusUpdate() {
-    if (!selectedItem) {
+  async function loadProducts() {
+    if (products.length > 0) {
       return;
     }
 
-    const oldStatus = selectedItem.status;
+    try {
+      setIsProductsLoading(true);
+      setModalErrorMessage(null);
 
-    const updatedMovement: InventoryMovement = {
-      id: `move-${Date.now()}`,
-      inventoryItemId: selectedItem.id,
-      fromStatus: oldStatus,
-      toStatus: newStatus,
-      fromLocation: selectedItem.location,
-      toLocation: selectedItem.location,
-      movementReason:
-        movementNote.trim() || `Status changed to ${statusLabels[newStatus]}.`,
-      performedBy: "Current User",
-      createdAt: new Date().toLocaleString(),
-    };
+      const data = await apiRequest<Product[]>(
+        "/api/products?limit=200&is_active=true"
+      );
 
-    setInventoryItems((currentItems) =>
-      currentItems.map((item) =>
-        item.id === selectedItem.id
-          ? {
-              ...item,
-              status: newStatus,
-              notes: movementNote.trim() || item.notes,
-            }
-          : item
-      )
-    );
-
-    setInventoryMovements((currentMovements) => [
-      ...currentMovements,
-      updatedMovement,
-    ]);
-
-    closeStatusModal();
+      setProducts(data);
+    } catch (error) {
+      setModalErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to load products."
+      );
+    } finally {
+      setIsProductsLoading(false);
+    }
   }
 
-  function handleSaveNewInventoryItem() {
-    const trimmedSku = newInventoryItem.sku.trim();
-    const trimmedProductName = newInventoryItem.productName.trim();
-    const trimmedCategory = newInventoryItem.category.trim();
-    const trimmedMaterial = newInventoryItem.material.trim();
-    const trimmedColor = newInventoryItem.color.trim();
-    const trimmedLocation = newInventoryItem.location.trim();
-    const trimmedBatchNumber = newInventoryItem.batchNumber.trim();
+  useEffect(() => {
+    void loadInventory();
+  }, []);
 
-    const parsedPrice = Number(newInventoryItem.price);
-    const parsedCost = Number(newInventoryItem.cost);
+  const selectedProduct = useMemo(() => {
+    return (
+      products.find(
+        (product) => product.id === inventoryForm.productId
+      ) ?? null
+    );
+  }, [inventoryForm.productId, products]);
+
+  const filteredInventory = useMemo(() => {
+    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+
+    return inventoryItems.filter((item) => {
+      const matchesStatus =
+        selectedStatus === "all" || item.status === selectedStatus;
+
+      const searchableValues = [
+        item.sku,
+        item.product_name,
+        item.category,
+        item.material,
+        item.color,
+        item.location,
+        item.store_type,
+        item.condition,
+        item.batch_number ?? "",
+      ];
+
+      const matchesSearch =
+        normalizedSearchTerm === "" ||
+        searchableValues.some((value) =>
+          value.toLowerCase().includes(normalizedSearchTerm)
+        );
+
+      return matchesStatus && matchesSearch;
+    });
+  }, [inventoryItems, searchTerm, selectedStatus]);
+
+  const inventorySummary = useMemo(() => {
+    return {
+      total: inventoryItems.length,
+      inTransit: inventoryItems.filter(
+        (item) => item.status === "in_transit"
+      ).length,
+      localWarehouse: inventoryItems.filter(
+        (item) => item.status === "local_warehouse"
+      ).length,
+      reserved: inventoryItems.filter(
+        (item) => item.status === "reserved"
+      ).length,
+    };
+  }, [inventoryItems]);
+
+  async function openAddModal() {
+    setInventoryForm(initialInventoryForm);
+    setModalErrorMessage(null);
+    setIsAddModalOpen(true);
+
+    await loadProducts();
+  }
+
+  function closeAddModal() {
+    if (isCreating) {
+      return;
+    }
+
+    setIsAddModalOpen(false);
+    setInventoryForm(initialInventoryForm);
+    setModalErrorMessage(null);
+  }
+
+  function handleProductSelection(productId: string) {
+    const product =
+      products.find((item) => item.id === productId) ?? null;
+
+    setInventoryForm((current) => ({
+      ...current,
+      productId,
+      unitCost: product?.default_cost ?? "",
+      expectedSellingPrice: product?.default_price ?? "",
+    }));
+  }
+
+  function handleInventoryStatusSelection(
+    status: InventoryStatus
+  ) {
+    const suggestedValues = getSuggestedLocation(status);
+
+    setInventoryForm((current) => ({
+      ...current,
+      status,
+      location: suggestedValues.location,
+      storeType: suggestedValues.storeType,
+    }));
+  }
+
+  async function handleCreateInventoryItem() {
+    setModalErrorMessage(null);
+
+    if (!inventoryForm.productId) {
+      setModalErrorMessage("Please select a product.");
+      return;
+    }
+
+    if (!inventoryForm.location.trim()) {
+      setModalErrorMessage("Location is required.");
+      return;
+    }
+
+    const unitCost = parseOptionalNumber(inventoryForm.unitCost);
+    const expectedSellingPrice = parseOptionalNumber(
+      inventoryForm.expectedSellingPrice
+    );
 
     if (
-      !trimmedSku ||
-      !trimmedProductName ||
-      !trimmedCategory ||
-      !trimmedMaterial ||
-      !trimmedColor ||
-      !trimmedLocation ||
-      !trimmedBatchNumber
+      inventoryForm.unitCost.trim() !== "" &&
+      (unitCost === null || unitCost < 0)
     ) {
-      alert(
-        "Please fill in SKU, Product Name, Category, Material, Color, Location, and Batch Number."
+      setModalErrorMessage("Please enter a valid unit cost.");
+      return;
+    }
+
+    if (
+      inventoryForm.expectedSellingPrice.trim() !== "" &&
+      (expectedSellingPrice === null || expectedSellingPrice < 0)
+    ) {
+      setModalErrorMessage(
+        "Please enter a valid expected selling price."
       );
       return;
     }
 
-    if (Number.isNaN(parsedPrice) || parsedPrice < 0) {
-      alert("Please enter a valid price.");
+    if (
+      inventoryForm.productionStartDate &&
+      inventoryForm.actualArrivalDate &&
+      inventoryForm.actualArrivalDate <
+        inventoryForm.productionStartDate
+    ) {
+      setModalErrorMessage(
+        "Actual arrival date cannot be earlier than production start date."
+      );
       return;
     }
 
-    if (Number.isNaN(parsedCost) || parsedCost < 0) {
-      alert("Please enter a valid cost.");
-      return;
-    }
-
-    const itemId = `inv-${Date.now()}`;
-
-    const itemToAdd: InventoryItem = {
-      id: itemId,
-      productId: newInventoryItem.productId.trim() || `product-${Date.now()}`,
-      sku: trimmedSku,
-      productName: trimmedProductName,
-
-      category: trimmedCategory,
-      material: trimmedMaterial,
-      color: trimmedColor,
-
-      price: parsedPrice,
-      cost: parsedCost,
-
-      status: newInventoryItem.status,
-      location: trimmedLocation,
-      storeType: newInventoryItem.storeType,
-
-      condition: newInventoryItem.condition,
-      batchNumber: trimmedBatchNumber,
-
-      receivedDate: newInventoryItem.receivedDate.trim() || undefined,
-      estimatedArrivalDate:
-        newInventoryItem.estimatedArrivalDate.trim() || undefined,
-      actualArrivalDate: newInventoryItem.actualArrivalDate.trim() || undefined,
-
-      reservedOrderNumber:
-        newInventoryItem.reservedOrderNumber.trim() || undefined,
-      notes: newInventoryItem.notes.trim() || undefined,
+    const payload: InventoryItemCreateRequest = {
+      product_id: inventoryForm.productId,
+      status: inventoryForm.status,
+      location: inventoryForm.location.trim(),
+      store_type: inventoryForm.storeType,
+      condition: inventoryForm.condition,
+      batch_number: emptyStringToNull(
+        inventoryForm.batchNumber
+      ),
+      unit_cost: unitCost,
+      expected_selling_price: expectedSellingPrice,
+      production_start_date: emptyStringToNull(
+        inventoryForm.productionStartDate
+      ),
+      estimated_arrival_date: emptyStringToNull(
+        inventoryForm.estimatedArrivalDate
+      ),
+      actual_arrival_date: emptyStringToNull(
+        inventoryForm.actualArrivalDate
+      ),
+      received_date: emptyStringToNull(
+        inventoryForm.receivedDate
+      ),
+      notes: emptyStringToNull(inventoryForm.notes),
     };
 
-    const initialMovement: InventoryMovement = {
-      id: `move-${Date.now()}`,
-      inventoryItemId: itemId,
-      toStatus: newInventoryItem.status,
-      toLocation: trimmedLocation,
-      movementReason:
-        newInventoryItem.notes.trim() ||
-        `Inventory item created with status ${
-          statusLabels[newInventoryItem.status]
+    try {
+      setIsCreating(true);
+
+      const createdItem = await apiRequest<InventoryItem>(
+        "/api/inventory/items",
+        {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }
+      );
+
+      setInventoryItems((currentItems) => [
+        createdItem,
+        ...currentItems,
+      ]);
+
+      closeAddModal();
+    } catch (error) {
+      setModalErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to create inventory item."
+      );
+    } finally {
+      setIsCreating(false);
+    }
+  }
+
+  function openStatusModal(item: InventoryItem) {
+    setStatusItem(item);
+    setModalErrorMessage(null);
+
+    setStatusUpdateForm({
+      status: item.status,
+      location: item.location,
+      storeType: item.store_type,
+      movementReason: "",
+    });
+  }
+
+  function closeStatusModal() {
+    if (isUpdatingStatus) {
+      return;
+    }
+
+    setStatusItem(null);
+    setModalErrorMessage(null);
+    setStatusUpdateForm(initialStatusUpdateForm);
+  }
+
+  function handleStatusSelection(status: InventoryStatus) {
+    const suggestedValues = getSuggestedLocation(status);
+
+    setStatusUpdateForm((current) => ({
+      ...current,
+      status,
+      location: suggestedValues.location,
+      storeType: suggestedValues.storeType,
+    }));
+  }
+
+  async function handleUpdateStatus() {
+    if (!statusItem) {
+      return;
+    }
+
+    setModalErrorMessage(null);
+
+    if (!statusUpdateForm.location.trim()) {
+      setModalErrorMessage("Location is required.");
+      return;
+    }
+
+    const payload: InventoryStatusUpdateRequest = {
+      status: statusUpdateForm.status,
+      location: statusUpdateForm.location.trim(),
+      store_type: statusUpdateForm.storeType,
+      movement_reason:
+        statusUpdateForm.movementReason.trim() ||
+        `Status changed from ${statusLabels[statusItem.status]} to ${
+          statusLabels[statusUpdateForm.status]
         }.`,
-      performedBy: "Current User",
-      createdAt: new Date().toLocaleString(),
     };
 
-    setInventoryItems((currentItems) => [...currentItems, itemToAdd]);
+    try {
+      setIsUpdatingStatus(true);
 
-    setInventoryMovements((currentMovements) => [
-      ...currentMovements,
-      initialMovement,
-    ]);
+      const updatedItem = await apiRequest<InventoryItem>(
+        `/api/inventory/items/${statusItem.id}/status`,
+        {
+          method: "PATCH",
+          body: JSON.stringify(payload),
+        }
+      );
 
-    closeAddModal();
+      setInventoryItems((currentItems) =>
+        currentItems.map((item) =>
+          item.id === updatedItem.id ? updatedItem : item
+        )
+      );
+
+      closeStatusModal();
+    } catch (error) {
+      setModalErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to update inventory status."
+      );
+    } finally {
+      setIsUpdatingStatus(false);
+    }
+  }
+
+  async function openTimelineModal(item: InventoryItem) {
+    setTimelineItem(item);
+    setTimelineMovements([]);
+    setTimelineErrorMessage(null);
+    setIsTimelineLoading(true);
+
+    try {
+      const data = await apiRequest<InventoryMovement[]>(
+        `/api/inventory/items/${item.id}/movements`
+      );
+
+      setTimelineMovements(data);
+    } catch (error) {
+      setTimelineErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to load inventory movement history."
+      );
+    } finally {
+      setIsTimelineLoading(false);
+    }
+  }
+
+  function closeTimelineModal() {
+    setTimelineItem(null);
+    setTimelineMovements([]);
+    setTimelineErrorMessage(null);
+    setIsTimelineLoading(false);
   }
 
   return (
@@ -351,12 +646,16 @@ function InventoryPage() {
         <div>
           <h2>Inventory</h2>
           <p>
-            Track furniture items across product attributes, inventory status,
-            location, cost, price, and store type.
+            Track furniture inventory, product attributes, location,
+            cost, pricing, and movement history.
           </p>
         </div>
 
-        <button className="primary-button" onClick={openAddModal}>
+        <button
+          className="primary-button"
+          type="button"
+          onClick={() => void openAddModal()}
+        >
           Add Inventory Item
         </button>
       </div>
@@ -364,38 +663,22 @@ function InventoryPage() {
       <div className="inventory-summary-grid">
         <div className="summary-card">
           <span className="summary-label">Total Items</span>
-          <strong>{inventoryItems.length}</strong>
+          <strong>{inventorySummary.total}</strong>
         </div>
 
         <div className="summary-card">
           <span className="summary-label">In Transit</span>
-          <strong>
-            {
-              inventoryItems.filter((item) => item.status === "in_transit")
-                .length
-            }
-          </strong>
+          <strong>{inventorySummary.inTransit}</strong>
         </div>
 
         <div className="summary-card">
           <span className="summary-label">Local Warehouse</span>
-          <strong>
-            {
-              inventoryItems.filter(
-                (item) => item.status === "local_warehouse"
-              ).length
-            }
-          </strong>
+          <strong>{inventorySummary.localWarehouse}</strong>
         </div>
 
         <div className="summary-card">
           <span className="summary-label">Reserved</span>
-          <strong>
-            {
-              inventoryItems.filter((item) => item.status === "reserved")
-                .length
-            }
-          </strong>
+          <strong>{inventorySummary.reserved}</strong>
         </div>
       </div>
 
@@ -404,34 +687,45 @@ function InventoryPage() {
           <div>
             <h3>Inventory Items</h3>
             <p>
-              Showing {filteredInventory.length} of {inventoryItems.length}{" "}
-              items.
+              Showing {filteredInventory.length} of{" "}
+              {inventoryItems.length} inventory items.
             </p>
           </div>
 
           <div className="table-actions">
             <div className="search-group">
               <label htmlFor="inventory-search">Search</label>
+
               <input
                 id="inventory-search"
-                type="text"
-                placeholder="Search SKU, product, category, location..."
+                type="search"
+                placeholder="Search SKU, product, location..."
                 value={searchTerm}
-                onChange={(event) => setSearchTerm(event.target.value)}
+                onChange={(event) =>
+                  setSearchTerm(event.target.value)
+                }
               />
             </div>
 
             <div className="filter-group">
-              <label htmlFor="status-filter">Status</label>
+              <label htmlFor="inventory-status-filter">
+                Status
+              </label>
+
               <select
-                id="status-filter"
+                id="inventory-status-filter"
                 value={selectedStatus}
                 onChange={(event) =>
-                  setSelectedStatus(event.target.value as InventoryStatusFilter)
+                  setSelectedStatus(
+                    event.target.value as InventoryStatusFilter
+                  )
                 }
               >
                 {statusFilterOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
+                  <option
+                    value={option.value}
+                    key={option.value}
+                  >
                     {option.label}
                   </option>
                 ))}
@@ -440,105 +734,548 @@ function InventoryPage() {
           </div>
         </div>
 
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>SKU</th>
-              <th>Product Name</th>
-              <th>Category</th>
-              <th>Status</th>
-              <th>Location</th>
-              <th>Store Type</th>
-              <th>Cost</th>
-              <th>Price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
+        {isLoading && (
+          <div className="page-state-message">
+            Loading inventory from the database...
+          </div>
+        )}
 
-          <tbody>
-            {filteredInventory.map((item) => (
-              <tr key={item.id}>
-                <td>{item.sku}</td>
-                <td>{item.productName}</td>
-                <td>{item.category}</td>
-                <td>
-                  <span className={statusClassNames[item.status]}>
-                    {statusLabels[item.status]}
-                  </span>
-                </td>
-                <td>{item.location}</td>
-                <td>{item.storeType}</td>
-                <td>{formatCurrency(item.cost)}</td>
-                <td>{formatCurrency(item.price)}</td>
-                <td>
-                  <div className="row-actions">
-                    <button
-                      className="secondary-button"
-                      onClick={() => openStatusModal(item)}
+        {!isLoading && errorMessage && (
+          <div className="error-message" role="alert">
+            <strong>Unable to load inventory.</strong>
+            <span>{errorMessage}</span>
+
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={() => void loadInventory()}
+            >
+              Try Again
+            </button>
+          </div>
+        )}
+
+        {!isLoading && !errorMessage && (
+          <div className="table-scroll-container">
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Location</th>
+                  <th>Store Type</th>
+                  <th>Condition</th>
+                  <th>Cost</th>
+                  <th>Expected Price</th>
+                  <th>Batch</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {filteredInventory.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.sku}</td>
+                    <td>{item.product_name}</td>
+                    <td>{item.category}</td>
+
+                    <td>
+                      <span
+                        className={statusClassNames[item.status]}
+                      >
+                        {statusLabels[item.status]}
+                      </span>
+                    </td>
+
+                    <td>{item.location}</td>
+                    <td>{formatText(item.store_type)}</td>
+                    <td>{formatText(item.condition)}</td>
+                    <td>{formatCurrency(item.unit_cost)}</td>
+                    <td>
+                      {formatCurrency(
+                        item.expected_selling_price
+                      )}
+                    </td>
+                    <td>{item.batch_number ?? "-"}</td>
+
+                    <td>
+                      <div className="row-actions">
+                        <button
+                          className="secondary-button"
+                          type="button"
+                          onClick={() => openStatusModal(item)}
+                        >
+                          Move Status
+                        </button>
+
+                        <button
+                          className="secondary-button"
+                          type="button"
+                          onClick={() =>
+                            void openTimelineModal(item)
+                          }
+                        >
+                          View Timeline
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+
+                {filteredInventory.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan={11}
+                      className="empty-table-message"
                     >
-                      Move Status
-                    </button>
-
-                    <button
-                      className="secondary-button"
-                      onClick={() => openTimelineModal(item)}
-                    >
-                      View Timeline
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-
-            {filteredInventory.length === 0 && (
-              <tr>
-                <td colSpan={9} className="empty-table-message">
-                  No inventory items match the current filters.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+                      No inventory items match the current
+                      filters.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
 
-      {selectedItem && (
+      {isAddModalOpen && (
+        <div className="modal-backdrop">
+          <div className="modal-card add-inventory-modal-card">
+            <div className="modal-header">
+              <div>
+                <h3>Add Inventory Item</h3>
+                <p>
+                  Select an existing product and enter the new
+                  inventory record.
+                </p>
+              </div>
+
+              <button
+                className="icon-button"
+                type="button"
+                onClick={closeAddModal}
+                aria-label="Close add inventory modal"
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="modal-body">
+              {modalErrorMessage && (
+                <div className="error-message" role="alert">
+                  <strong>Unable to save inventory item.</strong>
+                  <span>{modalErrorMessage}</span>
+                </div>
+              )}
+
+              <div className="form-grid">
+                <div className="form-group form-group-full-width">
+                  <label htmlFor="inventory-product">
+                    Product *
+                  </label>
+
+                  <select
+                    id="inventory-product"
+                    value={inventoryForm.productId}
+                    disabled={isProductsLoading}
+                    onChange={(event) =>
+                      handleProductSelection(event.target.value)
+                    }
+                  >
+                    <option value="">
+                      {isProductsLoading
+                        ? "Loading products..."
+                        : "Select a product"}
+                    </option>
+
+                    {products.map((product) => (
+                      <option
+                        value={product.id}
+                        key={product.id}
+                      >
+                        {product.sku} — {product.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {selectedProduct && (
+                  <>
+                    <div className="detail-box">
+                      <span>SKU</span>
+                      <strong>{selectedProduct.sku}</strong>
+                    </div>
+
+                    <div className="detail-box">
+                      <span>Category</span>
+                      <strong>
+                        {selectedProduct.category}
+                      </strong>
+                    </div>
+
+                    <div className="detail-box">
+                      <span>Material</span>
+                      <strong>
+                        {selectedProduct.material}
+                      </strong>
+                    </div>
+
+                    <div className="detail-box">
+                      <span>Color</span>
+                      <strong>{selectedProduct.color}</strong>
+                    </div>
+                  </>
+                )}
+
+                <div className="form-group">
+                  <label htmlFor="inventory-status">
+                    Status *
+                  </label>
+
+                  <select
+                    id="inventory-status"
+                    value={inventoryForm.status}
+                    onChange={(event) =>
+                      handleInventoryStatusSelection(
+                        event.target.value as InventoryStatus
+                      )
+                    }
+                  >
+                    {statusOptions.map((option) => (
+                      <option
+                        value={option.value}
+                        key={option.value}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="inventory-condition">
+                    Condition *
+                  </label>
+
+                  <select
+                    id="inventory-condition"
+                    value={inventoryForm.condition}
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        condition: event.target.value,
+                      }))
+                    }
+                  >
+                    {conditionOptions.map((option) => (
+                      <option
+                        value={option.value}
+                        key={option.value}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="inventory-location">
+                    Location *
+                  </label>
+
+                  <input
+                    id="inventory-location"
+                    type="text"
+                    value={inventoryForm.location}
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        location: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="inventory-store-type">
+                    Store Type *
+                  </label>
+
+                  <select
+                    id="inventory-store-type"
+                    value={inventoryForm.storeType}
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        storeType: event.target.value,
+                      }))
+                    }
+                  >
+                    {storeTypeOptions.map((option) => (
+                      <option
+                        value={option.value}
+                        key={option.value}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="inventory-batch-number">
+                    Batch Number
+                  </label>
+
+                  <input
+                    id="inventory-batch-number"
+                    type="text"
+                    placeholder="Example: BATCH-2026-001"
+                    value={inventoryForm.batchNumber}
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        batchNumber: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="inventory-unit-cost">
+                    Unit Cost
+                  </label>
+
+                  <input
+                    id="inventory-unit-cost"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={inventoryForm.unitCost}
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        unitCost: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="inventory-selling-price">
+                    Expected Selling Price
+                  </label>
+
+                  <input
+                    id="inventory-selling-price"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={
+                      inventoryForm.expectedSellingPrice
+                    }
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        expectedSellingPrice:
+                          event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="production-start-date">
+                    Production Start Date
+                  </label>
+
+                  <input
+                    id="production-start-date"
+                    type="date"
+                    value={
+                      inventoryForm.productionStartDate
+                    }
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        productionStartDate:
+                          event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="estimated-arrival-date">
+                    Estimated Arrival Date
+                  </label>
+
+                  <input
+                    id="estimated-arrival-date"
+                    type="date"
+                    value={
+                      inventoryForm.estimatedArrivalDate
+                    }
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        estimatedArrivalDate:
+                          event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="actual-arrival-date">
+                    Actual Arrival Date
+                  </label>
+
+                  <input
+                    id="actual-arrival-date"
+                    type="date"
+                    value={inventoryForm.actualArrivalDate}
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        actualArrivalDate:
+                          event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="received-date">
+                    Received Date
+                  </label>
+
+                  <input
+                    id="received-date"
+                    type="date"
+                    value={inventoryForm.receivedDate}
+                    onChange={(event) =>
+                      setInventoryForm((current) => ({
+                        ...current,
+                        receivedDate: event.target.value,
+                      }))
+                    }
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="inventory-notes">
+                  Notes
+                </label>
+
+                <textarea
+                  id="inventory-notes"
+                  rows={4}
+                  placeholder="Optional notes for this inventory item."
+                  value={inventoryForm.notes}
+                  onChange={(event) =>
+                    setInventoryForm((current) => ({
+                      ...current,
+                      notes: event.target.value,
+                    }))
+                  }
+                />
+              </div>
+            </div>
+
+            <div className="modal-footer">
+              <button
+                className="secondary-button"
+                type="button"
+                disabled={isCreating}
+                onClick={closeAddModal}
+              >
+                Cancel
+              </button>
+
+              <button
+                className="primary-button"
+                type="button"
+                disabled={isCreating || isProductsLoading}
+                onClick={() =>
+                  void handleCreateInventoryItem()
+                }
+              >
+                {isCreating
+                  ? "Saving..."
+                  : "Save Inventory Item"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {statusItem && (
         <div className="modal-backdrop">
           <div className="modal-card">
             <div className="modal-header">
               <div>
                 <h3>Update Inventory Status</h3>
                 <p>
-                  {selectedItem.sku} · {selectedItem.productName}
+                  {statusItem.sku} · {statusItem.product_name}
                 </p>
               </div>
 
-              <button className="icon-button" onClick={closeStatusModal}>
+              <button
+                className="icon-button"
+                type="button"
+                onClick={closeStatusModal}
+                aria-label="Close status update modal"
+              >
                 ×
               </button>
             </div>
 
             <div className="modal-body">
+              {modalErrorMessage && (
+                <div className="error-message" role="alert">
+                  <strong>
+                    Unable to update inventory status.
+                  </strong>
+                  <span>{modalErrorMessage}</span>
+                </div>
+              )}
+
               <div className="detail-row">
                 <span>Current Status</span>
-                <strong>{statusLabels[selectedItem.status]}</strong>
+                <strong>
+                  {statusLabels[statusItem.status]}
+                </strong>
               </div>
 
               <div className="detail-row">
                 <span>Current Location</span>
-                <strong>{selectedItem.location}</strong>
+                <strong>{statusItem.location}</strong>
               </div>
 
               <div className="form-group">
-                <label htmlFor="new-status">New Status</label>
+                <label htmlFor="new-inventory-status">
+                  New Status
+                </label>
+
                 <select
-                  id="new-status"
-                  value={newStatus}
+                  id="new-inventory-status"
+                  value={statusUpdateForm.status}
                   onChange={(event) =>
-                    setNewStatus(event.target.value as InventoryStatus)
+                    handleStatusSelection(
+                      event.target.value as InventoryStatus
+                    )
                   }
                 >
-                  {statusUpdateOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
+                  {statusOptions.map((option) => (
+                    <option
+                      value={option.value}
+                      key={option.value}
+                    >
                       {option.label}
                     </option>
                   ))}
@@ -546,27 +1283,90 @@ function InventoryPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="movement-note">Movement Note</label>
+                <label htmlFor="new-inventory-location">
+                  New Location
+                </label>
+
+                <input
+                  id="new-inventory-location"
+                  type="text"
+                  value={statusUpdateForm.location}
+                  onChange={(event) =>
+                    setStatusUpdateForm((current) => ({
+                      ...current,
+                      location: event.target.value,
+                    }))
+                  }
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="new-inventory-store-type">
+                  Store Type
+                </label>
+
+                <select
+                  id="new-inventory-store-type"
+                  value={statusUpdateForm.storeType}
+                  onChange={(event) =>
+                    setStatusUpdateForm((current) => ({
+                      ...current,
+                      storeType: event.target.value,
+                    }))
+                  }
+                >
+                  {storeTypeOptions.map((option) => (
+                    <option
+                      value={option.value}
+                      key={option.value}
+                    >
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="movement-reason">
+                  Movement Reason
+                </label>
+
                 <textarea
-                  id="movement-note"
+                  id="movement-reason"
                   rows={4}
-                  placeholder="Example: Arrived at Seattle warehouse."
-                  value={movementNote}
-                  onChange={(event) => setMovementNote(event.target.value)}
+                  placeholder="Example: Moved from warehouse to showroom."
+                  value={
+                    statusUpdateForm.movementReason
+                  }
+                  onChange={(event) =>
+                    setStatusUpdateForm((current) => ({
+                      ...current,
+                      movementReason: event.target.value,
+                    }))
+                  }
                 />
               </div>
             </div>
 
             <div className="modal-footer">
-              <button className="secondary-button" onClick={closeStatusModal}>
+              <button
+                className="secondary-button"
+                type="button"
+                disabled={isUpdatingStatus}
+                onClick={closeStatusModal}
+              >
                 Cancel
               </button>
 
               <button
                 className="primary-button"
-                onClick={handleSaveStatusUpdate}
+                type="button"
+                disabled={isUpdatingStatus}
+                onClick={() => void handleUpdateStatus()}
               >
-                Save Status
+                {isUpdatingStatus
+                  ? "Saving..."
+                  : "Save Status"}
               </button>
             </div>
           </div>
@@ -580,11 +1380,17 @@ function InventoryPage() {
               <div>
                 <h3>Inventory Movement Timeline</h3>
                 <p>
-                  {timelineItem.sku} · {timelineItem.productName}
+                  {timelineItem.sku} ·{" "}
+                  {timelineItem.product_name}
                 </p>
               </div>
 
-              <button className="icon-button" onClick={closeTimelineModal}>
+              <button
+                className="icon-button"
+                type="button"
+                onClick={closeTimelineModal}
+                aria-label="Close inventory movement timeline"
+              >
                 ×
               </button>
             </div>
@@ -607,417 +1413,208 @@ function InventoryPage() {
                 </div>
 
                 <div className="detail-box">
+                  <span>Status</span>
+                  <strong>
+                    {statusLabels[timelineItem.status]}
+                  </strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>Location</span>
+                  <strong>{timelineItem.location}</strong>
+                </div>
+
+                <div className="detail-box">
                   <span>Store Type</span>
-                  <strong>{timelineItem.storeType}</strong>
+                  <strong>
+                    {formatText(timelineItem.store_type)}
+                  </strong>
                 </div>
 
                 <div className="detail-box">
                   <span>Cost</span>
-                  <strong>{formatCurrency(timelineItem.cost)}</strong>
+                  <strong>
+                    {formatCurrency(timelineItem.unit_cost)}
+                  </strong>
                 </div>
 
                 <div className="detail-box">
-                  <span>Price</span>
-                  <strong>{formatCurrency(timelineItem.price)}</strong>
+                  <span>Expected Price</span>
+                  <strong>
+                    {formatCurrency(
+                      timelineItem.expected_selling_price
+                    )}
+                  </strong>
                 </div>
 
                 <div className="detail-box">
-                  <span>Batch</span>
-                  <strong>{timelineItem.batchNumber}</strong>
+                  <span>Batch Number</span>
+                  <strong>
+                    {timelineItem.batch_number ?? "-"}
+                  </strong>
                 </div>
 
                 <div className="detail-box">
-                  <span>ETA</span>
-                  <strong>{timelineItem.estimatedArrivalDate ?? "-"}</strong>
+                  <span>Production Start</span>
+                  <strong>
+                    {formatDate(
+                      timelineItem.production_start_date
+                    )}
+                  </strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>Estimated Arrival</span>
+                  <strong>
+                    {formatDate(
+                      timelineItem.estimated_arrival_date
+                    )}
+                  </strong>
+                </div>
+
+                <div className="detail-box">
+                  <span>Actual Arrival</span>
+                  <strong>
+                    {formatDate(
+                      timelineItem.actual_arrival_date
+                    )}
+                  </strong>
                 </div>
               </div>
 
-              {selectedTimelineMovements.length > 0 ? (
-                <div className="timeline">
-                  {selectedTimelineMovements.map((movement) => (
-                    <div className="timeline-item" key={movement.id}>
-                      <div className="timeline-marker" />
+              {timelineItem.notes && (
+                <div className="order-note-box">
+                  <span>Notes</span>
+                  <p>{timelineItem.notes}</p>
+                </div>
+              )}
 
-                      <div className="timeline-content">
-                        <div className="timeline-topline">
-                          <span className={statusClassNames[movement.toStatus]}>
-                            {statusLabels[movement.toStatus]}
-                          </span>
+              <div className="section-header">
+                <div>
+                  <h4>Movement History</h4>
+                  <p>
+                    Status and location changes recorded for
+                    this item.
+                  </p>
+                </div>
+              </div>
 
-                          <span className="timeline-date">
-                            {movement.createdAt}
-                          </span>
-                        </div>
+              {isTimelineLoading && (
+                <div className="page-state-message">
+                  Loading movement history...
+                </div>
+              )}
 
-                        <p className="timeline-reason">
-                          {movement.movementReason}
-                        </p>
+              {!isTimelineLoading &&
+                timelineErrorMessage && (
+                  <div
+                    className="error-message"
+                    role="alert"
+                  >
+                    <strong>
+                      Unable to load movement history.
+                    </strong>
+                    <span>{timelineErrorMessage}</span>
+                  </div>
+                )}
 
-                        <div className="timeline-meta">
-                          <span>
-                            From:{" "}
-                            {movement.fromStatus
-                              ? statusLabels[movement.fromStatus]
-                              : "New Record"}
-                          </span>
-                          <span>To: {statusLabels[movement.toStatus]}</span>
-                          <span>Location: {movement.toLocation}</span>
-                          <span>By: {movement.performedBy}</span>
+              {!isTimelineLoading &&
+                !timelineErrorMessage &&
+                timelineMovements.length > 0 && (
+                  <div className="timeline">
+                    {timelineMovements.map((movement) => (
+                      <div
+                        className="timeline-item"
+                        key={movement.id}
+                      >
+                        <div className="timeline-marker" />
+
+                        <div className="timeline-content">
+                          <div className="timeline-topline">
+                            <span
+                              className={
+                                statusClassNames[
+                                  movement.to_status
+                                ]
+                              }
+                            >
+                              {
+                                statusLabels[
+                                  movement.to_status
+                                ]
+                              }
+                            </span>
+
+                            <span className="timeline-date">
+                              {formatDateTime(
+                                movement.created_at
+                              )}
+                            </span>
+                          </div>
+
+                          <p className="timeline-reason">
+                            {movement.movement_reason ??
+                              "Inventory status updated."}
+                          </p>
+
+                          <div className="timeline-meta">
+                            <span>
+                              From status:{" "}
+                              {movement.from_status
+                                ? statusLabels[
+                                    movement.from_status
+                                  ]
+                                : "New Record"}
+                            </span>
+
+                            <span>
+                              To status:{" "}
+                              {
+                                statusLabels[
+                                  movement.to_status
+                                ]
+                              }
+                            </span>
+
+                            <span>
+                              From location:{" "}
+                              {movement.from_location ?? "-"}
+                            </span>
+
+                            <span>
+                              To location:{" "}
+                              {movement.to_location ?? "-"}
+                            </span>
+
+                            <span>
+                              Performed by:{" "}
+                              {movement.performed_by ??
+                                "System"}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="empty-table-message">
-                  No movement history found for this inventory item.
-                </p>
-              )}
+                    ))}
+                  </div>
+                )}
+
+              {!isTimelineLoading &&
+                !timelineErrorMessage &&
+                timelineMovements.length === 0 && (
+                  <p className="empty-table-message">
+                    No movement history was found for this
+                    inventory item.
+                  </p>
+                )}
             </div>
 
             <div className="modal-footer">
-              <button className="secondary-button" onClick={closeTimelineModal}>
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {isAddModalOpen && (
-        <div className="modal-backdrop">
-          <div className="modal-card add-inventory-modal-card">
-            <div className="modal-header">
-              <div>
-                <h3>Add Inventory Item</h3>
-                <p>
-                  Create a new furniture inventory record with product
-                  attributes, cost, price, location, and store type.
-                </p>
-              </div>
-
-              <button className="icon-button" onClick={closeAddModal}>
-                ×
-              </button>
-            </div>
-
-            <div className="modal-body">
-              <div className="form-grid">
-                <div className="form-group">
-                  <label htmlFor="add-product-id">Product ID</label>
-                  <input
-                    id="add-product-id"
-                    type="text"
-                    placeholder="Example: p-001"
-                    value={newInventoryItem.productId}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        productId: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-sku">SKU *</label>
-                  <input
-                    id="add-sku"
-                    type="text"
-                    placeholder="Example: SOFA-002"
-                    value={newInventoryItem.sku}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        sku: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-product-name">Product Name *</label>
-                  <input
-                    id="add-product-name"
-                    type="text"
-                    placeholder="Example: Leather Sectional Sofa"
-                    value={newInventoryItem.productName}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        productName: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-category">Category *</label>
-                  <input
-                    id="add-category"
-                    type="text"
-                    placeholder="Example: Sofa"
-                    value={newInventoryItem.category}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        category: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-material">Material *</label>
-                  <input
-                    id="add-material"
-                    type="text"
-                    placeholder="Example: Fabric"
-                    value={newInventoryItem.material}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        material: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-color">Color *</label>
-                  <input
-                    id="add-color"
-                    type="text"
-                    placeholder="Example: Gray"
-                    value={newInventoryItem.color}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        color: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-cost">Cost *</label>
-                  <input
-                    id="add-cost"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    placeholder="Example: 520"
-                    value={newInventoryItem.cost}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        cost: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-price">Price *</label>
-                  <input
-                    id="add-price"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    placeholder="Example: 1299"
-                    value={newInventoryItem.price}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        price: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-status">Status</label>
-                  <select
-                    id="add-status"
-                    value={newInventoryItem.status}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        status: event.target.value as InventoryStatus,
-                      }))
-                    }
-                  >
-                    {statusUpdateOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-condition">Condition</label>
-                  <select
-                    id="add-condition"
-                    value={newInventoryItem.condition}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        condition: event.target.value as InventoryCondition,
-                      }))
-                    }
-                  >
-                    {conditionOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-location">Location *</label>
-                  <input
-                    id="add-location"
-                    type="text"
-                    placeholder="Example: Seattle Warehouse"
-                    value={newInventoryItem.location}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        location: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-store-type">Store Type</label>
-                  <select
-                    id="add-store-type"
-                    value={newInventoryItem.storeType}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        storeType: event.target.value as StoreType,
-                      }))
-                    }
-                  >
-                    {storeTypeOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-batch-number">Batch Number *</label>
-                  <input
-                    id="add-batch-number"
-                    type="text"
-                    placeholder="Example: BATCH-2026-004"
-                    value={newInventoryItem.batchNumber}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        batchNumber: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-reserved-order">Reserved Order</label>
-                  <input
-                    id="add-reserved-order"
-                    type="text"
-                    placeholder="Example: ORD-1002"
-                    value={newInventoryItem.reservedOrderNumber}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        reservedOrderNumber: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-received-date">Received Date</label>
-                  <input
-                    id="add-received-date"
-                    type="date"
-                    value={newInventoryItem.receivedDate}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        receivedDate: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-eta">Estimated Arrival Date</label>
-                  <input
-                    id="add-eta"
-                    type="date"
-                    value={newInventoryItem.estimatedArrivalDate}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        estimatedArrivalDate: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="add-actual-arrival-date">
-                    Actual Arrival Date
-                  </label>
-                  <input
-                    id="add-actual-arrival-date"
-                    type="date"
-                    value={newInventoryItem.actualArrivalDate}
-                    onChange={(event) =>
-                      setNewInventoryItem((current) => ({
-                        ...current,
-                        actualArrivalDate: event.target.value,
-                      }))
-                    }
-                  />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="add-notes">Notes</label>
-                <textarea
-                  id="add-notes"
-                  rows={4}
-                  placeholder="Optional notes for this inventory item."
-                  value={newInventoryItem.notes}
-                  onChange={(event) =>
-                    setNewInventoryItem((current) => ({
-                      ...current,
-                      notes: event.target.value,
-                    }))
-                  }
-                />
-              </div>
-            </div>
-
-            <div className="modal-footer">
-              <button className="secondary-button" onClick={closeAddModal}>
-                Cancel
-              </button>
-
               <button
-                className="primary-button"
-                onClick={handleSaveNewInventoryItem}
+                className="secondary-button"
+                type="button"
+                onClick={closeTimelineModal}
               >
-                Save Inventory Item
+                Close
               </button>
             </div>
           </div>
